@@ -7,6 +7,30 @@ export default defineConfig({
     plugins: [tailwindcss()],
     ssr: {
       noExternal: ['primevue'] // Ensure PrimeVue works with SSR
+    },
+    // Add asset handling configuration
+    assetsInclude: [
+      '**/*.webp',
+      '**/*.ico',
+      '**/*.png',
+      '**/*.jpg',
+      '**/*.jpeg',
+      '**/*.gif',
+      '**/*.svg',
+      '**/*.avif',
+      '**/*.tiff',
+      '**/*.bmp'
+    ],
+    build: {
+      assetsInlineLimit: 0, // Don't inline any assets
+      rollupOptions: {
+        output: {
+          assetFileNames: (assetInfo) => {
+            // Keep original asset structure
+            return `assets/[name].[ext]`
+          }
+        }
+      }
     }
   },
   title: "All About Minecraft",
@@ -79,8 +103,8 @@ export default defineConfig({
     },
 
     footer: {
-      message: 'Made with ❤️ by Hira',
-      copyright: 'Copyright © 2024'
+      message: 'Made with ❤️ in New Zealand',
+      copyright: '2025 © Harman Singh Hira'
     }
   }
 });

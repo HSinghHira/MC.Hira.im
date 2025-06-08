@@ -7,7 +7,7 @@ hero:
   textsuffix: ', Download, Link & More'
   tagline: By Hira.im
   image:
-    src: /data/icons/Villager-Head.webp
+    src: /data/home.png
     alt: All About Minecraft
 
   # actions:
