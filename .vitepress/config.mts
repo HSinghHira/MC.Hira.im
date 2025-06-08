@@ -27,7 +27,7 @@ export default defineConfig({
     ['meta', { name: 'twitter:image', content: '' }],
 
     // Favicon (optional)
-    ['link', { rel: 'icon', href: 'Assets/icons/Villager-Head.ico' }]
+    ['link', { rel: 'icon', href: '/data/icons/Villager-Head.ico' }]
   ],
   themeConfig: {
 

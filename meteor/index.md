@@ -16,7 +16,7 @@ head:
 
 features:
   - icon:
-      src: assets/icons/electron.png
+      src: /data/icons/electron.png
     title: Electron
     link: /meteor/electron
     details: |
