@@ -43,15 +43,15 @@ export default defineConfig({
 
     // Open Graph (Facebook, Discord)
     ['meta', { property: 'og:type', content: 'website' }],
-    ['meta', { property: 'og:url', content: '' }],
+    ['meta', { property: 'og:url', content: 'https://mc.hira.im/' }],
     ['meta', { property: 'og:image', content: '' }],
 
     // Twitter Cards
     ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
-    ['meta', { name: 'twitter:image', content: '' }],
+    ['meta', { name: 'twitter:image', content: 'https://mc.hira.im/' }],
 
     // Favicon (optional)
-    ['link', { rel: 'icon', href: '/data/icons/Villager-Head.ico' }]
+    ['link', { rel: 'icon', href: '/data/icons/favicon.ico' }]
   ],
   themeConfig: {
 
@@ -71,15 +71,15 @@ export default defineConfig({
     sidebar: [
       
   
-      {
-        text: 'Villager Breeder',
-        collapsed: true,
-        items: [
-          { text: 'Starter Villager Breeder', link: 'villager-breeder/starter-villager-breeder' },
-          // { text: 'Item B', link: '/item-b' },
+      // {
+      //   text: 'Villager Breeder',
+      //   collapsed: true,
+      //   items: [
+      //     { text: 'Starter Villager Breeder', link: 'villager-breeder/starter-villager-breeder' },
+      //     // { text: 'Item B', link: '/item-b' },
 
-        ]
-      },
+      //   ]
+      // },
       // {
       //   text: 'Section Title B',
       //   items: [
@@ -90,7 +90,7 @@ export default defineConfig({
     ],
 
     socialLinks: [
-      { icon: 'youtube', link: 'https://youtube.com' },
+      // { icon: 'youtube', link: 'https://youtube.com' },
       { icon: 'discord', link: 'https://discord.gg/q5nF6mj4AV' },
     ],
 

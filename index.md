@@ -3,9 +3,9 @@ layout: home
 
 hero:
   name: "All About Minecraft"
-  text: "Tutorial"
-  textsuffix: ', Download, Link & More'
-  tagline: By Hira.im
+  text: "Tutorials"
+  textsuffix: ', Downloads, Links & More'
+  tagline: By Hira
   image:
     src: /data/home.png
     alt: All About Minecraft

@@ -9,34 +9,9 @@ I have taken this all infomation from new & old Github commits and explored the 
 
 ## Useful Links
 
-<div class="flex flex-wrap gap-4 mt-4">
- <Button    
-        type="button"  
-        severity="info" 
-        label="GitHub Repo"
-        icon="pi pi-github"
-        iconPos="left"
-        @click="() => window.open('https://github.com/your/repo', '_blank')" 
-        :loading="loading"/>
-
- <Button    
-        type="button"  
-        severity="info" 
-        label="Download"
-        icon="pi pi-download"
-        iconPos="left"
-        @click="() => window.open('https://github.com/your/repo', '_blank')" 
-        :loading="loading"/>
-
- <Button    
-        type="button"  
-        severity="info" 
-        label="GitHub Releases"
-        icon="pi pi-box"
-        iconPos="left"
-        @click="() => window.open('https://github.com/your/repo', '_blank')" 
-        :loading="loading"/>
-</div>
+* [Github Repository](https://github.com/RacoonDog/Electron)
+* [Latest Release](https://github.com/RacoonDog/Electron/releases/latest)
+* [Download Link](https://github.com/RacoonDog/Electron/releases/download/snapshot/electron-1.0.0.jar)
 
 ## Supported Version(s)
 
