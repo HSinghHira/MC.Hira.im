@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="refresh" content="0; url=./">
+    <script>
+      // Try to redirect to closest locale manually (like /en/)
+      const fallbackLang = localStorage.getItem("selectedLang") || "en";
+      const current = location.pathname;
+      const repoBase = "/"; // change to your repo name
+      const finalUrl = `${repoBase}/${fallbackLang}${current}`;
+
+      location.replace(finalUrl);
+    </script>
+  </head>
+  <body>
+    Redirecting...
+  </body>
+</html>
