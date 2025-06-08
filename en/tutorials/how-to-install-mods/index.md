@@ -18,7 +18,7 @@ features:
   - icon:
       src: /data/icons/modrinth.webp
     title: Install Mods in Modrinth?
-    link: /tutorials/how-to-install-mods/install-mods-in-modrinth
+    link: en/tutorials/how-to-install-mods/install-mods-in-modrinth
     details:  A simple step-by-step tutorial on how to install Minecraft mods in Modrinth.
 
   - icon: 🔜

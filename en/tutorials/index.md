@@ -18,7 +18,7 @@ features:
   - icon:
       src: /data/icons/mods.png
     title: How to Install Mods in Minecraft?
-    link: /tutorials/how-to-install-mods
+    link: en/tutorials/how-to-install-mods
     details:  A simple step-by-step tutorial on how to install mods in Minecraft.
 
   - icon: 🔜

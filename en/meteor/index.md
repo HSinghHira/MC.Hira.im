@@ -18,7 +18,7 @@ features:
   - icon:
       src: /data/icons/electron.png
     title: Electron
-    link: /meteor/electron
+    link: en/meteor/electron
     details: |
       
         <p>A lightweight and performant Minecraft mod for enhanced gameplay.</p>

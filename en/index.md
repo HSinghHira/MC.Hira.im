@@ -1,5 +1,6 @@
 ---
 layout: home
+redirect: /en/ 
 
 hero:
   name: "All About Minecraft"
@@ -23,13 +24,13 @@ features:
   - icon:
       src: /data/icons/tutorial.png
     title: Minecraft Tutorials
-    link: /tutorials
+    link: en/tutorials
     details: A step-by-step guide on how to do things in Minecraft.
 
   - icon:
       src: /data/icons/meteor.png
     title: Meteor Client Addons
-    link: /meteor
+    link: en/meteor
     details: The process of creating an efficient villager breeder in Minecraft
 
   - icon: 🔜
