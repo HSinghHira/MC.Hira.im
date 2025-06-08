@@ -46,12 +46,12 @@ jobs:
           npm install
       
       - name: Build with VitePress
-        run: npm run docs:build # or pnpm docs:build / yarn docs:build
+        run: npm run build # or npm run docs:build if that's your script name
       
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: docs/.vitepress/dist
+          path: .vitepress/dist
 
   # Deployment job
   deploy:
