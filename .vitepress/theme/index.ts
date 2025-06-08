@@ -3,10 +3,14 @@ import DefaultTheme from 'vitepress/theme'
 
 import PrimeVue from 'primevue/config'
 import Aura from '@primevue/themes/aura'
+
+import Chip from 'primevue/chip';
+
 import '@theojs/lumen/theme'
 
 
 import Button from 'primevue/button'
+import Tag from 'primevue/tag';
 import { HomeUnderline } from '@theojs/lumen'
 
 import Layout from './Layout.vue'
@@ -30,6 +34,8 @@ export default {
 
     // Register components globally
     app.component('Button', Button)
+    app.component('Tag', Tag)
+    app.component('Chip', Chip)
     app.component('Home', HomeUnderline)
 
   }

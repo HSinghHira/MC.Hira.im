@@ -1,5 +1,16 @@
 ---
 layout: doc
+
+title: Electron Meteor Client Addon
+description: A lightweight and performant Minecraft mod for enhanced gameplay.
+
+head:
+  - - meta
+    - name: description
+      content: A lightweight and performant Minecraft mod for enhanced gameplay.
+  - - meta
+    - name: keywords
+      content: electron, Electron Meteor Client Addon, meteor client, meteor client addon, minecraft mods
 ---
 ::: warning
 I have taken this all infomation from new & old Github commits and explored the modules manually. So if there is something that is not correct, please do let me know.
@@ -7,17 +18,18 @@ I have taken this all infomation from new & old Github commits and explored the 
 
 **Electron** is a Meteor Client addon focused on performance.  It implements *experimental performance improvements* for Meteor Client, aiming to speed up game launch and streamline the tick/render loops. In practice, Electron injects mixins into the client to skip unnecessary work (e.g. disabling unused render events) and use more efficient code paths in Meteor’s internals.  For example, it removes Meteor’s default 2D-rendering event when unused and substitutes optimized math and stream operations.  These tweaks reduce overhead in rendering and world tick processing, making the Meteor Client run leaner.
 
-## Useful Links
-
-* [Github Repository](https://github.com/RacoonDog/Electron)
-* [Latest Release](https://github.com/RacoonDog/Electron/releases/latest)
-* [Download Link](https://github.com/RacoonDog/Electron/releases/download/snapshot/electron-1.0.0.jar)
-
 ## Supported Version(s)
 
 * minecraft_version=1.21.5
 * minecraft_version=1.19.1 *(deleted)*
 * As the README notes, Electron only supports the latest dev build of Meteor Client.
+
+## Requirements
+
+1. Minecraft
+2. Meteor Client (latest dev build)
+3. Fabric
+4. Fabric API
 
 ## Key Features and Modules
 
@@ -30,6 +42,12 @@ Electron is essentially a collection of mixin-based performance modules. Its **c
 * **Developer/profiler support:**  Electron can enable optional dev tools for debugging (through `mixin.dev` and `mixin.dev.profiler`), which can be turned off in production mode.
 
 In short, Electron bundles a suite of performance tweaks – from rendering and math to networking and scripting – all aimed at making Meteor Client run smoother and faster. The full list of mixin modules is documented in the repo’s README.
+
+## Useful Links
+
+* [Github Repository](https://github.com/RacoonDog/Electron)
+* [Latest Release](https://github.com/RacoonDog/Electron/releases/latest)
+* [Download Link](https://github.com/RacoonDog/Electron/releases/download/snapshot/electron-1.0.0.jar)
 
 ## Why Author is Trustworthy
 
