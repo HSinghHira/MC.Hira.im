@@ -1,20 +1,28 @@
 ---
 layout: home
-title: Meteor Mods
+isHome: false
+editLink: true
+
+title: Meteor Client Addons
+description: The List of all updated and newest Meteor Client Addons.
+
+head:
+  - - meta
+    - name: description
+      content: The List of all updated and newest Meteor Client Addons.
+  - - meta
+    - name: keywords
+      content: meteor client, meteor client addon, minecraft mods
+
 features:
   - icon:
-      src: /Assets/Icons/meteor.png
+      src: /assets/icons/electron.png
     title: Electron
     link: /meteor/electron
-    details: A lightweight and performant Minecraft mod for enhanced gameplay.
-    github: https://github.com/RacoonDog/Electron
-    mc_version: 1.21.3, 1.21.4
+    details: |
+      
+        <p>A lightweight and performant Minecraft mod for enhanced gameplay.</p>
 
-  - icon:
-      src: /Assets/Icons/meteor.png
-    title: Electron 2
-    link: /meteor/electron-2
-    details: An advanced version of Electron with additional features.
-    github: https://github.com/RacoonDog/Electron
-    mc_version: 1.21.3, 1.21.4
+        <span class="mc-1-21-5"> 1.21.5 </span>
+
 ---

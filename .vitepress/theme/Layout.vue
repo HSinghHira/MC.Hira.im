@@ -1,9 +1,7 @@
 <template>
   <Layout>
    <template #home-hero-after>
-  <div class="mt-5">
-  
-  </div>
+  <div class="mt-5"/>
 </template>
 
   </Layout>

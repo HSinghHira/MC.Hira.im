@@ -5,11 +5,29 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
+    ssr: {
+      noExternal: ['primevue'] // Ensure PrimeVue works with SSR
+    }
   },
-  title: "Minecraft Wala Bro",
-
+  title: "All About Minecraft",
   description: "Minecraft Related Tutorial and Downloads",
+  head: [
+    // Basic Meta Tags
+    ['meta', { name: 'author', content: 'Harman Singh Hira' }],
+    ['meta', { charset: 'UTF-8' }],
 
+    // Open Graph (Facebook, Discord)
+    ['meta', { property: 'og:type', content: 'website' }],
+    ['meta', { property: 'og:url', content: '' }],
+    ['meta', { property: 'og:image', content: '' }],
+
+    // Twitter Cards
+    ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
+    ['meta', { name: 'twitter:image', content: '' }],
+
+    // Favicon (optional)
+    ['link', { rel: 'icon', href: 'Assets/icons/Villager-Head.ico' }]
+  ],
   themeConfig: {
 
     // https://vitepress.dev/reference/default-theme-config
