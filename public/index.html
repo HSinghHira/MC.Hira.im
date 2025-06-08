@@ -2,14 +2,14 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Not found</title>
+    <title>Redirecting...</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script>
       const fallbackLang = localStorage.getItem('selectedLang') || 'en';
-      const path = location.pathname;
-      location.replace(`/${fallbackLang}${path}`);
+      location.replace(`/${fallbackLang}/`);
     </script>
   </head>
   <body>
-    Redirecting to localized page...
+    Redirecting to your language...
   </body>
 </html>
