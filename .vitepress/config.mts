@@ -62,32 +62,38 @@ export default defineConfig({
     
     nav: [
       { text: 'Home', link: '/' },
-      // { text: 'Home', link: '/' },
+      { text: 'Credits', link: '/pages/credits' },
       // { text: 'Home', link: '/' },
       // { text: 'Home', link: '/' },
       // { text: 'Home', link: '/' },
     ],
 
-    sidebar: [
-      
-  
-      // {
-      //   text: 'Villager Breeder',
-      //   collapsed: true,
-      //   items: [
-      //     { text: 'Starter Villager Breeder', link: 'villager-breeder/starter-villager-breeder' },
-      //     // { text: 'Item B', link: '/item-b' },
+sidebar: [
+  {
+    text: 'Tutorials',
+    collapsed: true,
+    items: [
+      {
+        text: 'How to Install Mods?',
+        link: '/tutorials/how-to-install-mods/',
+        items: [ // Nested items array for sub-links
+          { text: 'For Modrinth', link: '/tutorials/how-to-install-mods/install-mods-in-modrinth' },
+          // { text: 'Step 2: Install Mods', link: '/tutorials/how-to-install-mods/step-2/' },
+        ]
+      },
+      // { text: 'Item B', link: '/item-b' },
+    ]
+  },
+  {
+    text: 'Meteor Client Addons',
+    collapsed: true,
+    items: [
+      { text: 'Electron', link: '/meteor/electron/' },
+      // { text: 'Item D', link: '/item-d' },
+    ]
+  }
+],
 
-      //   ]
-      // },
-      // {
-      //   text: 'Section Title B',
-      //   items: [
-      //     { text: 'Item C', link: '/item-c' },
-      //     { text: 'Item D', link: '/item-d' },
-      //   ]
-      // }
-    ],
 
     socialLinks: [
       // { icon: 'youtube', link: 'https://youtube.com' },

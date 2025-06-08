@@ -21,16 +21,16 @@ hero:
 features:
 
   - icon:
-      src: /data/icons/meteor.png
-    title: Meteor Client Addons
-    link: /meteor
-    details: The process of creating an efficient villager breeder in Minecraft
-
-  - icon:
       src: /data/icons/tutorial.png
     title: Minecraft Tutorials
     link: /tutorials
     details: A step-by-step guide on how to do things in Minecraft.
+
+  - icon:
+      src: /data/icons/meteor.png
+    title: Meteor Client Addons
+    link: /meteor
+    details: The process of creating an efficient villager breeder in Minecraft
 
   - icon: 🔜
     title: Coming Soon

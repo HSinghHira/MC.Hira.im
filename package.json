@@ -15,9 +15,6 @@
   "dependencies": {
     "@primevue/themes": "^4.3.5",
     "@theojs/lumen": "^5.6.0",
-    "ant-design-vue": "^4.2.6",
-    "element-plus": "^2.10.1",
-    "lucide": "^0.513.0",
     "primeicons": "^7.0.0",
     "primevue": "^4.3.5"
   }

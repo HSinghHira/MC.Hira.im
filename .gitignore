@@ -26,3 +26,7 @@ bun.lockb
 /bun.lockb
 /*.lockb
 *.lockb
+package.json
+/package.json
+package-lock.json
+/package-lock.json
