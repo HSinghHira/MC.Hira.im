@@ -26,7 +26,7 @@ Before we jump into the steps, here’s what you’ll need:
 * **Correct Minecraft version** : Make sure the version of mod matches your Minecraft version.
 * **Fabric or Forge** : Most mods require one of these mod loaders. Check the mod’s page to see which one you need and install it first.
 
-## Install via Modrinth Launcher?
+## Install Mods via Modrinth Launcher?
 
 1. **Open Modrinth Launcher**: Fire up the Modrinth Launcher on your computer. If you don’t have it yet, grab it from Modrinth’s website and set it up. Once it’s open, pick the Minecraft profile (or “instance”) where you want to add mods. Profiles let you keep different mod setups separate, which is super handy!
 
@@ -45,7 +45,7 @@ Before we jump into the steps, here’s what you’ll need:
    The launcher will handle the rest, installing the mod to your selected profile.
 5. **Launch and Play!**: Once the mod is installed, hit the **Play** button in the launcher to start Minecraft with your new mod. If everything’s set up right, you’ll see the mod in action!
 
-## Manually Install Mods
+## Install Mods Manually
 
 1. **Download Your Mod**: Head to Modrinth’s website and download the **.jar** file for your desired mod. Save it somewhere easy to find, like your Downloads folder.
 2. **Open the Run Command**: On Windows, press <Tag icon="pi pi-microsoft" value="Windows"></Tag> + <Tag value="R"></Tag> to open the Run dialog box. Type `%appdata%/ModrinthApp/profiles` and hit **OK**. This takes you straight to the Modrinth profiles folder.

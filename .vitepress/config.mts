@@ -63,7 +63,7 @@ export default defineConfig({
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Credits', link: '/pages/credits' },
-      // { text: 'Home', link: '/' },
+      { text: 'Issues', link: 'https://github.com/HSinghHira/MC.Hira.im/issues' },
       // { text: 'Home', link: '/' },
       // { text: 'Home', link: '/' },
     ],
