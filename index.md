@@ -7,7 +7,7 @@ hero:
   textsuffix: ', Download, Link & More'
   tagline: By Hira.im
   image:
-    src: /assets/icons/Villager-Head.webp
+    src: assets/icons/Villager-Head.webp
     alt: All About Minecraft
 
   # actions:
@@ -21,7 +21,7 @@ hero:
 features:
 
   - icon:
-      src: /assets/icons/meteor.png
+      src: assets/icons/meteor.png
     title: Meteor Client Addons
     link: /meteor
     details: The process of creating an efficient villager breeder in Minecraft
