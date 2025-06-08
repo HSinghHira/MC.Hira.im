@@ -11,7 +11,7 @@ export default defineConfig({
   },
   title: "All About Minecraft",
   description: "Minecraft Related Tutorial and Downloads",
-  base: 'https://mc.hira.im/',
+  base: '/',
   head: [
     // Basic Meta Tags
     ['meta', { name: 'author', content: 'Harman Singh Hira' }],
