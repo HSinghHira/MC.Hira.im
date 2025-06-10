@@ -13,7 +13,7 @@ head:
       content: Meteor+, Meteor Plus, Meteor Plus Meteor Client Addon, meteor client, meteor client addon, minecraft mods
 ---
 ::: warning
-I have taken this all infomation from new & old Github commits and explored the modules manually. So if there is something that is not correct, please do let me know.
+I have taken this all infomation from developer's homepage, new & old Github commits and explored the modules manually. So if there is something that is not correct, please do let me know.
 :::
 
 **Meteor Plus** is an addon for Meteor Client, a widely used Minecraft mod that offers various hacks to enhance gameplay. Meteor Plus extends Meteor Client by adding "blatant" features, which are advanced cheats designed to bypass anti-cheat systems on Minecraft servers. These features cater to players who want to gain advantages in player vs. environment (PvE) and player vs. player (PvP) scenarios, such as flying, moving faster, or ignoring anti-cheat restrictions. The addon is popular among mod users, with over 16,000 downloads and a strong community presence.
@@ -98,6 +98,9 @@ These modules and commands make Meteor Plus a powerful tool for players seeking 
 * [Github Repository](https://github.com/MeteorClientPlus/MeteorPlus)
 * [Latest Release](https://github.com/MeteorClientPlus/MeteorPlus/releases/latest)
 * [Download Link](https://meteorclientplus.github.io/versions.html)
+* [Discord](https://discord.com/invite/N3gqYc7GRS)
+* [Telegram](https://t.me/+E3PuLb8cZOlmZWIy)
+* [Guilded.gg](https://www.guilded.gg/i/27dAlJKk)
 
 ## Why Author is Trustworthy
 
