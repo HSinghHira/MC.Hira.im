@@ -1,5 +1,8 @@
-import { defineConfig } from "vitepress";
+import { createContentLoader, defineConfig, HeadConfig } from 'vitepress'
 import tailwindcss from "@tailwindcss/vite";
+import { SitemapStream } from 'sitemap'
+import { createWriteStream } from 'node:fs'
+import { resolve } from 'node:path'
 
 export default defineConfig({
   title: "All About Minecraft", // still required
@@ -145,5 +148,31 @@ export default defineConfig({
     ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
     ['meta', { name: 'twitter:image', content: 'https://mc.hira.im/' }],
     ['link', { rel: 'icon', href: '/data/icons/favicon.ico' }]
-  ]
+  ],
+  transformHead: ({ pageData }) => {
+    const head: HeadConfig[] = []
+
+    head.push(['meta', { property: 'og:title', content: pageData.frontmatter.title }])
+    head.push(['meta', { property: 'og:description', content: pageData.frontmatter.description }])
+    
+    return head
+  },
+  lastUpdated: true,
+  buildEnd: async ({ outDir }) => {
+    const sitemap = new SitemapStream({ hostname: 'https://mc.hira.im' })
+    const pages = await createContentLoader('*.md').load()
+    const writeStream = createWriteStream(resolve(outDir, 'sitemap.xml'))
+
+    sitemap.pipe(writeStream)
+    pages.forEach((page) => sitemap.write(
+      page.url
+        // Strip `index.html` from URL
+        .replace(/index.html$/g, '')
+        // Optional: if Markdown files are located in a subfolder
+        .replace(/^\/docs/, '')
+      ))
+    sitemap.end()
+
+    await new Promise<void>((r) => writeStream.on('finish', () => r()))
+  }
 });
