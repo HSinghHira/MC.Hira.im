@@ -142,12 +142,40 @@ export default defineConfig({
   head: [
     ['meta', { name: 'author', content: 'Harman Singh Hira' }],
     ['meta', { charset: 'UTF-8' }],
+    ['meta', { name: 'viewport', content: 'width=device-width, initial-scale=1.0' }],
+    ['meta', { name: 'robots', content: 'index, follow' }],
+    ['meta', { name: 'googlebot', content: 'index, follow' }],
+    ['meta', { name: 'theme-color', content: '#10b981' }],
+    ['meta', { name: 'keywords', content: 'Minecraft, mods, tutorials, Meteor Client, modding, gaming' }],
+    
+    // Open Graph
     ['meta', { property: 'og:type', content: 'website' }],
-    ['meta', { property: 'og:url', content: 'https://mc.hira.im/' }],
-    ['meta', { property: 'og:image', content: '' }],
+    ['meta', { property: 'og:site_name', content: 'All About Minecraft' }],
+    ['meta', { property: 'og:locale', content: 'en_US' }],
+    ['meta', { property: 'og:locale:alternate', content: 'pa_IN' }],
+    // ['meta', { property: 'og:image', content: 'https://mc.hira.im/data/icons/og-image.png' }],
+    // ['meta', { property: 'og:image:width', content: '1200' }],
+    // ['meta', { property: 'og:image:height', content: '630' }],
+    // ['meta', { property: 'og:image:type', content: 'image/png' }],
+    
+    // Twitter Card
     ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
-    ['meta', { name: 'twitter:image', content: 'https://mc.hira.im/' }],
-    ['link', { rel: 'icon', href: '/data/icons/favicon.ico' }]
+    ['meta', { name: 'twitter:site', content: '@HSinghHira' }],
+    ['meta', { name: 'twitter:creator', content: '@HSinghHira' }],
+    // ['meta', { name: 'twitter:image', content: 'https://mc.hira.im/data/icons/og-image.png' }],
+    
+    // Links
+    ['link', { rel: 'icon', href: '/data/icons/favicon.ico' }],
+    // ['link', { rel: 'apple-touch-icon', href: '/data/icons/apple-touch-icon.png' }],
+    // ['link', { rel: 'manifest', href: '/manifest.json' }],
+    ['link', { rel: 'sitemap', type: 'application/xml', href: '/sitemap.xml' }],
+    ['link', { rel: 'robots', href: '/robots.txt' }],
+    
+    // Preconnect for performance
+    ['link', { rel: 'preconnect', href: 'https://fonts.googleapis.com' }],
+    ['link', { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' }],
+    ['link', { rel: 'dns-prefetch', href: 'https://discord.gg' }],
+    ['link', { rel: 'dns-prefetch', href: 'https://github.com' }]
   ],
   transformHead: ({ pageData }) => {
     const head: HeadConfig[] = []
@@ -155,9 +183,42 @@ export default defineConfig({
     // Use fallback values if frontmatter properties are undefined
     const title = pageData.frontmatter.title || pageData.title || 'All About Minecraft'
     const description = pageData.frontmatter.description || pageData.description || 'Minecraft Related Tutorial and Downloads'
+    const currentUrl = `https://mc.hira.im${pageData.relativePath.replace(/\.md$/, '.html').replace(/index\.html$/, '')}`
+    const lastModified = pageData.lastUpdated ? new Date(pageData.lastUpdated).toISOString() : new Date().toISOString()
 
+    // Canonical URL
+    head.push(['link', { rel: 'canonical', href: currentUrl }])
+    
+    // Open Graph
     head.push(['meta', { property: 'og:title', content: title }])
     head.push(['meta', { property: 'og:description', content: description }])
+    head.push(['meta', { property: 'og:url', content: currentUrl }])
+    head.push(['meta', { property: 'og:updated_time', content: lastModified }])
+    
+    // Twitter Card
+    head.push(['meta', { name: 'twitter:title', content: title }])
+    head.push(['meta', { name: 'twitter:description', content: description }])
+    head.push(['meta', { name: 'twitter:url', content: currentUrl }])
+    
+    // SEO Meta
+    head.push(['meta', { name: 'description', content: description }])
+    
+    // Last Modified
+    head.push(['meta', { name: 'last-modified', content: lastModified }])
+    head.push(['meta', { property: 'article:modified_time', content: lastModified }])
+    
+    // Language alternates for multilingual support
+    if (pageData.relativePath.startsWith('en/')) {
+      const pbPath = pageData.relativePath.replace('en/', 'pb/')
+      head.push(['link', { rel: 'alternate', hreflang: 'pa', href: `https://mc.hira.im/${pbPath.replace(/\.md$/, '.html').replace(/index\.html$/, '')}` }])
+      head.push(['link', { rel: 'alternate', hreflang: 'en', href: currentUrl }])
+      head.push(['link', { rel: 'alternate', hreflang: 'x-default', href: currentUrl }])
+    } else if (pageData.relativePath.startsWith('pb/')) {
+      const enPath = pageData.relativePath.replace('pb/', 'en/')
+      head.push(['link', { rel: 'alternate', hreflang: 'en', href: `https://mc.hira.im/${enPath.replace(/\.md$/, '.html').replace(/index\.html$/, '')}` }])
+      head.push(['link', { rel: 'alternate', hreflang: 'pa', href: currentUrl }])
+      head.push(['link', { rel: 'alternate', hreflang: 'x-default', href: `https://mc.hira.im/${enPath.replace(/\.md$/, '.html').replace(/index\.html$/, '')}` }])
+    }
     
     return head
   },
