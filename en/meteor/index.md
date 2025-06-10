@@ -19,34 +19,18 @@ features:
       src: /data/icons/electron.png
     title: Electron
     link: en/meteor/electron
-    details: |
-
-      <p>A lightweight and performant Minecraft mod for enhanced gameplay.</p>
-
-      <span class="mc-1-21-5"> 1.21.5 </span>
+    details: Lightweight and performant Minecraft mod for enhanced gameplay.
 
   - icon:
       src: /data/icons/meteorplus.png
     title: Meteor+
     link: en/meteor/meteorplus
-    details: |
-
-      <p>Adds advanced cheat features, enhancing PvE and PvP gameplay</p>
-
-      <span class="mc-1-21-5"> 1.21.5 </span>
-      <span class="mc-1-21-4"> 1.21.4 </span>
-      <span class="mc-1-21-3"> 1.21.3 </span>
+    details: Adds advanced cheat features, enhancing PvE and PvP gameplay.
 
   - icon:
       src: /data/icons/meteor-rejects.png
     title: Meteor Rejects
     link: en/meteor/meteor-rejects
-    details: |
-
-      <p>An addon for Meteor Client that adds rejected and ported features</p>
-
-      <span class="mc-1-21-4"> 1.21.4 </span>
-      <span class="mc-1-21"> 1.21 </span>
-      <span class="mc-1-20-6"> 1.20.6 </span>
+    details: An addon for Meteor Client that adds rejected and ported features.
       
 ---
