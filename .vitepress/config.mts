@@ -164,17 +164,35 @@ export default defineConfig({
   lastUpdated: true,
   buildEnd: async ({ outDir }) => {
     const sitemap = new SitemapStream({ hostname: 'https://mc.hira.im' })
-    const pages = await createContentLoader('*.md').load()
+    
+    // Load all markdown files from all directories, excluding README files
+    const pages = await createContentLoader([
+      '**/*.md',
+      '!**/README.md',
+      '!README.md'
+    ]).load()
+    
     const writeStream = createWriteStream(resolve(outDir, 'sitemap.xml'))
 
     sitemap.pipe(writeStream)
-    pages.forEach((page) => sitemap.write(
-      page.url
+    
+    pages.forEach((page) => {
+      const url = page.url
         // Strip `index.html` from URL
-        .replace(/index.html$/g, '')
-        // Optional: if Markdown files are located in a subfolder
-        .replace(/^\/docs/, '')
-      ))
+        .replace(/index\.html$/g, '')
+        // Remove any leading slashes and ensure proper formatting
+        .replace(/^\/+/, '/')
+      
+      // Only add valid URLs (skip empty or invalid ones)
+      if (url && url !== '/') {
+        sitemap.write(url)
+      }
+    })
+    
+    // Add root URLs manually for each locale
+    sitemap.write('/en/')
+    sitemap.write('/pb/')
+    
     sitemap.end()
 
     await new Promise<void>((r) => writeStream.on('finish', () => r()))
