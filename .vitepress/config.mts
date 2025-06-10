@@ -5,11 +5,7 @@ export default defineConfig({
   title: "All About Minecraft", // still required
   description: "Minecraft Related Tutorial and Downloads",
   base: '/',
-  sitemap: {
-    hostname: 'https://mc.hira.im',
-  },
-
-  locales: {
+   locales: {
     root: {
       label: 'English',
       lang: 'en',

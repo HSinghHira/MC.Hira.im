@@ -36,14 +36,6 @@ features:
       <span class="mc-1-21-5"> 1.21.5 </span>
       <span class="mc-1-21-4"> 1.21.4 </span>
       <span class="mc-1-21-3"> 1.21.3 </span>
-      <span class="mc-1-21-1"> 1.21.1 </span>
-      <span class="mc-1-20-6"> 1.20.6 </span>
-      <span class="mc-1-20-4"> 1.20.4 </span>
-      <span class="mc-1-20-2"> 1.20.2 </span>
-      <span class="mc-1-20-1"> 1.20.1 </span>
-      <span class="mc-1-20"> 1.20 </span>
-      <span class="mc-1-19-4"> 1.19.4 </span>
-      <span class="mc-1-18-2"> 1.18.2 </span>
 
   - icon:
       src: /data/icons/meteor-rejects.png
@@ -53,6 +45,8 @@ features:
 
       <p>An addon for Meteor Client that adds rejected and ported features</p>
 
-
-
+      <span class="mc-1-21-4"> 1.21.4 </span>
+      <span class="mc-1-21"> 1.21 </span>
+      <span class="mc-1-20-6"> 1.20.6 </span>
+      
 ---
