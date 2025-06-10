@@ -152,8 +152,12 @@ export default defineConfig({
   transformHead: ({ pageData }) => {
     const head: HeadConfig[] = []
 
-    head.push(['meta', { property: 'og:title', content: pageData.frontmatter.title }])
-    head.push(['meta', { property: 'og:description', content: pageData.frontmatter.description }])
+    // Use fallback values if frontmatter properties are undefined
+    const title = pageData.frontmatter.title || pageData.title || 'All About Minecraft'
+    const description = pageData.frontmatter.description || pageData.description || 'Minecraft Related Tutorial and Downloads'
+
+    head.push(['meta', { property: 'og:title', content: title }])
+    head.push(['meta', { property: 'og:description', content: description }])
     
     return head
   },
