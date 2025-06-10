@@ -153,21 +153,21 @@ export default defineConfig({
     ['meta', { property: 'og:site_name', content: 'All About Minecraft' }],
     ['meta', { property: 'og:locale', content: 'en_US' }],
     ['meta', { property: 'og:locale:alternate', content: 'pa_IN' }],
-    // ['meta', { property: 'og:image', content: 'https://mc.hira.im/data/icons/og-image.png' }],
-    // ['meta', { property: 'og:image:width', content: '1200' }],
-    // ['meta', { property: 'og:image:height', content: '630' }],
-    // ['meta', { property: 'og:image:type', content: 'image/png' }],
+    ['meta', { property: 'og:image', content: 'https://mc.hira.im/data/icons/og-image.png' }],
+    ['meta', { property: 'og:image:width', content: '1200' }],
+    ['meta', { property: 'og:image:height', content: '630' }],
+    ['meta', { property: 'og:image:type', content: 'image/png' }],
     
     // Twitter Card
     ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
-    ['meta', { name: 'twitter:site', content: '@HSinghHira' }],
-    ['meta', { name: 'twitter:creator', content: '@HSinghHira' }],
-    // ['meta', { name: 'twitter:image', content: 'https://mc.hira.im/data/icons/og-image.png' }],
+    ['meta', { name: 'twitter:site', content: '@YourTwitterHandle' }],
+    ['meta', { name: 'twitter:creator', content: '@YourTwitterHandle' }],
+    ['meta', { name: 'twitter:image', content: 'https://mc.hira.im/data/icons/og-image.png' }],
     
     // Links
     ['link', { rel: 'icon', href: '/data/icons/favicon.ico' }],
-    // ['link', { rel: 'apple-touch-icon', href: '/data/icons/apple-touch-icon.png' }],
-    // ['link', { rel: 'manifest', href: '/manifest.json' }],
+    ['link', { rel: 'apple-touch-icon', href: '/data/icons/apple-touch-icon.png' }],
+    ['link', { rel: 'manifest', href: '/manifest.json' }],
     ['link', { rel: 'sitemap', type: 'application/xml', href: '/sitemap.xml' }],
     ['link', { rel: 'robots', href: '/robots.txt' }],
     
@@ -183,7 +183,17 @@ export default defineConfig({
     // Use fallback values if frontmatter properties are undefined
     const title = pageData.frontmatter.title || pageData.title || 'All About Minecraft'
     const description = pageData.frontmatter.description || pageData.description || 'Minecraft Related Tutorial and Downloads'
-    const currentUrl = `https://mc.hira.im${pageData.relativePath.replace(/\.md$/, '.html').replace(/index\.html$/, '')}`
+    
+    // Generate proper URL from relative path
+    let urlPath = pageData.relativePath.replace(/\.md$/, '').replace(/\/index$/, '/')
+    if (urlPath && !urlPath.startsWith('/')) {
+      urlPath = '/' + urlPath
+    }
+    if (urlPath && !urlPath.endsWith('/') && !urlPath.includes('.')) {
+      urlPath = urlPath + '/'
+    }
+    const currentUrl = `https://mc.hira.im${urlPath}`
+    
     const lastModified = pageData.lastUpdated ? new Date(pageData.lastUpdated).toISOString() : new Date().toISOString()
 
     // Canonical URL
@@ -210,14 +220,24 @@ export default defineConfig({
     // Language alternates for multilingual support
     if (pageData.relativePath.startsWith('en/')) {
       const pbPath = pageData.relativePath.replace('en/', 'pb/')
-      head.push(['link', { rel: 'alternate', hreflang: 'pa', href: `https://mc.hira.im/${pbPath.replace(/\.md$/, '.html').replace(/index\.html$/, '')}` }])
+      let pbUrlPath = pbPath.replace(/\.md$/, '').replace(/\/index$/, '/')
+      if (pbUrlPath && !pbUrlPath.startsWith('/')) pbUrlPath = '/' + pbUrlPath
+      if (pbUrlPath && !pbUrlPath.endsWith('/') && !pbUrlPath.includes('.')) pbUrlPath = pbUrlPath + '/'
+      const pbUrl = `https://mc.hira.im${pbUrlPath}`
+      
+      head.push(['link', { rel: 'alternate', hreflang: 'pa', href: pbUrl }])
       head.push(['link', { rel: 'alternate', hreflang: 'en', href: currentUrl }])
       head.push(['link', { rel: 'alternate', hreflang: 'x-default', href: currentUrl }])
     } else if (pageData.relativePath.startsWith('pb/')) {
       const enPath = pageData.relativePath.replace('pb/', 'en/')
-      head.push(['link', { rel: 'alternate', hreflang: 'en', href: `https://mc.hira.im/${enPath.replace(/\.md$/, '.html').replace(/index\.html$/, '')}` }])
+      let enUrlPath = enPath.replace(/\.md$/, '').replace(/\/index$/, '/')
+      if (enUrlPath && !enUrlPath.startsWith('/')) enUrlPath = '/' + enUrlPath
+      if (enUrlPath && !enUrlPath.endsWith('/') && !enUrlPath.includes('.')) enUrlPath = enUrlPath + '/'
+      const enUrl = `https://mc.hira.im${enUrlPath}`
+      
+      head.push(['link', { rel: 'alternate', hreflang: 'en', href: enUrl }])
       head.push(['link', { rel: 'alternate', hreflang: 'pa', href: currentUrl }])
-      head.push(['link', { rel: 'alternate', hreflang: 'x-default', href: `https://mc.hira.im/${enPath.replace(/\.md$/, '.html').replace(/index\.html$/, '')}` }])
+      head.push(['link', { rel: 'alternate', hreflang: 'x-default', href: enUrl }])
     }
     
     return head
