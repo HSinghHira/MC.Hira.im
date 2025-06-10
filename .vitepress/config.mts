@@ -153,21 +153,21 @@ export default defineConfig({
     ['meta', { property: 'og:site_name', content: 'All About Minecraft' }],
     ['meta', { property: 'og:locale', content: 'en_US' }],
     ['meta', { property: 'og:locale:alternate', content: 'pa_IN' }],
-    ['meta', { property: 'og:image', content: 'https://mc.hira.im/data/icons/og-image.png' }],
-    ['meta', { property: 'og:image:width', content: '1200' }],
-    ['meta', { property: 'og:image:height', content: '630' }],
-    ['meta', { property: 'og:image:type', content: 'image/png' }],
+    // ['meta', { property: 'og:image', content: 'https://mc.hira.im/data/icons/og-image.png' }],
+    // ['meta', { property: 'og:image:width', content: '1200' }],
+    // ['meta', { property: 'og:image:height', content: '630' }],
+    // ['meta', { property: 'og:image:type', content: 'image/png' }],
     
     // Twitter Card
     ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
-    ['meta', { name: 'twitter:site', content: '@YourTwitterHandle' }],
-    ['meta', { name: 'twitter:creator', content: '@YourTwitterHandle' }],
-    ['meta', { name: 'twitter:image', content: 'https://mc.hira.im/data/icons/og-image.png' }],
+    ['meta', { name: 'twitter:site', content: '@HSinghHira' }],
+    ['meta', { name: 'twitter:creator', content: '@HSinghHira' }],
+    // ['meta', { name: 'twitter:image', content: 'https://mc.hira.im/data/icons/og-image.png' }],
     
     // Links
     ['link', { rel: 'icon', href: '/data/icons/favicon.ico' }],
-    ['link', { rel: 'apple-touch-icon', href: '/data/icons/apple-touch-icon.png' }],
-    ['link', { rel: 'manifest', href: '/manifest.json' }],
+    // ['link', { rel: 'apple-touch-icon', href: '/data/icons/apple-touch-icon.png' }],
+    // ['link', { rel: 'manifest', href: '/manifest.json' }],
     ['link', { rel: 'sitemap', type: 'application/xml', href: '/sitemap.xml' }],
     ['link', { rel: 'robots', href: '/robots.txt' }],
     
@@ -212,6 +212,7 @@ export default defineConfig({
     
     // SEO Meta
     head.push(['meta', { name: 'description', content: description }])
+
     
     // Last Modified
     head.push(['meta', { name: 'last-modified', content: lastModified }])

@@ -6,6 +6,14 @@ editLink: true
 title: Minecraft Tutorials
 description: A step-by-step guide on how to do things in Minecraft.
 
+head:
+  - - meta
+    - name: description
+      content: A step-by-step guide on how to do things in Minecraft.
+  - - meta
+    - name: keywords
+      content: Minecraft Tutorials, Minecraft, minecraft mods
+
 features:
   - icon:
       src: /data/icons/mods.png
