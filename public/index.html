@@ -1,15 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Redirecting...</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script>
-      const fallbackLang = localStorage.getItem('selectedLang') || 'en';
-      location.replace(`/${fallbackLang}/`);
-    </script>
-  </head>
-  <body>
-    Redirecting to your language...
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Redirecting...</title>
+  <meta name="author" content="Harman Singh Hira" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow" />
+  <meta name="googlebot" content="index, follow" />
+  <meta name="theme-color" content="#10b981" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="All About Minecraft" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:locale:alternate" content="pa_IN" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@HSinghHira" />
+  <meta name="twitter:creator" content="@HSinghHira" />
+  <link rel="icon" href="/data/icons/favicon.ico" />
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+  <link rel="robots" href="/robots.txt" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+  <link rel="dns-prefetch" href="https://discord.gg" />
+  <link rel="dns-prefetch" href="https://github.com" />
+  <script id="check-dark-mode">
+    (() => {
+      const e = localStorage.getItem("vitepress-theme-appearance") || "auto",
+        a = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      (!e || e === "auto" ? a : e === "dark") &&
+        document.documentElement.classList.add("dark");
+    })();
+  </script>
+  <script id="check-mac-os">
+    document.documentElement.classList.toggle(
+      "mac",
+      /Mac|iPhone|iPod|iPad/i.test(navigator.platform)
+    );
+  </script>
+  <link rel="canonical" href="https://mc.hira.im/en/" />
+  <meta property="og:title" content="All About Minecraft" />
+  <meta property="og:description" content="Minecraft Related Tutorial and Downloads" />
+  <meta property="og:url" content="https://mc.hira.im/en/" />
+  <meta name="twitter:title" content="All About Minecraft" />
+  <meta name="twitter:description" content="Minecraft Related Tutorial and Downloads" />
+  <meta name="twitter:url" content="https://mc.hira.im/en/" />
+  <meta name="description" content="Minecraft Related Tutorial and Downloads" />
+  <meta name="keywords" content="Minecraft, mods, tutorials, Meteor Client, modding, gaming" />
+  <link rel="alternate" hreflang="pa" href="https://mc.hira.im/pb/" />
+  <link rel="alternate" hreflang="en" href="https://mc.hira.im/en/" />
+  <link rel="alternate" hreflang="x-default" href="https://mc.hira.im/en/" />
+  <script>
+    const fallbackLang = localStorage.getItem("selectedLang") || "en";
+    location.replace(`/${fallbackLang}/`);
+  </script>
+</head>
+
+<body>
+  Redirecting to your language...
+</body>
+
 </html>
