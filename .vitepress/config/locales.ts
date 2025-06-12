@@ -9,7 +9,7 @@ export const locales: LocaleConfig = {
       nav: [
         { text: 'Home', link: '/en/' },
         { text: 'Credits', link: '/en/pages/credits' },
-        { text: 'Issues', link: 'https://github.com/HSinghHira/MC.Hira.im/issues' },
+        { text: 'Issues', link: 'https://discord.gg/HKubbUNNGP' },
       ],
       sidebar: [
         {
@@ -58,7 +58,7 @@ export const locales: LocaleConfig = {
       nav: [
         { text: 'ਘਰ', link: '/pb/' },
         { text: 'ਕ੍ਰੈਡਿਟਸ', link: '/pb/pages/credits' },
-        { text: 'ਮੁੱਦੇ', link: 'https://github.com/HSinghHira/MC.Hira.im/issues' },
+        { text: 'ਮੁੱਦੇ', link: 'https://discord.gg/HKubbUNNGP' },
       ],
       sidebar: [
         {

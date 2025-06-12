@@ -44,7 +44,7 @@ export const transformHead = ({ pageData }: TransformContext): HeadConfig[] => {
 
   // Use fallback values if frontmatter properties are undefined
   const title = pageData.frontmatter.title || pageData.title || 'All About Minecraft'
-  const description = pageData.frontmatter.description || pageData.description || 'Minecraft Related Tutorial and Downloads'
+  const description = pageData.frontmatter.description || pageData.description || 'Discover the latest Minecraft client addons, mods, and tools on MC.Hira.im. Stay updated with curated content, installation guides, and support for the Meteor Client.'
   
   // Handle keywords from frontmatter tags
   const defaultKeywords = 'Minecraft, mods, tutorials, Meteor Client, modding, gaming'
