@@ -26,8 +26,6 @@ bun.lockb
 /bun.lockb
 /*.lockb
 *.lockb
-package.json
-/package.json
 docs
 /docs
 docs/
