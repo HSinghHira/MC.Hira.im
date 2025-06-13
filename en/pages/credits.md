@@ -17,5 +17,3 @@ head:
 * https://modrinth.com/
 * https://pngtree.com/freepng/minecraft_8709743.html
 * https://rosepng.com/minecraft-logo-png/
-* https://github.com/RacoonDog/Electron
-* https://github.com/MeteorDevelopment

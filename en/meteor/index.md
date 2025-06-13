@@ -8,6 +8,13 @@ description: The List of all updated and newest Meteor Client Addons.
 tags: meteor client, meteor client addon, minecraft mods, test
 
 features:
+
+  - icon:
+      src: /data/icons/trouser-streak.png
+    title: Trouser-Streak
+    link: en/meteor/trouser-streak
+    details: Comprehensive addon with 60+ modules for griefing, base hunting, and chunk tracing in Minecraft.
+
   - icon:
       src: /data/icons/electron.png
     title: Electron
