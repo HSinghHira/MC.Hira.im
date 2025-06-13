@@ -1,9 +1,9 @@
 import { defineConfig } from 'vitepress'
-import tailwindcss from "@tailwindcss/vite"
 import { locales } from './config/locales'
 import { head, transformHead } from './config/head'
 import { viteConfig } from './config/vite'
 import { buildEnd } from './config/sitemap'
+import { generateSidebar } from './config/autosidebar'
 
 export default defineConfig({
   title: "All About Minecraft",
@@ -18,5 +18,12 @@ export default defineConfig({
   transformHead,
   
   lastUpdated: true,
-  buildEnd
+  buildEnd,
+  
+  themeConfig: {
+    sidebar: {
+      '/en/': generateSidebar('./en'),
+      '/pb/': generateSidebar('./pb')
+    }
+  },
 })

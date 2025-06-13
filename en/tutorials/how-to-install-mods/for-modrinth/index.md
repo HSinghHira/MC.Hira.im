@@ -30,15 +30,15 @@ Before we jump into the steps, here’s what you’ll need:
 
 1. **Open Modrinth Launcher**: Fire up the Modrinth Launcher on your computer. If you don’t have it yet, grab it from Modrinth’s website and set it up. Once it’s open, pick the Minecraft profile (or “instance”) where you want to add mods. Profiles let you keep different mod setups separate, which is super handy!
 
-![](assets/20250608_162616_modrinth-1.png){width=50%}
+![](/data/assets/20250608_162616_modrinth-1.png){width=50%}
 
 2. **Access the Install Content Menu** : Look for the **Install Content** button (usually near the top). Click the **drop-down arrow** next to it to see more options.
 
-![](assets/20250608_162640_modrinth-2.png){width=50%}
+![](/data/assets/20250608_162640_modrinth-2.png){width=50%}
 
 3. **Add Mod from File** : From the drop-down menu, select **Add from file** . This lets you upload a mod file you’ve downloaded from Modrinth or another trusted source.
 
-![](assets/20250608_162837_modrinth-3.png){width=50%}
+![](/data/assets/20250608_162837_modrinth-3.png){width=50%}
 
 4. **Select and Install Your Mod**: A file explorer window will pop up. Navigate to where you saved your mod’s **.jar** file (e.g., **meteor-client-0.5.9.jar**), select it, and click **Open**.
 
