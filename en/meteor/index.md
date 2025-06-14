@@ -16,6 +16,12 @@ features:
     details: Comprehensive addon with 60+ modules for griefing, base hunting, and chunk tracing in Minecraft.
 
   - icon:
+      src: /data/icons/meteorist.png
+    title: Meteorist
+    link: en/meteor/meteorist
+    details: Useful addon for Meteor Client specifically designed for anarchy Minecraft servers.
+
+  - icon:
       src: /data/icons/electron.png
     title: Electron
     link: en/meteor/electron

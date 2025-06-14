@@ -1,8 +1,17 @@
 import { readdirSync, statSync, existsSync } from 'fs'
 import { join, basename } from 'path'
+import { textMappings } from '../config.mts'
 
-// Function to convert kebab-case to Title Case
+// Function to convert kebab-case to Title Case with custom mappings
 function toTitleCase(str: string): string {
+  const lowerStr = str.toLowerCase()
+  
+  // Check if we have a custom mapping for this string
+  if (textMappings[lowerStr]) {
+    return textMappings[lowerStr]
+  }
+  
+  // Default title case conversion
   return str
     .split('-')
     .map(word => word.charAt(0).toUpperCase() + word.slice(1))

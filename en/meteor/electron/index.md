@@ -16,6 +16,8 @@ head:
 I have taken this all infomation from new & old Github commits and explored the modules manually. So if there is something that is not correct, please do let me know.
 :::
 
+## Introduction
+
 **Electron** is a Meteor Client addon focused on performance.  It implements *experimental performance improvements* for Meteor Client, aiming to speed up game launch and streamline the tick/render loops. In practice, Electron injects mixins into the client to skip unnecessary work (e.g. disabling unused render events) and use more efficient code paths in Meteor’s internals.  For example, it removes Meteor’s default 2D-rendering event when unused and substitutes optimized math and stream operations.  These tweaks reduce overhead in rendering and world tick processing, making the Meteor Client run leaner.
 
 ## Supported Version(s)

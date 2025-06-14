@@ -5,6 +5,13 @@ import { viteConfig } from './config/vite'
 import { buildEnd } from './config/sitemap'
 import { generateSidebar } from './config/autosidebar'
 
+export const textMappings: Record<string, string> = {
+  'meteor': 'Meteor Client Addons',
+  'meteorplus': 'Meteor+',
+  'meteor-plus': 'Meteor+',
+  // Add more custom mappings as needed
+}
+
 export default defineConfig({
   title: "All About Minecraft",
   description: "Minecraft Related Tutorial and Downloads",

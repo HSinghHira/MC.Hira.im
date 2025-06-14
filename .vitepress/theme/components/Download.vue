@@ -1,0 +1,118 @@
+<script setup>
+import { onMounted, ref } from 'vue'
+import { useRoute, useRouter } from 'vitepress'
+
+const route = useRoute()
+const router = useRouter()
+const status = ref('Fetching download...')
+
+const redirectToHome = (delay = 1000) => {
+  setTimeout(async () => {
+    try {
+      await router.go('/')
+    } catch (error) {
+      // Fallback to window.location if router.go fails
+      console.log('Router navigation failed, using window.location')
+      window.location.href = '/'
+    }
+  }, delay)
+}
+
+onMounted(async () => {
+  try {
+    let user, repo
+    const fileExtension = '.jar'
+
+    // Parse URL parameters - support multiple formats
+    const urlParams = new URLSearchParams(window.location.search)
+    
+    // Format 1: ?user=Zgoly&repo=Meteorist
+    if (urlParams.has('user') && urlParams.has('repo')) {
+      user = urlParams.get('user')
+      repo = urlParams.get('repo')
+    }
+    // Format 2: ?Zgoly/Meteorist (first query parameter)
+    else if (window.location.search) {
+      const searchString = window.location.search.substring(1) // Remove '?'
+      const firstParam = searchString.split('&')[0] // Get first parameter
+      
+      if (firstParam.includes('/')) {
+        const parts = firstParam.split('/')
+        if (parts.length === 2) {
+          user = parts[0]
+          repo = parts[1]
+        }
+      }
+    }
+
+    console.log('Parsed params:', { user, repo })
+    console.log('Full URL:', window.location.href)
+    console.log('Search params:', window.location.search)
+
+    if (!user || !repo) {
+      status.value = 'Missing user or repo parameter. Redirecting...'
+      redirectToHome(500)
+      return
+    }
+
+    status.value = `Fetching release data for ${user}/${repo}...`
+
+    const response = await fetch(`https://api.github.com/repos/${user}/${repo}/releases/latest`)
+    
+    if (!response.ok) {
+      throw new Error(`GitHub API returned ${response.status}: ${response.statusText}`)
+    }
+    
+    const data = await response.json()
+    
+    console.log('GitHub API response:', data)
+
+    if (!data.assets || data.assets.length === 0) {
+      status.value = 'No assets found in the latest release. Redirecting...'
+      alert('No assets found in the latest release.')
+      redirectToHome(2000)
+      return
+    }
+
+    const asset = data.assets.find(asset => asset.name.endsWith(fileExtension))
+    
+    if (!asset) {
+      status.value = `No ${fileExtension} file found. Redirecting...`
+      alert(`No ${fileExtension} file found in the latest release.`)
+      redirectToHome(2000)
+      return
+    }
+
+    status.value = `Downloading ${asset.name}...`
+    
+    // Create and trigger download
+    const link = document.createElement('a')
+    link.href = asset.browser_download_url
+    link.download = asset.name
+    link.style.display = 'none'
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+    
+    status.value = 'Download started! Redirecting...'
+    redirectToHome(1500)
+    
+  } catch (error) {
+    console.error('Download error:', error)
+    status.value = `Error: ${error.message}. Redirecting...`
+    alert(`Failed to fetch release data: ${error.message}`)
+    redirectToHome(2000)
+  }
+})
+</script>
+
+<template>
+  <div style="text-align: center; margin-top: 2rem; padding: 2rem;">
+    <p>{{ status }}</p>
+    <div style="margin-top: 1rem;">
+      <small style="color: #666;">
+        If the download doesn't start automatically, you'll be redirected to the home page.
+      </small>
+    </div>
+  </div>
+</template>

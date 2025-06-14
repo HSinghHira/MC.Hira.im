@@ -8,12 +8,13 @@ import Chip from 'primevue/chip';
 
 import '@theojs/lumen/theme'
 
-
 import Button from 'primevue/button'
 import Tag from 'primevue/tag';
 import { HomeUnderline } from '@theojs/lumen'
 
 import Layout from './Layout.vue'
+import Download from './components/Download.vue'
+import { h } from 'vue'
 
 import './style.css'
 import './tailwind.css'
@@ -22,7 +23,7 @@ import 'primeicons/primeicons.css'
 export default {
   extends: DefaultTheme,
   Layout,
-  enhanceApp({ app }) {
+  enhanceApp({ app, router }) {
     app.use(PrimeVue, {
       theme: {
         preset: Aura,
@@ -37,6 +38,6 @@ export default {
     app.component('Tag', Tag)
     app.component('Chip', Chip)
     app.component('Home', HomeUnderline)
-
+    app.component('Download', Download) // Register Download component globally if needed
   }
 } satisfies Theme
