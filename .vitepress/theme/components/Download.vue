@@ -7,36 +7,20 @@ const router = useRouter()
 const status = ref('Fetching download...')
 
 const closeTabOrRedirect = (delay = 1000) => {
-  setTimeout(async () => {
-    try {
-      // Check if we can close the window (only works in certain contexts)
-      const canClose = window.history.length <= 1 || document.referrer === ''
-      
-      if (canClose) {
-        // Try multiple close methods
-        window.close()
-        
-        // Alternative close method for some browsers
-        if (!window.closed) {
-          window.open('', '_self', '')
-          window.close()
-        }
-        
-        // If still not closed after a short delay, redirect
-        setTimeout(() => {
-          if (!window.closed) {
-            redirectToHomePage()
-          }
-        }, 500)
-      } else {
-        // Can't close, so redirect immediately
+  setTimeout(() => {
+    // Show a message asking user to close the tab
+    status.value = 'Download completed! You can now close this tab.'
+    
+    // Try to close the tab
+    window.close()
+    
+    // If tab doesn't close after 3 seconds, redirect
+    setTimeout(() => {
+      if (!window.closed) {
+        status.value = 'Redirecting to homepage...'
         redirectToHomePage()
       }
-      
-    } catch (error) {
-      console.error('Error in closeTabOrRedirect:', error)
-      redirectToHomePage()
-    }
+    }, 3000)
   }, delay)
 }
 
@@ -44,7 +28,6 @@ const redirectToHomePage = async () => {
   try {
     await router.go('/')
   } catch (error) {
-    // Fallback to window.location if router.go fails
     console.log('Router navigation failed, using window.location')
     window.location.href = '/'
   }
@@ -143,7 +126,7 @@ onMounted(async () => {
     <p>{{ status }}</p>
     <div style="margin-top: 1rem;">
       <small style="color: #666;">
-        If the download doesn't start automatically, this tab will close or redirect to the home page.
+        Download completed! You can close this tab manually, or it will redirect automatically.
       </small>
     </div>
   </div>
