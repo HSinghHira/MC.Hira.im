@@ -6,14 +6,31 @@ const route = useRoute()
 const router = useRouter()
 const status = ref('Fetching download...')
 
-const redirectToHome = (delay = 1000) => {
+const closeTabOrRedirect = (delay = 1000) => {
   setTimeout(async () => {
     try {
-      await router.go('/')
+      // First, try to close the tab/window
+      window.close()
+      
+      // If window.close() doesn't work (tab doesn't close), wait a bit and then redirect
+      setTimeout(async () => {
+        try {
+          await router.go('/')
+        } catch (error) {
+          // Fallback to window.location if router.go fails
+          console.log('Router navigation failed, using window.location')
+          window.location.href = '/'
+        }
+      }, 1000) // Wait 1 second to see if the tab closes
+      
     } catch (error) {
-      // Fallback to window.location if router.go fails
-      console.log('Router navigation failed, using window.location')
-      window.location.href = '/'
+      console.error('Error in closeTabOrRedirect:', error)
+      // If there's any error, fallback to redirect
+      try {
+        await router.go('/')
+      } catch (routerError) {
+        window.location.href = '/'
+      }
     }
   }, delay)
 }
@@ -50,8 +67,8 @@ onMounted(async () => {
     console.log('Search params:', window.location.search)
 
     if (!user || !repo) {
-      status.value = 'Missing user or repo parameter. Redirecting...'
-      redirectToHome(500)
+      status.value = 'Missing user or repo parameter. Closing tab...'
+      closeTabOrRedirect(500)
       return
     }
 
@@ -68,18 +85,18 @@ onMounted(async () => {
     console.log('GitHub API response:', data)
 
     if (!data.assets || data.assets.length === 0) {
-      status.value = 'No assets found in the latest release. Redirecting...'
+      status.value = 'No assets found in the latest release. Closing tab...'
       alert('No assets found in the latest release.')
-      redirectToHome(2000)
+      closeTabOrRedirect(2000)
       return
     }
 
     const asset = data.assets.find(asset => asset.name.endsWith(fileExtension))
     
     if (!asset) {
-      status.value = `No ${fileExtension} file found. Redirecting...`
+      status.value = `No ${fileExtension} file found. Closing tab...`
       alert(`No ${fileExtension} file found in the latest release.`)
-      redirectToHome(2000)
+      closeTabOrRedirect(2000)
       return
     }
 
@@ -94,14 +111,14 @@ onMounted(async () => {
     link.click()
     document.body.removeChild(link)
     
-    status.value = 'Download started! Redirecting...'
-    redirectToHome(1500)
+    status.value = 'Download started! Closing tab...'
+    closeTabOrRedirect(1500)
     
   } catch (error) {
     console.error('Download error:', error)
-    status.value = `Error: ${error.message}. Redirecting...`
+    status.value = `Error: ${error.message}. Closing tab...`
     alert(`Failed to fetch release data: ${error.message}`)
-    redirectToHome(2000)
+    closeTabOrRedirect(2000)
   }
 })
 </script>
@@ -111,7 +128,7 @@ onMounted(async () => {
     <p>{{ status }}</p>
     <div style="margin-top: 1rem;">
       <small style="color: #666;">
-        If the download doesn't start automatically, you'll be redirected to the home page.
+        If the download doesn't start automatically, this tab will close or redirect to the home page.
       </small>
     </div>
   </div>
