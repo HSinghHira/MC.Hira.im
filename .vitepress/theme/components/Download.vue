@@ -9,30 +9,45 @@ const status = ref('Fetching download...')
 const closeTabOrRedirect = (delay = 1000) => {
   setTimeout(async () => {
     try {
-      // First, try to close the tab/window
-      window.close()
+      // Check if we can close the window (only works in certain contexts)
+      const canClose = window.history.length <= 1 || document.referrer === ''
       
-      // If window.close() doesn't work (tab doesn't close), wait a bit and then redirect
-      setTimeout(async () => {
-        try {
-          await router.go('/')
-        } catch (error) {
-          // Fallback to window.location if router.go fails
-          console.log('Router navigation failed, using window.location')
-          window.location.href = '/'
+      if (canClose) {
+        // Try multiple close methods
+        window.close()
+        
+        // Alternative close method for some browsers
+        if (!window.closed) {
+          window.open('', '_self', '')
+          window.close()
         }
-      }, 1000) // Wait 1 second to see if the tab closes
+        
+        // If still not closed after a short delay, redirect
+        setTimeout(() => {
+          if (!window.closed) {
+            redirectToHomePage()
+          }
+        }, 500)
+      } else {
+        // Can't close, so redirect immediately
+        redirectToHomePage()
+      }
       
     } catch (error) {
       console.error('Error in closeTabOrRedirect:', error)
-      // If there's any error, fallback to redirect
-      try {
-        await router.go('/')
-      } catch (routerError) {
-        window.location.href = '/'
-      }
+      redirectToHomePage()
     }
   }, delay)
+}
+
+const redirectToHomePage = async () => {
+  try {
+    await router.go('/')
+  } catch (error) {
+    // Fallback to window.location if router.go fails
+    console.log('Router navigation failed, using window.location')
+    window.location.href = '/'
+  }
 }
 
 onMounted(async () => {
