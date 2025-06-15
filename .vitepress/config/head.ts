@@ -1,6 +1,8 @@
 import type { HeadConfig, TransformContext } from 'vitepress'
 
 export const head: HeadConfig[] = [
+
+
   ['meta', { name: 'author', content: 'Harman Singh Hira' }],
   ['meta', { charset: 'UTF-8' }],
   ['meta', { name: 'viewport', content: 'width=device-width, initial-scale=1.0' }],

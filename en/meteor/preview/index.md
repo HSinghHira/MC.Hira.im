@@ -1,0 +1,12 @@
+---
+layout: false
+
+title: Meteor Client Addon's Modules Preview
+description: The List of all updated and newest Meteor Client Modules.
+---
+
+<script setup>
+import MeteorAddonView from '../../../.vitepress/theme/components/MeteorAddonView.vue'
+</script>
+
+<MeteorAddonView />

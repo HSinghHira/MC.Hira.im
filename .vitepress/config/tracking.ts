@@ -1,7 +1,6 @@
 // config/tracking.ts
 import type { HeadConfig } from 'vitepress'
 
-// Google Analytics Tracking ID
 const GA_TRACKING_ID = 'G-PS8V67BLY3'
 
 // Google Analytics head configuration
@@ -23,7 +22,6 @@ gtag('config', '${GA_TRACKING_ID}');`
   ]
 ]
 
-// Optional: Function to get tracking head with custom config
 export const getGoogleAnalyticsHead = (trackingId: string = GA_TRACKING_ID): HeadConfig[] => [
   [
     'script',

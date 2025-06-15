@@ -22,7 +22,6 @@ export default defineConfig({
   
   vite: viteConfig,
   
-  // Combine your existing head config with Google Analytics
   head: [
     ...head,
     ...googleAnalyticsHead
