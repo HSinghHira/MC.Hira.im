@@ -98,7 +98,7 @@ These modules and commands make Meteor Plus a powerful tool for players seeking 
 ## Useful Links
 
 * [Github Repository](https://github.com/MeteorClientPlus/MeteorPlus)
-* [Latest Release](https://github.com/MeteorClientPlus/MeteorPlus/releases/latest)
+* [Latest Download](/en/download/?MeteorClientPlus/MeteorPlus){target="_blank"}
 * [Download Link](https://meteorclientplus.github.io/versions.html)
 * [Discord](https://discord.com/invite/N3gqYc7GRS)
 * [Telegram](https://t.me/+E3PuLb8cZOlmZWIy)

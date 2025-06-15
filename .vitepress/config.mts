@@ -4,6 +4,7 @@ import { head, transformHead } from './config/head'
 import { viteConfig } from './config/vite'
 import { buildEnd } from './config/sitemap'
 import { generateSidebar } from './config/autosidebar'
+import { googleAnalyticsHead } from './config/tracking'
 
 export const textMappings: Record<string, string> = {
   'meteor': 'Meteor Client Addons',
@@ -21,7 +22,11 @@ export default defineConfig({
   
   vite: viteConfig,
   
-  head,
+  // Combine your existing head config with Google Analytics
+  head: [
+    ...head,
+    ...googleAnalyticsHead
+  ],
   transformHead,
   
   lastUpdated: true,

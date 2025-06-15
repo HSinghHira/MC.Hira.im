@@ -104,7 +104,7 @@ Modules that require operator or creative mode:
 ## Useful Links
 
 * [Github Repository](https://github.com/etianl/Trouser-Streak)
-* [Latest Release](https://github.com/etianl/Trouser-Streak/releases/latest)
+* [Latest Download](/en/download/?etianl/Trouser-Streak){target="_blank"}
 * [Older Versions](https://github.com/etianl/Trouser-Streak/tags)
 * [Discord](https://discord.gg/3RUjaRzdKv)
 

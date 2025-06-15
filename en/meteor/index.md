@@ -13,19 +13,13 @@ features:
       src: /data/icons/trouser-streak.png
     title: Trouser-Streak
     link: en/meteor/trouser-streak
-    details: Comprehensive addon with 60+ modules for griefing, base hunting, and chunk tracing in Minecraft.
+    details: Comprehensive modules for griefing, base hunting, and chunk tracing in Minecraft.
 
   - icon:
       src: /data/icons/meteorist.png
     title: Meteorist
     link: en/meteor/meteorist
     details: Useful addon for Meteor Client specifically designed for anarchy Minecraft servers.
-
-  - icon:
-      src: /data/icons/electron.png
-    title: Electron
-    link: en/meteor/electron
-    details: Lightweight and performant Minecraft mod for enhanced gameplay.
 
   - icon:
       src: /data/icons/meteorplus.png
@@ -38,5 +32,11 @@ features:
     title: Meteor Rejects
     link: en/meteor/meteor-rejects
     details: An addon for Meteor Client that adds rejected and ported features.
+
+  - icon:
+      src: /data/icons/electron.png
+    title: Electron
+    link: en/meteor/electron
+    details: Lightweight and performant Minecraft mod for enhanced gameplay.
       
 ---

@@ -118,8 +118,8 @@ These features make Meteor Rejects a versatile addon, catering to players who wa
 ## Usefull Links
 
 * [Github Repository](https://github.com/AntiCope/meteor-rejects)
-* [Latest Release](https://github.com/AntiCope/meteor-rejects/releases/latest)
-* [Download Link](https://github.com/AntiCope/meteor-rejects/tags)
+* [Latest Download](/en/download/?AntiCope/meteor-rejects){target="_blank"}
+* [All Versions](https://github.com/AntiCope/meteor-rejects/tags)
 * [Discord](https://discord.gg/9mrRPGKYU3)
 
 ## Why the Author Is Trustworthy?

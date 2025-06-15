@@ -48,8 +48,7 @@ In short, Electron bundles a suite of performance tweaks – from rendering and 
 ## Useful Links
 
 * [Github Repository](https://github.com/RacoonDog/Electron)
-* [Latest Release](https://github.com/RacoonDog/Electron/releases/latest)
-* [Download Link](https://github.com/RacoonDog/Electron/releases/download/snapshot/electron-1.0.0.jar)
+* [Latest Download](/en/download/?RacoonDog/Electron){target="_blank"}
 
 ## Why Author is Trustworthy
 

@@ -5,16 +5,13 @@ import { useRoute, useRouter } from 'vitepress'
 const route = useRoute()
 const router = useRouter()
 const status = ref('Fetching download...')
+const debugInfo = ref('')
 
 const closeTabOrRedirect = (delay = 1000) => {
   setTimeout(() => {
-    // Show a message asking user to close the tab
     status.value = 'Download completed! You can now close this tab.'
-    
-    // Try to close the tab
     window.close()
     
-    // If tab doesn't close after 3 seconds, redirect
     setTimeout(() => {
       if (!window.closed) {
         status.value = 'Redirecting to homepage...'
@@ -33,23 +30,25 @@ const redirectToHomePage = async () => {
   }
 }
 
+const logDebug = (message, data = null) => {
+  console.log(message, data)
+  debugInfo.value += `${message}\n${data ? JSON.stringify(data, null, 2) : ''}\n\n`
+}
+
 onMounted(async () => {
   try {
     let user, repo
-    const fileExtension = '.jar'
+    const fileExtensions = ['.jar']
 
-    // Parse URL parameters - support multiple formats
+    // Parse URL parameters
     const urlParams = new URLSearchParams(window.location.search)
     
-    // Format 1: ?user=Zgoly&repo=Meteorist
     if (urlParams.has('user') && urlParams.has('repo')) {
       user = urlParams.get('user')
       repo = urlParams.get('repo')
-    }
-    // Format 2: ?Zgoly/Meteorist (first query parameter)
-    else if (window.location.search) {
-      const searchString = window.location.search.substring(1) // Remove '?'
-      const firstParam = searchString.split('&')[0] // Get first parameter
+    } else if (window.location.search) {
+      const searchString = window.location.search.substring(1)
+      const firstParam = searchString.split('&')[0]
       
       if (firstParam.includes('/')) {
         const parts = firstParam.split('/')
@@ -60,9 +59,7 @@ onMounted(async () => {
       }
     }
 
-    console.log('Parsed params:', { user, repo })
-    console.log('Full URL:', window.location.href)
-    console.log('Search params:', window.location.search)
+    logDebug('Parsed parameters:', { user, repo, url: window.location.href })
 
     if (!user || !repo) {
       status.value = 'Missing user or repo parameter. Closing tab...'
@@ -72,33 +69,106 @@ onMounted(async () => {
 
     status.value = `Fetching release data for ${user}/${repo}...`
 
-    const response = await fetch(`https://api.github.com/repos/${user}/${repo}/releases/latest`)
+    // First, check if the repository exists and is accessible
+    const repoResponse = await fetch(`https://api.github.com/repos/${user}/${repo}`)
     
-    if (!response.ok) {
-      throw new Error(`GitHub API returned ${response.status}: ${response.statusText}`)
+    if (!repoResponse.ok) {
+      if (repoResponse.status === 404) {
+        throw new Error(`Repository ${user}/${repo} not found or is private`)
+      } else if (repoResponse.status === 403) {
+        throw new Error(`Access forbidden to ${user}/${repo}. API rate limit exceeded or repository is private`)
+      } else {
+        throw new Error(`GitHub API returned ${repoResponse.status}: ${repoResponse.statusText}`)
+      }
     }
-    
-    const data = await response.json()
-    
-    console.log('GitHub API response:', data)
 
-    if (!data.assets || data.assets.length === 0) {
-      status.value = 'No assets found in the latest release. Closing tab...'
-      alert('No assets found in the latest release.')
+    const repoData = await repoResponse.json()
+    logDebug('Repository data:', repoData)
+
+    // Check if the repository has releases
+    const releasesResponse = await fetch(`https://api.github.com/repos/${user}/${repo}/releases`)
+    
+    if (!releasesResponse.ok) {
+      throw new Error(`Failed to fetch releases: ${releasesResponse.status} ${releasesResponse.statusText}`)
+    }
+
+    const allReleases = await releasesResponse.json()
+    logDebug('All releases:', allReleases)
+
+    if (!Array.isArray(allReleases) || allReleases.length === 0) {
+      status.value = 'No releases found in this repository. Closing tab...'
+      alert(`No releases found in ${user}/${repo}. The repository might not have any published releases.`)
       closeTabOrRedirect(2000)
       return
     }
 
-    const asset = data.assets.find(asset => asset.name.endsWith(fileExtension))
+    // Get the latest release
+    const latestRelease = allReleases[0]
+    logDebug('Latest release:', latestRelease)
+
+    if (!latestRelease.assets || latestRelease.assets.length === 0) {
+      status.value = 'No assets found in the latest release. Checking other releases...'
+      
+      // Check other releases for assets
+      let foundAsset = null
+      let foundRelease = null
+      
+      for (const release of allReleases) {
+        if (release.assets && release.assets.length > 0) {
+          for (const ext of fileExtensions) {
+            const asset = release.assets.find(asset => asset.name.toLowerCase().endsWith(ext.toLowerCase()))
+            if (asset) {
+              foundAsset = asset
+              foundRelease = release
+              break
+            }
+          }
+          if (foundAsset) break
+        }
+      }
+      
+      if (!foundAsset) {
+        status.value = 'No downloadable assets found in any releases. Closing tab...'
+        alert(`No downloadable assets found in any releases of ${user}/${repo}.\n\nAvailable assets in latest release: ${latestRelease.assets.map(a => a.name).join(', ') || 'None'}`)
+        closeTabOrRedirect(2000)
+        return
+      }
+      
+      logDebug('Found asset in older release:', { asset: foundAsset, release: foundRelease.tag_name })
+      
+      status.value = `Downloading ${foundAsset.name} from release ${foundRelease.tag_name}...`
+      
+      // Download the found asset
+      const link = document.createElement('a')
+      link.href = foundAsset.browser_download_url
+      link.download = foundAsset.name
+      link.style.display = 'none'
+      document.body.appendChild(link)
+      link.click()
+      document.body.removeChild(link)
+      
+      status.value = 'Download started! Closing tab...'
+      closeTabOrRedirect(1500)
+      return
+    }
+
+    // Look for supported file types in the latest release
+    let asset = null
+    for (const ext of fileExtensions) {
+      asset = latestRelease.assets.find(asset => asset.name.toLowerCase().endsWith(ext.toLowerCase()))
+      if (asset) break
+    }
     
     if (!asset) {
-      status.value = `No ${fileExtension} file found. Closing tab...`
-      alert(`No ${fileExtension} file found in the latest release.`)
+      const availableAssets = latestRelease.assets.map(a => a.name).join(', ')
+      status.value = 'No supported file type found. Closing tab...'
+      alert(`No supported file types (${fileExtensions.join(', ')}) found in the latest release.\n\nAvailable assets: ${availableAssets}`)
       closeTabOrRedirect(2000)
       return
     }
 
     status.value = `Downloading ${asset.name}...`
+    logDebug('Downloading asset:', asset)
     
     // Create and trigger download
     const link = document.createElement('a')
@@ -114,9 +184,10 @@ onMounted(async () => {
     
   } catch (error) {
     console.error('Download error:', error)
+    logDebug('Error occurred:', error)
     status.value = `Error: ${error.message}. Closing tab...`
-    alert(`Failed to fetch release data: ${error.message}`)
-    closeTabOrRedirect(2000)
+    alert(`Failed to download from ${user}/${repo}:\n\n${error.message}\n\nCheck the console for more details.`)
+    closeTabOrRedirect(3000)
   }
 })
 </script>
@@ -129,5 +200,11 @@ onMounted(async () => {
         Download completed! You can close this tab manually, or it will redirect automatically.
       </small>
     </div>
+    
+    <!-- Debug information (only shown in development) -->
+    <details style="margin-top: 2rem; text-align: left; max-width: 800px; margin-left: auto; margin-right: auto;">
+      <summary style="cursor: pointer; color: #666;">Debug Information</summary>
+      <pre style="padding: 1rem; border-radius: 4px; overflow: auto; font-size: 12px; white-space: pre-wrap;">{{ debugInfo }}</pre>
+    </details>
   </div>
 </template>
