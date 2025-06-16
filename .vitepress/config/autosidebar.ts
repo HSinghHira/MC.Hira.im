@@ -18,25 +18,33 @@ function toTitleCase(str: string): string {
     .join(' ')
 }
 
-// Function to check if a directory contains markdown files
+// Function to check if a directory contains markdown files (excluding preview)
 function hasMarkdownFiles(dirPath: string): boolean {
   try {
     if (!existsSync(dirPath)) return false
     const files = readdirSync(dirPath)
-    return files.some(file => file.endsWith('.md') && file !== 'index.md')
+    return files.some(file => 
+      file.endsWith('.md') && 
+      file !== 'index.md' && 
+      file.toLowerCase() !== 'preview.md'
+    )
   } catch {
     return false
   }
 }
 
-// Function to get markdown files in a directory
+// Function to get markdown files in a directory (excluding preview)
 function getMarkdownFiles(dirPath: string): Array<{ text: string; link: string }> {
   try {
     if (!existsSync(dirPath)) return []
     
     const files = readdirSync(dirPath)
     const mdFiles = files
-      .filter(file => file.endsWith('.md') && file !== 'index.md')
+      .filter(file => 
+        file.endsWith('.md') && 
+        file !== 'index.md' && 
+        file.toLowerCase() !== 'preview.md'
+      )
       .map(file => {
         const name = basename(file, '.md')
         return {
@@ -77,12 +85,16 @@ export function generateSidebar(contentRoot: string): any[] {
         items: []
       }
 
-      // Get subdirectories
+      // Get subdirectories (excluding preview directories)
       const items = readdirSync(basePath, { withFileTypes: true })
       const subdirs = items
         .filter(item => item.isDirectory())
         .map(item => item.name)
-        .filter(name => !name.startsWith('.') && name !== 'assets')
+        .filter(name => 
+          !name.startsWith('.') && 
+          name !== 'assets' && 
+          name.toLowerCase() !== 'preview'
+        )
 
       for (const subdir of subdirs) {
         const subdirPath = join(basePath, subdir)
@@ -106,7 +118,7 @@ export function generateSidebar(contentRoot: string): any[] {
         }
       }
 
-      // Check if base directory itself has markdown files (not subdirectories)
+      // Check if base directory itself has markdown files (not subdirectories, excluding preview)
       const baseMarkdownFiles = getMarkdownFiles(basePath)
       if (baseMarkdownFiles.length > 0) {
         sidebarGroup.items.push(...baseMarkdownFiles)
