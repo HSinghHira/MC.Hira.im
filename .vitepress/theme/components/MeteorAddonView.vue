@@ -1,5 +1,5 @@
 <template>
-  <div class="relative inset-0 min-h-screen overflow-hidden font-['courier']">
+   <div class="fixed inset-0 overflow-hidden font-['courier']">
     <!-- Background image -->
     <div
       class="z-0 absolute inset-0 bg-cover bg-no-repeat bg-center"
