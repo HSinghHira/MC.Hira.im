@@ -1,5 +1,5 @@
 <template>
-  <div class="fixed relative inset-0 min-h-screen overflow-hidden font-['courier']">
+  <div class="relative inset-0 min-h-screen overflow-hidden font-['courier']">
     <!-- Background image -->
     <div
       class="z-0 absolute inset-0 bg-cover bg-no-repeat bg-center"
@@ -184,7 +184,7 @@ const extractCategories = async () => {
     for (const fileName of possibleMainFiles) {
       try {
         const response = await fetch(
-          `https://api.github.com/repos/${urlParams.user}/${urlParams.repo}/contents/${addonRoot}/${fileName}`,
+          `https://api.github.com/repos/${urlParams.user}/${urlParams.repo}/${addonRoot}/${fileName}`,
           getAuthHeader()
         );
         if (response.ok) {
@@ -306,7 +306,7 @@ const fetchModules = async () => {
 
     // Fetch modules from directory
     const response = await fetch(
-      `https://api.github.com/repos/${urlParams.user}/${urlParams.repo}/contents/${urlParams.path}`,
+      `https://api.github.com/repos/${urlParams.user}/${urlParams.repo}/${urlParams.path}`,
       getAuthHeader()
     );
     apiCallsRemaining.value = response.headers.get('x-ratelimit-remaining') || 0;
