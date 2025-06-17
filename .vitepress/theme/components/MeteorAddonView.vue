@@ -1,5 +1,5 @@
 <template>
-   <div class="fixed inset-0 overflow-hidden font-['courier']">
+  <div class="fixed inset-0 min-h-screen overflow-hidden font-['courier']">
     <!-- Background image -->
     <div
       class="z-0 absolute inset-0 bg-cover bg-no-repeat bg-center"
@@ -59,7 +59,30 @@
       </div>
     </div>
 
-    <!-- Improved GitHub Token Input Component -->
+    <!-- Loading overlay -->
+    <div v-if="isLoading" class="z-50 absolute inset-0 flex justify-center items-center bg-black bg-opacity-50">
+      <div class="bg-purple-600 px-6 py-4 rounded-lg text-white">
+        <div class="flex items-center space-x-3">
+          <div class="border-white border-b-2 rounded-full w-6 h-6 animate-spin"></div>
+          <div>
+            <div class="font-bold">{{ loadingMessage }}</div>
+            <div class="opacity-75 text-sm">{{ loadingProgress }}</div>
+            <div v-if="rateLimitWarning" class="mt-1 text-yellow-300 text-xs">
+              ⚠️ {{ rateLimitWarning }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Rate limit warning -->
+    <div v-if="showRateLimit" class="top-4 right-4 z-40 absolute bg-red-600 px-4 py-2 rounded-lg text-white">
+      <div class="font-bold">API Rate Limited</div>
+      <div class="text-sm">Waiting for rate limit reset...</div>
+      <div class="mt-1 text-xs">{{ rateLimitMessage }}</div>
+    </div>
+
+    <!-- GitHub token input -->
     <div
       v-if="showTokenPrompt"
       class="top-6 left-1/2 z-50 fixed bg-gradient-to-br from-purple-700 to-purple-500 shadow-2xl px-8 py-6 border border-purple-300 rounded-2xl w-full max-w-md text-white -translate-x-1/2 transform"
@@ -96,22 +119,43 @@
       </div>
     </div>
 
-    <!-- Statistics Panel -->
-    <div class="right-4 bottom-4 z-40 absolute bg-gray-800 bg-opacity-90 px-4 py-2 rounded-lg text-white text-sm">
-      <div class="flex space-x-4">
-        <div>Repository: {{ urlParams.user }}/{{ urlParams.repo }}</div>
-        <div>Total: {{ totalItems }}</div>
-        <div>API Remaining: {{ apiCallsRemaining }}</div>
-        <div v-if="showRateLimit" class="text-yellow-300">
-          API Resets at: {{ rateLimitMessage }}
-        </div>
-      </div>
+    <!-- Error display -->
+    <div v-if="errorMessage" class="top-20 right-4 z-40 absolute bg-red-800 px-4 py-2 rounded-lg max-w-md text-white">
+      <div class="font-bold">Error</div>
+      <div class="text-sm">{{ errorMessage }}</div>
+      <button @click="errorMessage = ''" class="bg-gray-600 mt-2 px-2 py-1 rounded text-xs">Dismiss</button>
     </div>
+
+    <!-- Statistics Panel -->
+<div class="right-4 bottom-4 z-40 absolute bg-gray-800 bg-opacity-90 px-4 py-2 rounded-lg text-white text-sm">
+  <div class="flex space-x-4">
+    <div>Repository: {{ urlParams.user }}/{{ urlParams.repo }}</div>
+    <div>Total: {{ totalItems }}</div>
+    <div>API Remaining: {{ apiCallsRemaining }}</div>
+    <div v-if="showRateLimit" class="text-yellow-300">
+      Available at: {{ rateLimitMessage }}
+    </div>
+  </div>
+</div>
+
   </div>
 </template>
 
 <script setup>
-import { ref, onMounted, nextTick } from "vue";
+import { ref, onMounted, computed, nextTick } from "vue";
+
+// --- UI State ---
+const isLoading = ref(false);
+const loadingMessage = ref('Loading...');
+const loadingProgress = ref('');
+const rateLimitWarning = ref('');
+const showRateLimit = ref(false);
+const rateLimitMessage = ref('');
+const showTokenPrompt = ref(false);
+const tokenInput = ref('');
+const errorMessage = ref('');
+const totalItems = ref(0);
+const apiCallsRemaining = ref(0);
 
 // --- URL Params ---
 const getUrlParams = () => {
@@ -131,15 +175,14 @@ const getUrlParams = () => {
   return {
     user: urlParams.get("user") || "MeteorDevelopment",
     repo: urlParams.get("repo") || "meteor-client",
-    path:
-      urlParams.get("path") ||
+    path: urlParams.get("path") ||
       "src/main/java/meteordevelopment/meteorclient/systems/modules/combat",
     branch: "master",
   };
 };
 const urlParams = getUrlParams();
 
-// --- State ---
+// --- Floating Panels Data ---
 const guiRefs = ref([]);
 const categories = ref([]);
 const isDragging = ref(false);
@@ -148,14 +191,78 @@ const dragTarget = ref(null);
 const maxHeight = ref(400);
 const maxZIndex = ref(1000);
 
-const totalItems = ref(0);
-const apiCallsRemaining = ref(0);
-const showRateLimit = ref(false);
-const rateLimitMessage = ref("");
-const showTokenPrompt = ref(false);
-const tokenInput = ref("");
 
-// --- Token logic ---
+
+// --- Methods for Floating Panels ---
+const toggleCollapse = (category) => {
+  category.collapsed = !category.collapsed;
+};
+const toggleModule = (module) => {
+  module.active = !module.active;
+};
+const bringToFront = (category) => {
+  maxZIndex.value += 1;
+  category.zIndex = maxZIndex.value;
+};
+const positionCategories = () => {
+  if (categories.value.length === 0) return;
+  const windowWidth = window.innerWidth;
+  const guiWidth = 280;
+  const topOffset = 20;
+  const horizontalGap = 50;
+  if (categories.value.length === 1) {
+    categories.value[0].position = {
+      x: windowWidth / 2 - guiWidth / 2,
+      y: topOffset,
+    };
+    categories.value[0].zIndex = 1000;
+  } else {
+    const totalWidth =
+      categories.value.length * guiWidth +
+      (categories.value.length - 1) * horizontalGap;
+    const startX = windowWidth / 2 - totalWidth / 2;
+    categories.value.forEach((category, index) => {
+      category.position = {
+        x: startX + index * (guiWidth + horizontalGap),
+        y: topOffset,
+      };
+      category.zIndex = 1000 + index;
+    });
+  }
+};
+
+const updateMaxHeight = () => {
+  maxHeight.value = window.innerHeight - 200;
+};
+// Drag functionality
+const startDrag = (event, category) => {
+  event.stopPropagation();
+  isDragging.value = true;
+  dragTarget.value = category;
+  const rect = event.currentTarget.parentElement.getBoundingClientRect();
+  dragOffset.value = {
+    x: event.clientX - rect.left,
+    y: event.clientY - rect.top,
+  };
+  document.addEventListener("mousemove", onDrag);
+  document.addEventListener("mouseup", stopDrag);
+  bringToFront(category);
+};
+const onDrag = (event) => {
+  if (!isDragging.value || !dragTarget.value) return;
+  dragTarget.value.position = {
+    x: event.clientX - dragOffset.value.x,
+    y: event.clientY - dragOffset.value.y,
+  };
+};
+const stopDrag = () => {
+  isDragging.value = false;
+  dragTarget.value = null;
+  document.removeEventListener("mousemove", onDrag);
+  document.removeEventListener("mouseup", stopDrag);
+};
+
+// --- GitHub API and Token Logic ---
 function saveToken() {
   if (tokenInput.value.trim()) {
     localStorage.setItem('github_token', tokenInput.value.trim());
@@ -164,12 +271,10 @@ function saveToken() {
     fetchModules();
   }
 }
-function getAuthHeader() {
-  const token = localStorage.getItem('github_token');
-  return token ? { headers: { Authorization: `token ${token}` } } : {};
-}
 
-// --- Methods ---
+
+
+// --- Category and Module Extraction ---
 const extractCategories = async () => {
   try {
     const possibleMainFiles = [
@@ -184,7 +289,7 @@ const extractCategories = async () => {
     for (const fileName of possibleMainFiles) {
       try {
         const response = await fetch(
-          `https://api.github.com/repos/${urlParams.user}/${urlParams.repo}/${addonRoot}/${fileName}`,
+          `https://api.github.com/repos/${urlParams.user}/${urlParams.repo}/contents/${addonRoot}/${fileName}`,
           getAuthHeader()
         );
         if (response.ok) {
@@ -271,30 +376,27 @@ const determineModuleCategory = (moduleContent, categoryMap, moduleName) => {
   return null;
 };
 
-const fetchModules = async () => {
+function getAuthHeader() {
+  const token = localStorage.getItem('github_token');
+  return token ? { headers: { Authorization: `token ${token}` } } : {};
+}
+
+async function fetchModules() {
+  isLoading.value = true;
+  loadingMessage.value = 'Fetching repository data...';
   showRateLimit.value = false;
-  rateLimitMessage.value = "";
+  rateLimitWarning.value = '';
+  errorMessage.value = '';
   try {
-    // Get repo stats and rate limit info
+    // Check repo API for stats and rate limit
     const repoRes = await fetch(
       `https://api.github.com/repos/${urlParams.user}/${urlParams.repo}`,
       getAuthHeader()
     );
     apiCallsRemaining.value = repoRes.headers.get('x-ratelimit-remaining') || 0;
-    const resetTimestamp = repoRes.headers.get('x-ratelimit-reset');
-    if (resetTimestamp && apiCallsRemaining.value == 0) {
-      showRateLimit.value = true;
-      const resetDate = new Date(parseInt(resetTimestamp, 10) * 1000);
-      rateLimitMessage.value = resetDate.toLocaleTimeString();
-    }
     if (repoRes.status === 403) {
       showRateLimit.value = true;
-      if (resetTimestamp) {
-        const resetDate = new Date(parseInt(resetTimestamp, 10) * 1000);
-        rateLimitMessage.value = resetDate.toLocaleTimeString();
-      }
-      // If rate limited, prompt for token
-      showTokenPrompt.value = true;
+      rateLimitMessage.value = 'You have exceeded your API rate limit.';
       throw new Error('Rate limit exceeded');
     }
     const repoData = await repoRes.json();
@@ -306,24 +408,13 @@ const fetchModules = async () => {
 
     // Fetch modules from directory
     const response = await fetch(
-      `https://api.github.com/repos/${urlParams.user}/${urlParams.repo}/${urlParams.path}`,
+      `https://api.github.com/repos/${urlParams.user}/${urlParams.repo}/contents/${urlParams.path}`,
       getAuthHeader()
     );
     apiCallsRemaining.value = response.headers.get('x-ratelimit-remaining') || 0;
-    const resetTimestamp2 = response.headers.get('x-ratelimit-reset');
-    if (resetTimestamp2 && apiCallsRemaining.value == 0) {
-      showRateLimit.value = true;
-      const resetDate = new Date(parseInt(resetTimestamp2, 10) * 1000);
-      rateLimitMessage.value = resetDate.toLocaleTimeString();
-    }
     if (response.status === 403) {
       showRateLimit.value = true;
-      if (resetTimestamp2) {
-        const resetDate = new Date(parseInt(resetTimestamp2, 10) * 1000);
-        rateLimitMessage.value = resetDate.toLocaleTimeString();
-      }
-      // If rate limited, prompt for token
-      showTokenPrompt.value = true;
+      rateLimitMessage.value = 'You have exceeded your API rate limit.';
       throw new Error('Rate limit exceeded');
     }
     const data = await response.json();
@@ -361,84 +452,30 @@ const fetchModules = async () => {
     await nextTick();
     positionCategories();
   } catch (err) {
-    console.error(err);
+    errorMessage.value = err.message;
+    categories.value = [
+      {
+        name: "Main",
+        displayName: "GitHub API Rate Limit Exceeded",
+        modules: [
+          { name: "GitHub API Rate Limit Exceeded", displayName: "GitHub API Rate Limit Exceeded", active: false },
+        ],
+        collapsed: false,
+        position: { x: 50, y: 50 },
+        zIndex: 1000,
+      },
+    ];
+  } finally {
+    isLoading.value = false;
   }
-};
+}
 
-const toggleCollapse = (category) => {
-  category.collapsed = !category.collapsed;
-};
-const toggleModule = (module) => {
-  module.active = !module.active;
-};
-const bringToFront = (category) => {
-  maxZIndex.value += 1;
-  category.zIndex = maxZIndex.value;
-};
-const positionCategories = () => {
-  if (categories.value.length === 0) return;
-  const windowWidth = window.innerWidth;
-  const guiWidth = 280;
-  const topOffset = 20;
-  const horizontalGap = 50;
-  if (categories.value.length === 1) {
-    categories.value[0].position = {
-      x: windowWidth / 2 - guiWidth / 2,
-      y: topOffset,
-    };
-    categories.value[0].zIndex = 1000;
-  } else {
-    const totalWidth =
-      categories.value.length * guiWidth +
-      (categories.value.length - 1) * horizontalGap;
-    const startX = windowWidth / 2 - totalWidth / 2;
-    categories.value.forEach((category, index) => {
-      category.position = {
-        x: startX + index * (guiWidth + horizontalGap),
-        y: topOffset,
-      };
-      category.zIndex = 1000 + index;
-    });
-  }
-};
-const updateMaxHeight = () => {
-  maxHeight.value = window.innerHeight - 200;
-};
-// Drag functionality
-const startDrag = (event, category) => {
-  event.stopPropagation();
-  isDragging.value = true;
-  dragTarget.value = category;
-  const rect = event.currentTarget.parentElement.getBoundingClientRect();
-  dragOffset.value = {
-    x: event.clientX - rect.left,
-    y: event.clientY - rect.top,
-  };
-  document.addEventListener("mousemove", onDrag);
-  document.addEventListener("mouseup", stopDrag);
-  bringToFront(category);
-};
-const onDrag = (event) => {
-  if (!isDragging.value || !dragTarget.value) return;
-  dragTarget.value.position = {
-    x: event.clientX - dragOffset.value.x,
-    y: event.clientY - dragOffset.value.y,
-  };
-};
-const stopDrag = () => {
-  isDragging.value = false;
-  dragTarget.value = null;
-  document.removeEventListener("mousemove", onDrag);
-  document.removeEventListener("mouseup", stopDrag);
-};
-// Lifecycle
+// --- Lifecycle ---
 onMounted(async () => {
   const token = localStorage.getItem('github_token');
   if (!token) {
-    showTokenPrompt.value = false; // Don't show at first, only on rate limit
-    await fetchModules();
+    showTokenPrompt.value = true;
   } else {
-    showTokenPrompt.value = false;
     await fetchModules();
   }
   await nextTick();
@@ -449,3 +486,7 @@ onMounted(async () => {
   });
 });
 </script>
+
+<style scoped>
+/* Customize styles here if needed */
+</style>
