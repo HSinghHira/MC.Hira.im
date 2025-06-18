@@ -274,69 +274,137 @@ function saveToken() {
 
 
 
-// --- Category and Module Extraction ---
+// --- Improved Category and Module Extraction ---
 const extractCategories = async () => {
   try {
     const possibleMainFiles = [
       `${urlParams.repo}.java`,
       `${urlParams.repo.charAt(0).toUpperCase() + urlParams.repo.slice(1)}.java`,
       "Addon.java",
-      "Trouser.java",
+      "TrouserStreak.java", // Added specific file for your repo
+      "Main.java",
+      "Client.java",
     ];
+    
     let mainFileContent = null;
     let categoryVariableMap = new Map();
+    
+    // Try to find the main addon file
     const addonRoot = urlParams.path.split("/").slice(0, -1).join("/");
+    console.log('Looking for main files in:', addonRoot);
+    
     for (const fileName of possibleMainFiles) {
       try {
-        const response = await fetch(
-          `https://api.github.com/repos/${urlParams.user}/${urlParams.repo}/${addonRoot}/${fileName}`,
-          getAuthHeader()
-        );
+        const fileUrl = `https://api.github.com/repos/${urlParams.user}/${urlParams.repo}/contents/${addonRoot}/${fileName}`;
+        console.log('Trying to fetch:', fileUrl);
+        
+        const response = await fetch(fileUrl, getAuthHeader());
+        
         if (response.ok) {
           const data = await response.json();
           mainFileContent = atob(data.content);
+          console.log(`Found main file: ${fileName}`);
+          console.log('Main file content preview:', mainFileContent.substring(0, 500));
           break;
         }
-      } catch (e) {}
+      } catch (e) {
+        console.log(`Failed to fetch ${fileName}:`, e.message);
+      }
     }
+
     const extractedCategories = [];
+    
     if (mainFileContent) {
-      const categoryRegex =
-        /public\s+static\s+final\s+Category\s+(\w+)\s*=\s*new\s+Category\s*\(\s*"([^"]+)"/g;
-      let match;
-      while ((match = categoryRegex.exec(mainFileContent)) !== null) {
-        const variableName = match[1];
-        const displayName = match[2];
-        categoryVariableMap.set(variableName, displayName);
+      // Multiple patterns to match category definitions
+      const categoryPatterns = [
+        // Pattern 1: public static final Category CATEGORY_NAME = new Category("Display Name")
+        /public\s+static\s+final\s+Category\s+(\w+)\s*=\s*new\s+Category\s*\(\s*"([^"]+)"/g,
+        // Pattern 2: public static Category CATEGORY_NAME = new Category("Display Name")
+        /public\s+static\s+Category\s+(\w+)\s*=\s*new\s+Category\s*\(\s*"([^"]+)"/g,
+        // Pattern 3: Category CATEGORY_NAME = new Category("Display Name")
+        /Category\s+(\w+)\s*=\s*new\s+Category\s*\(\s*"([^"]+)"/g,
+        // Pattern 4: Categories.register("Display Name", CATEGORY_VAR)
+        /Categories\.register\s*\(\s*"([^"]+)"\s*,\s*(\w+)\s*\)/g,
+      ];
+
+      for (const pattern of categoryPatterns) {
+        let match;
+        pattern.lastIndex = 0; // Reset regex
+        
+        while ((match = pattern.exec(mainFileContent)) !== null) {
+          let variableName, displayName;
+          
+          if (pattern.source.includes('Categories\\.register')) {
+            // For Categories.register pattern, order is reversed
+            displayName = match[1];
+            variableName = match[2];
+          } else {
+            variableName = match[1];
+            displayName = match[2];
+          }
+          
+          console.log(`Found category: ${variableName} -> ${displayName}`);
+          
+          categoryVariableMap.set(variableName, displayName);
+          categoryVariableMap.set(variableName.toLowerCase(), displayName);
+          
+          // Check if category already exists
+          const existingCategory = extractedCategories.find(cat => cat.name === variableName);
+          if (!existingCategory) {
+            extractedCategories.push({
+              name: variableName,
+              displayName: displayName,
+              modules: [],
+              collapsed: false,
+              position: { x: 50, y: 50 },
+              zIndex: 1000,
+            });
+          }
+        }
+      }
+    }
+
+    // If no categories found, create some common default categories
+    if (extractedCategories.length === 0) {
+      console.log('No categories found in main file, creating defaults');
+      
+      const defaultCategories = [
+        { name: 'COMBAT', displayName: 'Combat' },
+        { name: 'MOVEMENT', displayName: 'Movement' },
+        { name: 'RENDER', displayName: 'Render' },
+        { name: 'PLAYER', displayName: 'Player' },
+        { name: 'WORLD', displayName: 'World' },
+        { name: 'MISC', displayName: 'Misc' },
+        { name: 'MAIN', displayName: 'Main' },
+      ];
+      
+      for (const cat of defaultCategories) {
         extractedCategories.push({
-          name: variableName,
-          displayName: displayName,
+          name: cat.name,
+          displayName: cat.displayName,
           modules: [],
           collapsed: false,
           position: { x: 50, y: 50 },
           zIndex: 1000,
         });
+        categoryVariableMap.set(cat.name, cat.displayName);
+        categoryVariableMap.set(cat.name.toLowerCase(), cat.displayName);
       }
     }
-    if (extractedCategories.length === 0) {
-      extractedCategories.push({
-        name: "Main",
-        displayName: "Main",
-        modules: [],
-        collapsed: false,
-        position: { x: 50, y: 50 },
-        zIndex: 1000,
-      });
-    }
+
+    console.log('Final categories:', extractedCategories);
+    console.log('Category variable map:', categoryVariableMap);
+
     return {
       categories: extractedCategories,
       categoryMap: categoryVariableMap,
     };
   } catch (error) {
+    console.error('Error in extractCategories:', error);
     return {
       categories: [
         {
-          name: "Main",
+          name: "MAIN",
           displayName: "Main",
           modules: [],
           collapsed: false,
@@ -344,35 +412,97 @@ const extractCategories = async () => {
           zIndex: 1000,
         },
       ],
-      categoryMap: new Map([["Main", "Main"]]),
+      categoryMap: new Map([["MAIN", "Main"], ["main", "Main"]]),
     };
   }
 };
 
 const determineModuleCategory = (moduleContent, categoryMap, moduleName) => {
-  const constructorPatterns = [
+  console.log(`\n--- Analyzing module: ${moduleName} ---`);
+  console.log('Available categories:', Array.from(categoryMap.keys()));
+  
+  // Multiple patterns to find category references in modules
+  const categoryPatterns = [
+    // Pattern 1: super(CategoryClass.CATEGORY_NAME, ...)
     /super\s*\(\s*\w+\.(\w+)\s*,/g,
-    /super\s*\(\s*(\w+)\s*,/g,
-    /super\s*\(\s*([^,\s]+)\s*,/g,
+    // Pattern 2: super(CATEGORY_NAME, ...)
+    /super\s*\(\s*([A-Z_]+)\s*,/g,
+    // Pattern 3: super("module name", "description", CATEGORY_NAME, ...)
+    /super\s*\(\s*"[^"]*"\s*,\s*"[^"]*"\s*,\s*(\w+)/g,
+    // Pattern 4: super("module name", CATEGORY_NAME, ...)
+    /super\s*\(\s*"[^"]*"\s*,\s*(\w+)/g,
+    // Pattern 5: Category.CATEGORY_NAME
+    /Category\.(\w+)/g,
+    // Pattern 6: @RegisterModule(category = CATEGORY_NAME)
+    /@RegisterModule\s*\([^)]*category\s*=\s*(\w+)/g,
+    // Pattern 7: this.category = CATEGORY_NAME
+    /this\.category\s*=\s*(\w+)/g,
   ];
-  for (let i = 0; i < constructorPatterns.length; i++) {
-    const pattern = constructorPatterns[i];
+
+  for (let i = 0; i < categoryPatterns.length; i++) {
+    const pattern = categoryPatterns[i];
+    pattern.lastIndex = 0; // Reset regex
+    
+    console.log(`Trying pattern ${i + 1}: ${pattern.source}`);
+    
     const matches = [...moduleContent.matchAll(pattern)];
+    console.log(`Found ${matches.length} matches`);
+    
     for (const match of matches) {
       let categoryVar = match[1];
+      console.log(`Raw match: "${categoryVar}"`);
+      
+      // Clean up the category variable
       if (categoryVar.includes(".")) {
         categoryVar = categoryVar.split(".").pop();
       }
+      
+      console.log(`Cleaned category var: "${categoryVar}"`);
+      
+      // Try exact match first
       if (categoryMap.has(categoryVar)) {
+        console.log(`✓ Found exact match: ${categoryVar}`);
         return categoryVar;
       }
+      
+      // Try case-insensitive match
+      const lowerCategoryVar = categoryVar.toLowerCase();
+      if (categoryMap.has(lowerCategoryVar)) {
+        console.log(`✓ Found case-insensitive match: ${lowerCategoryVar}`);
+        return Array.from(categoryMap.keys()).find(key => key.toLowerCase() === lowerCategoryVar);
+      }
+      
+      // Try partial matches
       for (const [key] of categoryMap.entries()) {
-        if (key.toLowerCase() === categoryVar.toLowerCase()) {
+        if (key.toLowerCase().includes(lowerCategoryVar) || lowerCategoryVar.includes(key.toLowerCase())) {
+          console.log(`✓ Found partial match: ${key} (from ${categoryVar})`);
           return key;
         }
       }
     }
   }
+  
+  // Try to guess category based on module name
+  const moduleNameLower = moduleName.toLowerCase();
+  const categoryGuesses = [
+    { keywords: ['combat', 'attack', 'kill', 'fight', 'pvp', 'war'], category: 'COMBAT' },
+    { keywords: ['move', 'speed', 'fly', 'jump', 'walk', 'run', 'step'], category: 'MOVEMENT' },
+    { keywords: ['render', 'esp', 'visual', 'display', 'show', 'hud'], category: 'RENDER' },
+    { keywords: ['player', 'inv', 'inventory', 'hand', 'armor'], category: 'PLAYER' },
+    { keywords: ['world', 'block', 'place', 'break', 'mine'], category: 'WORLD' },
+    { keywords: ['misc', 'util', 'helper', 'auto', 'anti'], category: 'MISC' },
+  ];
+  
+  for (const guess of categoryGuesses) {
+    if (guess.keywords.some(keyword => moduleNameLower.includes(keyword))) {
+      if (categoryMap.has(guess.category)) {
+        console.log(`✓ Guessed category based on name: ${guess.category}`);
+        return guess.category;
+      }
+    }
+  }
+  
+  console.log('✗ No category found, will use first available');
   return null;
 };
 
@@ -387,18 +517,35 @@ async function fetchModules() {
   showRateLimit.value = false;
   rateLimitWarning.value = '';
   errorMessage.value = '';
+  
   try {
     // Check repo API for stats and rate limit
     const repoRes = await fetch(
       `https://api.github.com/repos/${urlParams.user}/${urlParams.repo}`,
       getAuthHeader()
     );
+    
     apiCallsRemaining.value = repoRes.headers.get('x-ratelimit-remaining') || 0;
+    
     if (repoRes.status === 403) {
+      const resetTime = repoRes.headers.get('x-ratelimit-reset');
+      const resetDate = resetTime ? new Date(resetTime * 1000) : null;
       showRateLimit.value = true;
-      rateLimitMessage.value = 'You have exceeded your API rate limit.';
+      rateLimitMessage.value = resetDate 
+        ? `Rate limit resets at ${resetDate.toLocaleTimeString()}`
+        : 'You have exceeded your API rate limit.';
+      
+      if (!localStorage.getItem('github_token')) {
+        showTokenPrompt.value = true;
+        return;
+      }
       throw new Error('Rate limit exceeded');
     }
+
+    if (!repoRes.ok) {
+      throw new Error(`Failed to fetch repository info: ${repoRes.status} ${repoRes.statusText}`);
+    }
+
     const repoData = await repoRes.json();
     totalItems.value = repoData.stargazers_count || 0;
 
@@ -406,67 +553,207 @@ async function fetchModules() {
     const { categories: extractedCategories, categoryMap } = await extractCategories();
     categories.value = extractedCategories;
 
-    // Fetch modules from directory
-    const response = await fetch(
-      `https://api.github.com/repos/${urlParams.user}/${urlParams.repo}/${urlParams.path}`,
-      getAuthHeader()
-    );
+    // Fetch modules from directory - Fix the API endpoint
+    const contentsUrl = `https://api.github.com/repos/${urlParams.user}/${urlParams.repo}/contents/${urlParams.path}`;
+    console.log('Fetching from URL:', contentsUrl); // Debug log
+    
+    const response = await fetch(contentsUrl, getAuthHeader());
+    
     apiCallsRemaining.value = response.headers.get('x-ratelimit-remaining') || 0;
+    
     if (response.status === 403) {
+      const resetTime = response.headers.get('x-ratelimit-reset');
+      const resetDate = resetTime ? new Date(resetTime * 1000) : null;
       showRateLimit.value = true;
-      rateLimitMessage.value = 'You have exceeded your API rate limit.';
+      rateLimitMessage.value = resetDate 
+        ? `Rate limit resets at ${resetDate.toLocaleTimeString()}`
+        : 'You have exceeded your API rate limit.';
+      
+      if (!localStorage.getItem('github_token')) {
+        showTokenPrompt.value = true;
+        return;
+      }
       throw new Error('Rate limit exceeded');
     }
+
+    if (response.status === 404) {
+      throw new Error(`Directory not found: ${urlParams.path}`);
+    }
+
+    if (!response.ok) {
+      throw new Error(`GitHub API error: ${response.status} ${response.statusText}`);
+    }
+
     const data = await response.json();
-    const moduleFiles = data.filter((item) => item.name.endsWith(".java"));
+    console.log('API Response:', data); // Debug log
+    
+    // Check if data is an array (directory contents) or an object (single file/error)
+    if (!Array.isArray(data)) {
+      if (data.message) {
+        throw new Error(`GitHub API: ${data.message}`);
+      }
+      if (data.type === 'file') {
+        throw new Error('The specified path points to a file, not a directory');
+      }
+      throw new Error('Unexpected response format from GitHub API');
+    }
+    
+    // Filter for Java files
+    const moduleFiles = data.filter((item) => {
+      return item.type === 'file' && item.name.endsWith('.java');
+    });
+    
     totalItems.value = moduleFiles.length;
 
-    for (const moduleFile of moduleFiles) {
-      try {
-        const moduleResponse = await fetch(moduleFile.download_url);
-        const moduleContent = await moduleResponse.text();
-        const module = {
-          name: moduleFile.name,
-          displayName: moduleFile.name.replace(".java", ""),
-          active: false,
-        };
-        const categoryVar = determineModuleCategory(
-          moduleContent,
-          categoryMap,
-          moduleFile.name
-        );
-        if (categoryVar) {
-          const category = categories.value.find(
-            (cat) => cat.name === categoryVar
-          );
-          if (category) {
-            category.modules.push(module);
-          } else if (categories.value.length > 0) {
-            categories.value[0].modules.push(module);
-          }
-        } else if (categories.value.length > 0) {
-          categories.value[0].modules.push(module);
-        }
-      } catch (error) {}
+    loadingMessage.value = 'Processing modules...';
+    loadingProgress.value = `0 / ${moduleFiles.length}`;
+
+ // Updated module processing section for fetchModules function
+// Replace the module processing loop in your fetchModules function with this:
+
+// Process each module file
+for (let i = 0; i < moduleFiles.length; i++) {
+  const moduleFile = moduleFiles[i];
+  
+  try {
+    loadingProgress.value = `${i + 1} / ${moduleFiles.length}`;
+    
+    // Use the download_url to get the raw file content
+    const moduleResponse = await fetch(moduleFile.download_url);
+    
+    if (!moduleResponse.ok) {
+      console.warn(`Failed to fetch ${moduleFile.name}: ${moduleResponse.status}`);
+      continue;
     }
-    await nextTick();
-    positionCategories();
+    
+    const moduleContent = await moduleResponse.text();
+    
+    const module = {
+      name: moduleFile.name,
+      displayName: moduleFile.name.replace('.java', ''),
+      active: false,
+    };
+
+    // Determine which category this module belongs to
+    const categoryVar = determineModuleCategory(
+      moduleContent,
+      categoryMap,
+      moduleFile.name
+    );
+
+    let targetCategory = null;
+    
+    if (categoryVar) {
+      // Find the category by variable name
+      targetCategory = categories.value.find((cat) => cat.name === categoryVar);
+      
+      if (!targetCategory) {
+        // Try case-insensitive search
+        targetCategory = categories.value.find((cat) => 
+          cat.name.toLowerCase() === categoryVar.toLowerCase()
+        );
+      }
+    }
+    
+    // If no specific category found, try to auto-categorize based on module name
+    if (!targetCategory) {
+      const moduleNameLower = moduleFile.name.toLowerCase();
+      
+      // Auto-categorization based on common patterns
+      if (moduleNameLower.includes('combat') || moduleNameLower.includes('kill') || 
+          moduleNameLower.includes('attack') || moduleNameLower.includes('pvp')) {
+        targetCategory = categories.value.find(cat => 
+          cat.name.toLowerCase().includes('combat') || cat.displayName.toLowerCase().includes('combat')
+        );
+      } else if (moduleNameLower.includes('move') || moduleNameLower.includes('speed') || 
+                 moduleNameLower.includes('fly') || moduleNameLower.includes('jump')) {
+        targetCategory = categories.value.find(cat => 
+          cat.name.toLowerCase().includes('movement') || cat.displayName.toLowerCase().includes('movement')
+        );
+      } else if (moduleNameLower.includes('render') || moduleNameLower.includes('esp') || 
+                 moduleNameLower.includes('visual') || moduleNameLower.includes('hud')) {
+        targetCategory = categories.value.find(cat => 
+          cat.name.toLowerCase().includes('render') || cat.displayName.toLowerCase().includes('render')
+        );
+      } else if (moduleNameLower.includes('player') || moduleNameLower.includes('inv')) {
+        targetCategory = categories.value.find(cat => 
+          cat.name.toLowerCase().includes('player') || cat.displayName.toLowerCase().includes('player')
+        );
+      } else if (moduleNameLower.includes('world') || moduleNameLower.includes('block')) {
+        targetCategory = categories.value.find(cat => 
+          cat.name.toLowerCase().includes('world') || cat.displayName.toLowerCase().includes('world')
+        );
+      }
+    }
+    
+    // If still no category found, use the first available category
+    if (!targetCategory && categories.value.length > 0) {
+      targetCategory = categories.value[0];
+    }
+    
+    // Add the module to the determined category
+    if (targetCategory) {
+      targetCategory.modules.push(module);
+      console.log(`✓ Added ${module.displayName} to category: ${targetCategory.displayName}`);
+    } else {
+      console.warn(`✗ Could not categorize module: ${module.displayName}`);
+    }
+    
+    // Small delay to avoid overwhelming the API
+    if (i < moduleFiles.length - 1) {
+      await new Promise(resolve => setTimeout(resolve, 50));
+    }
+    
+  } catch (error) {
+    console.warn(`Error processing ${moduleFile.name}:`, error);
+    // Continue with other files even if one fails
+  }
+}
+
+// After processing all modules, log the final distribution
+console.log('\n=== Final Category Distribution ===');
+categories.value.forEach(category => {
+  console.log(`${category.displayName}: ${category.modules.length} modules`);
+  if (category.modules.length > 0) {
+    console.log(`  Modules: ${category.modules.map(m => m.displayName).join(', ')}`);
+  }
+});
+
+// Remove empty categories (optional)
+categories.value = categories.value.filter(category => category.modules.length > 0);
+
+await nextTick();
+positionCategories();
+    
   } catch (err) {
+    console.error('fetchModules error:', err);
     errorMessage.value = err.message;
+    
+    // Create fallback category with error info
     categories.value = [
       {
-        name: "Main",
-        displayName: "GitHub API Rate Limit Exceeded",
+        name: 'Error',
+        displayName: 'Error Loading Modules',
         modules: [
-          { name: "GitHub API Rate Limit Exceeded", displayName: "GitHub API Rate Limit Exceeded", active: false },
+          { 
+            name: 'error', 
+            displayName: err.message.length > 50 ? err.message.substring(0, 50) + '...' : err.message, 
+            active: false 
+          },
         ],
         collapsed: false,
         position: { x: 50, y: 50 },
         zIndex: 1000,
       },
     ];
+    
+    await nextTick();
+    positionCategories();
+    
   } finally {
     isLoading.value = false;
+    loadingMessage.value = '';
+    loadingProgress.value = '';
   }
 }
 
