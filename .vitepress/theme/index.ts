@@ -4,17 +4,15 @@ import DefaultTheme from 'vitepress/theme'
 import PrimeVue from 'primevue/config'
 import Aura from '@primevue/themes/aura'
 
-import Chip from 'primevue/chip';
-
-import '@theojs/lumen/theme'
-
+import Chip from 'primevue/chip'
 import Button from 'primevue/button'
-import Tag from 'primevue/tag';
+import Tag from 'primevue/tag'
+
 import { HomeUnderline } from '@theojs/lumen'
 
 import Layout from './Layout.vue'
 import Download from './components/Download.vue'
-import { h } from 'vue'
+
 
 import './style.css'
 import './tailwind.css'
@@ -28,16 +26,17 @@ export default {
       theme: {
         preset: Aura,
         options: {
-          darkModeSelector: '.dark', // Enable dark mode support
+          darkModeSelector: '.dark',
         }
       }
     })
 
-    // Register components globally
     app.component('Button', Button)
     app.component('Tag', Tag)
     app.component('Chip', Chip)
     app.component('Home', HomeUnderline)
-    app.component('Download', Download) // Register Download component globally if needed
-  }
+    app.component('Download', Download)
+
+  },
+
 } satisfies Theme

@@ -17,8 +17,11 @@
     "@primevue/themes": "^4.3.5",
     "@theojs/lumen": "^5.6.0",
     "fs": "^0.0.1-security",
+    "pako": "^2.1.0",
     "path": "^0.12.7",
     "primeicons": "^7.0.0",
-    "primevue": "^4.3.5"
+    "primevue": "^4.3.5",
+    "prismarine-nbt": "^2.7.0",
+    "three": "^0.177.0"
   }
 }
