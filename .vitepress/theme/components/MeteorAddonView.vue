@@ -101,9 +101,11 @@
           v-model="tokenInput"
           type="password"
           placeholder="GitHub Personal Access Token"
-          class="flex-1 mr-2 px-3 py-2 border border-purple-400 focus:border-green-400 rounded-lg focus:ring-2 focus:ring-green-400/50 text-white transition-all duration-150 placeholder-purple-300"
+          id="tokenInput" 
           @keyup.enter="saveToken"
           autocomplete="off"
+          class="flex-1 bg-gray-800 px-3 py-2 border border-purple-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-white transition duration-200"
+
         >
         <button
           @click="saveToken"
@@ -776,4 +778,20 @@ onMounted(async () => {
 
 <style scoped>
 /* Customize styles here if needed */
+#tokenInput {
+padding-top: 0.5rem!important;
+padding-bottom: 0.5rem!important; 
+padding-left: 0.75rem!important;
+padding-right: 0.75rem!important; 
+margin-right: 0.5rem!important; 
+flex: 1 1 0%!important; 
+border-radius: 0.5rem!important; 
+border-width: 1px!important; 
+border-color: #A78BFA!important; 
+color: #ffffff!important; 
+transition-property: all!important;
+transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1)!important;
+transition-duration: 300ms!important; 
+transition-duration: 150ms!important; 
+}
 </style>
