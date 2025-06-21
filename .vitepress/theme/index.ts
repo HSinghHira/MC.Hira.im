@@ -15,7 +15,6 @@ import Download from './components/Download.vue'
 import LitematicViewer from './components/LitematicViewer.vue'
 import MinecraftServerPing from './components/MinecraftServerPing.vue'
 
-import './style.css'
 import './tailwind.css'
 import 'primeicons/primeicons.css'
 
