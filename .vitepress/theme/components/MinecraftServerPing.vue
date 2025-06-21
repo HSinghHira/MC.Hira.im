@@ -1,7 +1,7 @@
 <template>
   <div class="minecraft-ping-tool">
     <!-- Content -->
-    <div class="shadow-2xl p-8 rounded-b-2xl">
+    <div>
       <!-- CORS Notice -->
       <div v-if="showCorsNotice" class="bg-red-50 mb-6 p-4 border-red-500 border-l-4 rounded-r-lg text-red-700">
         <div class="flex">
