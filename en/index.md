@@ -4,9 +4,9 @@ redirect: /en/
 
 hero:
   name: "All About Minecraft"
-  text: "Tutorials"
-  textsuffix: ', Downloads, Links & More'
-  tagline: By Hira
+  text: "Basically"
+  textsuffix: ' Everything'
+  tagline: Goal is to provide every Link, Download, Tutorial, etc about is block game known as Minecraft.
   image:
     src: /data/home.png
     alt: All About Minecraft
