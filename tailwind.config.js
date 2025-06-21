@@ -1,15 +1,12 @@
-export default {
-  "content": [
-    // Remove the docs/ prefix since your content is in the root
-    "./**/*.{vue,js,ts,jsx,tsx,md}",
-    "./.vitepress/**/*.{vue,js,ts,jsx,tsx,md}",
-    // Specifically include your content directories
-    "./en/**/*.{vue,js,ts,jsx,tsx,md}",
-    "./pb/**/*.{vue,js,ts,jsx,tsx,md}",
-    "./*.md", // for any root level markdown files
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    './.vitepress/**/*.{vue,js,ts}', // Include Vitepress theme files
+    './en/**/*.{md,vue}', // Include Markdown and Vue files in the `en` directory
+    './pb/**/*.{md,vue}', // Include other directories if needed
   ],
-  "theme": {
-    "extend": {}
+  theme: {
+    extend: {},
   },
-  "plugins": []
-}
+  plugins: [],
+};
