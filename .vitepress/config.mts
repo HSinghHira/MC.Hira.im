@@ -7,11 +7,15 @@ import { generateSidebar } from './config/autosidebar'
 import { googleAnalyticsHead } from './config/tracking'
 
 export const textMappings: Record<string, string> = {
+
+  // Custom Text Mappings
+
   'meteor': 'Meteor Client Addons',
   'meteorplus': 'Meteor+',
   'meteor-plus': 'Meteor+',
   'mcping': 'MC Server Ping', 
-  // Add more custom mappings as needed
+  'tools': 'Web-Based Online Tools',
+
 }
 
 export default defineConfig({

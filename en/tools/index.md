@@ -24,7 +24,7 @@ features:
   - icon:
       src: /data/icons/litematic.png
     title: Litematic Schematics Viewer
-    link: en/litematic-viewer
+    link: en/tools/litematic-viewer
     details: Web tool for visualizing Minecraft Litematic schematics in 3D, with accurate block textures and interactive controls.
       
 ---

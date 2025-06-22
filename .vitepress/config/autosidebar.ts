@@ -1,4 +1,4 @@
-import { readdirSync, statSync, existsSync } from 'fs'
+import { readdirSync, statSync, existsSync, readFileSync } from 'fs'
 import { join, basename } from 'path'
 import { textMappings } from '../config.mts'
 
@@ -16,6 +16,40 @@ function toTitleCase(str: string): string {
     .split('-')
     .map(word => word.charAt(0).toUpperCase() + word.slice(1))
     .join(' ')
+}
+
+// Function to convert heading text to slug for anchor links
+function toSlug(str: string): string {
+  return str
+    .toLowerCase()
+    .replace(/[^\w\s-]/g, '') // Remove special characters
+    .replace(/\s+/g, '-') // Replace spaces with hyphens
+    .replace(/-+/g, '-') // Replace multiple hyphens with single
+    .trim()
+}
+
+// Function to extract ## headings from markdown file
+function getHeadingsFromMarkdown(filePath: string): Array<{ text: string; link: string }> {
+  try {
+    if (!existsSync(filePath)) return []
+    
+    const content = readFileSync(filePath, 'utf-8')
+    const headingRegex = /^##\s+(.+)$/gm // Match ## headings
+    const headings: Array<{ text: string; link: string }> = []
+    let match: RegExpExecArray | null
+
+    while ((match = headingRegex.exec(content)) !== null) {
+      const headingText = match[1].trim()
+      headings.push({
+        text: headingText,
+        link: `#${toSlug(headingText)}`
+      })
+    }
+
+    return headings
+  } catch {
+    return []
+  }
 }
 
 // Function to check if a directory contains markdown files (excluding preview)
@@ -83,6 +117,37 @@ export function generateSidebar(contentRoot: string): any[] {
         text: toTitleCase(baseDir),
         collapsed: true,
         items: []
+      }
+
+      // Special case for 'useful-sites': index headings from index.md
+      if (baseDir === 'useful-sites') {
+        const indexPath = join(basePath, 'index.md')
+        if (existsSync(indexPath)) {
+          // Add top-level link to the page itself as "Overview"
+          sidebarGroup.items.push({
+            text: 'Overview',
+            link: `/${contentRoot.replace('./', '')}/${baseDir}/`
+          })
+          // Add heading-based sub-links
+          const headings = getHeadingsFromMarkdown(indexPath)
+          if (headings.length > 0) {
+            sidebarGroup.items.push(...headings.map(heading => ({
+              ...heading,
+              link: `/${contentRoot.replace('./', '')}/${baseDir}/${heading.link}`
+            })))
+          }
+          sidebar.push(sidebarGroup)
+        }
+        continue
+      }
+
+      // Add top-level link to base directory's index.md as "Overview" if it exists
+      const indexPath = join(basePath, 'index.md')
+      if (existsSync(indexPath)) {
+        sidebarGroup.items.push({
+          text: 'Overview',
+          link: `/${contentRoot.replace('./', '')}/${baseDir}/`
+        })
       }
 
       // Get subdirectories (excluding preview directories)

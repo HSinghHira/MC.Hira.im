@@ -1,5 +1,7 @@
 ---
 layout: doc
+prev: false
+next: false
 
 title: Useful Websites for Minecraft
 description: Explore a curated collection of the best Minecraft websites, organized into categories like server management, world exploration, design customization, and building aids. Whether you're a server admin, builder, or casual player, these resources will elevate your Minecraft experience with tools for skins, maps, commands, and more.
@@ -15,7 +17,7 @@ head:
 
 A curated collection of essential Minecraft tools and websites, organized into intuitive categories to enhance your gaming experience. Whether you're hosting a server, exploring worlds, designing custom skins, or building intricate structures, these resources provide the tools you need to succeed. Below, find detailed descriptions of each website, categorized for easy navigation, along with an SEO-friendly description and keywords to help you discover the best Minecraft tools.
 
-## Server Management and Hosting
+## Server Management & Hosting
 
 - **[playit.gg](https://playit.gg)**  
   **Free Port Forwarding for Minecraft Servers**  
