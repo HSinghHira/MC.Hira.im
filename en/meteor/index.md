@@ -50,5 +50,11 @@ features:
     title: Lucid
     link: en/meteor/lucid
     details: Enhance your Minecraft experience with advanced chat features & ESP.
+
+  - icon:
+      src: /data/icons/blackout.png
+    title: BlackOut
+    link: en/meteor/blackout
+    details: Powerful addon for Meteor Client that enhances Minecraft PvP experience.
       
 ---
