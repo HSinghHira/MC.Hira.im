@@ -23,7 +23,7 @@ I have taken this all infomation from developer's new & old Github commits and e
 
 ## Useful Links
 
-* [Advanced Demo/Preview](/en/meteor/preview/?Zgoly/Meteorist/tree/main/src/main/java/zgoly/meteorist/modules), [Simple Previewer](/en/meteor/preview/simple/?Zgoly/Meteorist/tree/main/src/main/java/zgoly/meteorist/modules)
+* [Advanced Demo/Preview](/en/meteor/preview/?Zgoly/Meteorist/tree/main/src/main/java/zgoly/meteorist/modules), [Simple Previewer](/en/meteor/preview/simple.html?Zgoly/Meteorist/tree/main/src/main/java/zgoly/meteorist/modules)
 * [Github Repository](https://github.com/Zgoly/Meteorist)
 * [Latest Download](/en/download/?Zgoly/Meteorist){target="_blank"}
 * [All Versions](https://github.com/Zgoly/Meteorist/tags)

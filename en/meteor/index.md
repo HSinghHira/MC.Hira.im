@@ -44,5 +44,11 @@ features:
     title: Electron
     link: en/meteor/electron
     details: Lightweight and performant Minecraft mod for enhanced gameplay.
+
+  - icon:
+      src: /data/icons/lucid.png
+    title: Lucid
+    link: en/meteor/lucid
+    details: Enhance your Minecraft experience with advanced chat features & ESP.
       
 ---

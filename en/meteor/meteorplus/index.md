@@ -24,7 +24,7 @@ I have taken this all infomation from developer's homepage, new & old Github com
 
 ## Useful Links
 
-* [Advanced Demo/Preview](/en/meteor/preview/?MeteorClientPlus/MeteorPlus/tree/1.21.6/src/main/java/nekiplay/meteorplus/features/modules), [Simple Previewer](/en/meteor/preview/simple/?MeteorClientPlus/MeteorPlus/tree/1.21.6/src/main/java/nekiplay/meteorplus/features/modules)
+* [Advanced Demo/Preview](/en/meteor/preview/?MeteorClientPlus/MeteorPlus/tree/1.21.6/src/main/java/nekiplay/meteorplus/features/modules), [Simple Previewer](/en/meteor/preview/simple.html?MeteorClientPlus/MeteorPlus/tree/1.21.6/src/main/java/nekiplay/meteorplus/features/modules)
 * [Github Repository](https://github.com/MeteorClientPlus/MeteorPlus)
 * [Latest Download](/en/download/?MeteorClientPlus/MeteorPlus){target="_blank"}
 * [Download Link](https://meteorclientplus.github.io/versions.html)
