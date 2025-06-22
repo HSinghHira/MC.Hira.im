@@ -56,5 +56,11 @@ features:
     title: BlackOut
     link: en/meteor/blackout
     details: Powerful addon for Meteor Client that enhances Minecraft PvP experience.
+
+  - icon:
+      src: /data/icons/glazed.png
+    title: Glazed
+    link: en/meteor/glazed
+    details: Advanced addon for Meteor Client specifically designed for the DonutSMP server.
       
 ---
