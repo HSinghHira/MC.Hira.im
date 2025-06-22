@@ -32,6 +32,7 @@ export default defineConfig({
     ...googleAnalyticsHead
   ],
   transformHead,
+  ignoreDeadLinks: true,
   
   lastUpdated: true,
   buildEnd,
