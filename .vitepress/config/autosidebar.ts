@@ -141,15 +141,6 @@ export function generateSidebar(contentRoot: string): any[] {
         continue
       }
 
-      // Add top-level link to base directory's index.md as "Overview" if it exists
-      const indexPath = join(basePath, 'index.md')
-      if (existsSync(indexPath)) {
-        sidebarGroup.items.push({
-          text: 'Overview',
-          link: `/${contentRoot.replace('./', '')}/${baseDir}/`
-        })
-      }
-
       // Get subdirectories (excluding preview directories)
       const items = readdirSync(basePath, { withFileTypes: true })
       const subdirs = items
