@@ -23,21 +23,27 @@ features:
 
   - icon:
       src: /data/icons/tutorial.png
-    title: Minecraft Tutorials
+    title: Minecraft Tutorials Hub
     link: en/tutorials
-    details: A step-by-step guide on how to do things in Minecraft.
+    details: Discover a comprehensive collection of step-by-step Minecraft tutorials, guiding you through mod installation, gameplay tips, building techniques.
 
   - icon:
       src: /data/icons/meteor.png
     title: Meteor Client Addons
     link: en/meteor
-    details: The process of creating an efficient villager breeder in Minecraft
+    details: Explore a dynamic collection of Meteor Client addons for Minecraft, featuring powerful tools for especially for anarchy servers.
 
-  - icon: 🔜
-    title: Coming Soon
-    link: /
-    details: Coming Soon...
+  - icon:
+      src: /data/icons/tools.png
+    title: Minecraft Web-Based Tools
+    link: en/tools
+    details: Discover a versatile suite of web-based Minecraft tools designed to enhance your gameplay, server management, and creative projects.
 
+  - icon:
+      src: /data/icons/useful-site.png
+    title: Useful Website for Minecraft
+    link: en/useful-sites
+    details: Explore a curated collection of the best Minecraft websites, organized into categories.
 ---
 <Home />
 

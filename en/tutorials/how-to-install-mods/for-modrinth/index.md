@@ -1,5 +1,5 @@
 ---
-. layout: doc
+layout: doc
 
 title: How to Install Minecraft Mods in Modrinth?
 description: A simple step-by-step tutorial on how to install Minecraft mods in Modrinth.

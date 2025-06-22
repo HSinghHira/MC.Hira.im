@@ -69,7 +69,7 @@ export function generateSidebar(contentRoot: string): any[] {
       return sidebar
     }
 
-    const baseDirs = ['tutorials', 'meteor']
+    const baseDirs = ['tutorials', 'meteor', 'tools', 'useful-sites']
     
     for (const baseDir of baseDirs) {
       const basePath = join(contentRoot, baseDir)

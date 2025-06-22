@@ -17,3 +17,4 @@ head:
 * https://modrinth.com/
 * https://pngtree.com/freepng/minecraft_8709743.html
 * https://rosepng.com/minecraft-logo-png/
+* https://modrinth.com/plugin/displayping

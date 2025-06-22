@@ -1,18 +1,17 @@
 ---
 layout: home
 isHome: false
-editLink: true
 
-title: Minecraft Tutorials
-description: A step-by-step guide on how to do things in Minecraft.
+title: Minecraft Tutorials Hub
+description: Discover a comprehensive collection of step-by-step Minecraft tutorials, guiding you through mod installation, gameplay tips, building techniques, and more. Perfect for beginners and seasoned players looking to enhance their Minecraft experience.
 
 head:
   - - meta
     - name: description
-      content: A step-by-step guide on how to do things in Minecraft.
+      content: Discover a comprehensive collection of step-by-step Minecraft tutorials, guiding you through mod installation, gameplay tips, building techniques, and more. Perfect for beginners and seasoned players looking to enhance their Minecraft experience.
   - - meta
     - name: keywords
-      content: Minecraft Tutorials, Minecraft, minecraft mods
+      content: Minecraft tutorials, Minecraft guides, how to install Minecraft mods, Minecraft gameplay tips, Minecraft building tutorials, Minecraft beginner guides, Minecraft modding
 
 features:
   - icon:

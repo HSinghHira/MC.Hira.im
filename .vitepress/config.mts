@@ -10,6 +10,7 @@ export const textMappings: Record<string, string> = {
   'meteor': 'Meteor Client Addons',
   'meteorplus': 'Meteor+',
   'meteor-plus': 'Meteor+',
+  'mcping': 'MC Server Ping', 
   // Add more custom mappings as needed
 }
 

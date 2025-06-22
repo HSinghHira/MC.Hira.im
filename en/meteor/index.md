@@ -1,11 +1,17 @@
 ---
 layout: home
 isHome: false
-editLink: true
 
-title: Meteor Client Addons
-description: The List of all updated and newest Meteor Client Addons.
-tags: meteor client, meteor client addon, minecraft mods, test
+title: Meteor Client Addons Collection
+description: Explore a dynamic collection of Meteor Client addons for Minecraft, featuring powerful tools for anarchy servers, griefing, PvP, PvE, and enhanced gameplay. Discover the latest addons like Trouser-Streak, Meteorist, Meteor+, and more to elevate your modded experience.
+
+head:
+  - - meta
+    - name: description
+      content: Explore a dynamic collection of Meteor Client addons for Minecraft, featuring powerful tools for anarchy servers, griefing, PvP, PvE, and enhanced gameplay. Discover the latest addons like Trouser-Streak, Meteorist, Meteor+, and more to elevate your modded experience.
+  - - meta
+    - name: keywords
+      content: Meteor Client addons, Minecraft mods, Meteor Client, anarchy server mods, PvP cheats, PvE tools, Trouser-Streak, Meteorist, Meteor+, Meteor Rejects, Electron
 
 features:
 
