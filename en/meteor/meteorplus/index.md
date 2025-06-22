@@ -1,7 +1,7 @@
 ---
 layout: doc
 
-title: Meteor+ Client Addon
+title: Meteor+ Addon for Meteor Client
 description: Adds advanced cheat features, enhancing PvE and PvP gameplay
 
 head:
@@ -12,6 +12,8 @@ head:
     - name: keywords
       content: Meteor+, Meteor Plus, Meteor Plus Meteor Client Addon, meteor client, meteor client addon, minecraft mods
 ---
+
+# Meteor+ Addon for Meteor Client
 ::: warning
 I have taken this all infomation from developer's homepage, new & old Github commits and explored the modules manually. So if there is something that is not correct, please do let me know.
 :::
@@ -20,8 +22,19 @@ I have taken this all infomation from developer's homepage, new & old Github com
 
 **Meteor Plus** is an addon for Meteor Client, a widely used Minecraft mod that offers various hacks to enhance gameplay. Meteor Plus extends Meteor Client by adding "blatant" features, which are advanced cheats designed to bypass anti-cheat systems on Minecraft servers. These features cater to players who want to gain advantages in player vs. environment (PvE) and player vs. player (PvP) scenarios, such as flying, moving faster, or ignoring anti-cheat restrictions. The addon is popular among mod users, with over 16,000 downloads and a strong community presence.
 
+## Useful Links
+
+* [Advanced Demo/Preview](/en/meteor/preview/?MeteorClientPlus/MeteorPlus/tree/1.21.6/src/main/java/nekiplay/meteorplus/features/modules), [Simple Previewer](/en/meteor/simple/?MeteorClientPlus/MeteorPlus/tree/1.21.6/src/main/java/nekiplay/meteorplus/features/modules)
+* [Github Repository](https://github.com/MeteorClientPlus/MeteorPlus)
+* [Latest Download](/en/download/?MeteorClientPlus/MeteorPlus){target="_blank"}
+* [Download Link](https://meteorclientplus.github.io/versions.html)
+* [Discord](https://discord.com/invite/N3gqYc7GRS)
+* [Telegram](https://t.me/+E3PuLb8cZOlmZWIy)
+* [Guilded.gg](https://www.guilded.gg/i/27dAlJKk)
+
 ## Supported Version(s)
 
+* minecraft_version=1.21.6
 * minecraft_version=1.21.5
 * minecraft_version=1.21.4
 * minecraft_version=1.21.3
@@ -94,15 +107,6 @@ Meteor Plus enhances existing Meteor Client features for better performance.
 | Freecam | Adds improved Baritone control via Freecam. |
 
 These modules and commands make Meteor Plus a powerful tool for players seeking to customize their Minecraft experience, particularly on servers with anti-cheat systems. However, users should be aware that using these features may violate server rules, potentially leading to bans.
-
-## Useful Links
-
-* [Github Repository](https://github.com/MeteorClientPlus/MeteorPlus)
-* [Latest Download](/en/download/?MeteorClientPlus/MeteorPlus){target="_blank"}
-* [Download Link](https://meteorclientplus.github.io/versions.html)
-* [Discord](https://discord.com/invite/N3gqYc7GRS)
-* [Telegram](https://t.me/+E3PuLb8cZOlmZWIy)
-* [Guilded.gg](https://www.guilded.gg/i/27dAlJKk)
 
 ## Why Author is Trustworthy
 

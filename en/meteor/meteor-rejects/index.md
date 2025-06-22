@@ -1,7 +1,7 @@
 ---
 layout: doc
 
-title: Meteor Rejects Client Addon
+title: Meteor Rejects Addon for Meteor Client
 description: An addon for Meteor Client that adds rejected and ported features
 
 head:
@@ -12,6 +12,7 @@ head:
     - name: keywords
       content: Meteor Rejects, Meteor Rejects Meteor Client Addon, meteor client, meteor client addon, minecraft mods
 ---
+# Meteor Rejects Addon for Meteor Client
 ::: warning
 I have taken this all infomation from developer's new & old Github commits and explored the modules manually. So if there is something that is not correct, please do let me know.
 :::
@@ -19,6 +20,14 @@ I have taken this all infomation from developer's new & old Github commits and e
 ## Introduction
 
 Meteor Rejects is an addon designed to enhance the Meteor Client, a widely-used utility mod for Minecraft built on the Fabric mod loader. This addon introduces features that were either rejected from the main Meteor Client or ported from other Minecraft clients, offering players additional tools to customize and improve their gameplay experience. Whether you’re looking for advanced combat options, new commands, or enhanced user interface elements, Meteor Rejects provides a range of functionalities to meet diverse needs.
+
+## Usefull Links
+
+* [Advanced Demo/Preview](/en/meteor/preview/?AntiCope/meteor-rejects/tree/master/src/main/java/anticope/rejects/modules), [Simple Previewer](/en/meteor/simple/?AntiCope/meteor-rejects/tree/master/src/main/java/anticope/rejects/modules)
+* [Github Repository](https://github.com/AntiCope/meteor-rejects)
+* [Latest Download](/en/download/?AntiCope/meteor-rejects){target="_blank"}
+* [All Versions](https://github.com/AntiCope/meteor-rejects/tags)
+* [Discord](https://discord.gg/9mrRPGKYU3)
 
 ## Supported Minecraft Versions
 
@@ -114,13 +123,6 @@ Meteor Rejects provides additional settings to customize the addon’s behavior:
 * **Duplicate Module Names** : Allows modules to share the same name, providing flexibility in module management.
 
 These features make Meteor Rejects a versatile addon, catering to players who want more control, customization, and utility in their Minecraft experience.
-
-## Usefull Links
-
-* [Github Repository](https://github.com/AntiCope/meteor-rejects)
-* [Latest Download](/en/download/?AntiCope/meteor-rejects){target="_blank"}
-* [All Versions](https://github.com/AntiCope/meteor-rejects/tags)
-* [Discord](https://discord.gg/9mrRPGKYU3)
 
 ## Why the Author Is Trustworthy?
 

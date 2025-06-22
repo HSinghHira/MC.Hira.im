@@ -12,6 +12,7 @@ head:
     - name: keywords
       content: how to?, modrinth, install mods in modrinth, how to install mods, install mods in minecraft, meteor client, meteor client addon, minecraft mods
 ---
+# Credits
 ## Logos and Images
 
 * https://modrinth.com/

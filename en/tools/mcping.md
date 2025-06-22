@@ -13,6 +13,7 @@ head:
     - name: keywords
       content: Minecraft server ping, Minecraft server status, Minecraft tool, server checker, Vue.js tool, Minecraft server monitor, multiplayer server status
 ---
+# Minecraft Server Ping Tool
 ## Introduction
 
 The Minecraft Server Ping Tool is a Vue.js-based web application designed to check the status of multiple Minecraft servers simultaneously. By entering server IP addresses, users can quickly retrieve detailed information about each server's availability, player count, version, and more. This tutorial explains what the tool does, how to use it, and why it stands out compared to other similar tools.

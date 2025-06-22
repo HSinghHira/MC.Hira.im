@@ -13,6 +13,7 @@ head:
     - name: keywords
       content: Litematic viewer, Minecraft schematic viewer, 3D Minecraft visualizer, Vue.js tool, Three.js renderer, Minecraft Litematica, schematic visualizer
 ---
+# Litematic Schematics Viewer
 ::: warning
 The tool is still under development. Not fully functionable and you may face some bugs.
 :::

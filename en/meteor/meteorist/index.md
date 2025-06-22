@@ -12,6 +12,7 @@ head:
     - name: keywords
       content: Meteorist, Meteorist Meteor Client Addon, meteor client, meteor client addon, minecraft mods
 ---
+# Meteorist Addon for Meteor Client
 ::: warning
 I have taken this all infomation from developer's new & old Github commits and explored the modules manually. So if there is something that is not correct, please do let me know.
 :::
@@ -19,6 +20,13 @@ I have taken this all infomation from developer's new & old Github commits and e
 ## Introduction
 
 **Meteorist** is an addon for Meteor Client that adds useful modules and commands for non-vanilla anarchy servers. This addon was created by Zgoly and focuses on providing practical tools that work well on modded servers. The addon includes 28 different modules, 4 commands, and preset configurations.
+
+## Useful Links
+
+* [Advanced Demo/Preview](/en/meteor/preview/?Zgoly/Meteorist/tree/main/src/main/java/zgoly/meteorist/modules), [Simple Previewer](/en/meteor/simple/?Zgoly/Meteorist/tree/main/src/main/java/zgoly/meteorist/modules)
+* [Github Repository](https://github.com/Zgoly/Meteorist)
+* [Latest Download](/en/download/?Zgoly/Meteorist){target="_blank"}
+* [All Versions](https://github.com/Zgoly/Meteorist/tags)
 
 ## Supported Minecraft Versions
 
@@ -90,12 +98,6 @@ The addon requires the latest development build of Meteor Client to work properl
 ### Preset Configurations
 
 The addon includes presets for fall damage calculations and distance measurements.
-
-## Useful Links
-
-* [Github Repository](https://github.com/Zgoly/Meteorist)
-* [Latest Download](/en/download/?Zgoly/Meteorist){target="_blank"}
-* [All Versions](https://github.com/Zgoly/Meteorist/tags)
 
 ## Why the Author is Trustworthy
 

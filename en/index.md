@@ -3,10 +3,10 @@ layout: home
 redirect: /en/ 
 
 hero:
-  name: "All About Minecraft"
-  text: "Basically"
-  textsuffix: ' Everything'
-  tagline: Goal is to provide every Link, Download, Tutorial, etc about is block game known as Minecraft.
+  name: "Basically Everything"
+  text: "Minecraft"
+  textsuffix: ' Gamer Needs'
+  tagline: Goal is to provide every Link, Download, Tutorial, Tool, etc about this block game known as Minecraft.
   image:
     src: /data/home.png
     alt: All About Minecraft

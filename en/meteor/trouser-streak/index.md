@@ -12,6 +12,7 @@ head:
     - name: keywords
       content: Trouser-Streak, Trouser-Streak Meteor Client Addon, meteor client, meteor client addon, minecraft mods
 ---
+# Trouser-Streak Addon for Meteor Client
 ::: warning
 I have taken this all infomation from developer's new & old Github commits and explored the modules manually. So if there is something that is not correct, please do let me know.
 :::
@@ -21,6 +22,14 @@ I have taken this all infomation from developer's new & old Github commits and e
 **Trouser-Streak** is a powerful addon for Meteor Client that adds over 60 specialized modules. This addon focuses on griefing, chunk tracing, base hunting, and server exploration. It works as an extension to Meteor Client and requires the base client to function.
 
 The addon is open source and actively maintained by etianl and team. It gets regular updates with new features and bug fixes. The project has a strong community with 390 stars on GitHub.
+
+## Useful Links
+
+* [Demo/Preview](/en/meteor/preview/?etianl/Trouser-Streak/tree/main/src/main/java/pwn/noobs/trouserstreak/modules/)
+* [Github Repository](https://github.com/etianl/Trouser-Streak)
+* [Latest Download](/en/download/?etianl/Trouser-Streak){target="_blank"}
+* [Download Other Versions](https://github.com/etianl/Trouser-Streak/tags)
+* [Official Discord](https://discord.gg/3RUjaRzdKv)
 
 ## Supported Minecraft Versions
 
@@ -100,13 +109,6 @@ Modules that require operator or creative mode:
 - **InstaMineNuker** - Instantly mines blocks
 - **NbtEditor** - Creates custom items and entities
 - **ViewNbtCommand** - Shows NBT data for items
-
-## Useful Links
-
-* [Github Repository](https://github.com/etianl/Trouser-Streak)
-* [Latest Download](/en/download/?etianl/Trouser-Streak){target="_blank"}
-* [Older Versions](https://github.com/etianl/Trouser-Streak/tags)
-* [Discord](https://discord.gg/3RUjaRzdKv)
 
 ## Why The Author Is Trustworthy
 
