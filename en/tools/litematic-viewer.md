@@ -22,6 +22,10 @@ The tool is still under development. Not fully functionable and you may face som
 
 The **Litematic Schematics Viewer** is a Vue.js and Three.js-based web application designed to visualize Minecraft **`.litematic`** schematic files in a 3D environment. It allows users to upload Litematic files, render their block structures with accurate Minecraft textures, and interact with the 3D model through rotation and zooming. This tutorial provides an overview of what the tool does, its limitations, and SEO metadata to optimize its discoverability.
 
+## Litematic Viewer
+
+<LitematicViewer />
+
 ## What Does the Tool Do?
 
 The Litematic Viewer Tool enables users to:
@@ -38,8 +42,6 @@ The Litematic Viewer Tool enables users to:
 * **Handle Large Schematics** : Render up to 50,000 blocks with caching for textures, materials, and geometries to optimize performance.
 
 The tool is ideal for Minecraft builders, modders, or server administrators who need to preview Litematic schematics in a browser-based 3D viewer.
-
-<LitematicViewer />
 
 ## Limitations
 

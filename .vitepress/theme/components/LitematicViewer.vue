@@ -1,8 +1,8 @@
-
 <script setup lang="ts">
 import { onMounted, ref, nextTick, onBeforeUnmount } from 'vue'
 import * as THREE from 'three'
 import { BlockState } from 'deepslate'
+
 
 const loading = ref(true)
 const error = ref('')
@@ -44,8 +44,8 @@ class NBTParser {
 
   readInt(): number {
     if (this.pos + 3 >= this.data.length) throw new Error('Unexpected end of data')
-    const value = (this.data[this.pos] << 24) | (this.data[this.pos + 1] << 16) | 
-                  (this.data[this.pos + 2] << 8) | this.data[this.pos + 3]
+    const value = (this.data[this.pos] << 24) | (this.data[this.pos + 1] << 16) |
+      (this.data[this.pos + 2] << 8) | this.data[this.pos + 3]
     this.pos += 4
     return value
   }
@@ -551,14 +551,13 @@ function getBlockGeometry(blockState: BlockState): THREE.BufferGeometry {
   return geometry
 }
 
-async function handleFileUpload(event: Event) {
-  const input = event.target as HTMLInputElement
-  if (input.files && input.files[0]) {
+async function handleFileUpload(event: any) {
+  const file = event.files[0] // PrimeVue FileUpload passes files in event.files
+  if (file) {
     try {
       loading.value = true
       error.value = ''
       debugInfo.value = 'Loading file from upload...'
-      const file = input.files[0]
       const compressed = await file.arrayBuffer()
       debugInfo.value = `File loaded: ${compressed.byteLength} bytes`
       await processFile(new Uint8Array(compressed))
@@ -674,7 +673,7 @@ onMounted(async () => {
 
     const urlParams = new URLSearchParams(window.location.search)
     let fileURL = urlParams.get('file') || urlParams.get('url')
-    
+
     if (!fileURL) {
       debugInfo.value += '\nNo file URL provided. Please upload a file.'
       loading.value = false
@@ -724,7 +723,7 @@ function decodeBitPackedLongArray(longArray: bigint[], bitsPerEntry: number, arr
       const bitsFromFirstLong = 64 - localBitIndex
       const bitsFromSecondLong = bitsPerEntry - bitsFromFirstLong
       const firstPart = (longArray[longIndex] >> BigInt(localBitIndex)) & ((1n << BigInt(bitsFromFirstLong)) - 1n)
-      const secondPart = longIndex + 1 < longArray.length 
+      const secondPart = longIndex + 1 < longArray.length
         ? (longArray[longIndex + 1] & ((1n << BigInt(bitsFromSecondLong)) - 1n))
         : 0n
       value = firstPart | (secondPart << BigInt(bitsFromFirstLong))
@@ -858,7 +857,7 @@ async function initThree(sizeArray: number[], palette: BlockState[], blockStates
       const deltaX = e.clientX - mouseX
       const deltaY = e.clientY - mouseY
       cameraAngleX += deltaX * 0.005
-      cameraAngleY = Math.max(-Math.PI/2 + 0.1, Math.min(Math.PI/2 - 0.1, cameraAngleY + deltaY * 0.005))
+      cameraAngleY = Math.max(-Math.PI / 2 + 0.1, Math.min(Math.PI / 2 - 0.1, cameraAngleY + deltaY * 0.005))
       updateCamera()
       mouseX = e.clientX
       mouseY = e.clientY
@@ -912,9 +911,11 @@ function getBlockColor(blockName: string): number {
 
 <template>
   <div class="p-4">
-    <h1 class="mb-4 font-bold text-2xl">Litematic Viewer</h1>
-    <div class="mb-4">
-      <input type="file" accept=".litematic" @change="handleFileUpload" />
+
+    <div class="flex justify-between items-center content-start mb-4">
+
+      <FileUpload mode="basic" accept=".litematic" :maxFileSize="10000000" @select="handleFileUpload"
+        chooseLabel="Select Litematic File" />
     </div>
     <div v-if="error" class="bg-red-100 p-4 rounded-lg text-red-600">
       Error: {{ error }}
@@ -944,6 +945,7 @@ canvas {
   max-width: 100%;
   cursor: grab;
 }
+
 canvas:active {
   cursor: grabbing;
 }

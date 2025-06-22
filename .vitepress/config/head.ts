@@ -10,7 +10,10 @@ export const head: HeadConfig[] = [
   ['meta', { name: 'googlebot', content: 'index, follow' }],
   ['meta', { name: 'theme-color', content: '#10b981' }],
   ['meta', { name: 'keywords', content: 'Minecraft, mods, tutorials, Meteor Client, modding, gaming' }],
-  
+
+  ['meta', { name: 'google-site-verification', content: 'oQMdsS94GsVMXmnVVFsxY4syJf656ZWAXRu_g_fQIY8' }],
+
+
   // Open Graph
   ['meta', { property: 'og:type', content: 'website' }],
   ['meta', { property: 'og:site_name', content: 'All About Minecraft' }],

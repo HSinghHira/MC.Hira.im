@@ -7,6 +7,7 @@ import Aura from '@primevue/themes/aura'
 import Chip from 'primevue/chip'
 import Button from 'primevue/button'
 import Tag from 'primevue/tag'
+import FileUpload from 'primevue/fileupload' // Add this line
 
 import { HomeUnderline } from '@theojs/lumen'
 
@@ -34,12 +35,10 @@ export default {
     app.component('Button', Button)
     app.component('Tag', Tag)
     app.component('Chip', Chip)
+    app.component('FileUpload', FileUpload) // Add this line
     app.component('Home', HomeUnderline)
     app.component('Download', Download)
     app.component('LitematicViewer', LitematicViewer)
     app.component('MinecraftServerPing', MinecraftServerPing)
-
-
   },
-
 } satisfies Theme
