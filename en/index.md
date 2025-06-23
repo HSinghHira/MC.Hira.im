@@ -5,7 +5,7 @@ redirect: /en/
 hero:
   name: "Basically Everything"
   text: "Minecraft"
-  textsuffix: ' Gamer Needs'
+  textsuffix: 'Gamer Needs'
   tagline: Goal is to provide every Link, Download, Tutorial, Tool, etc about this block game known as Minecraft.
   image:
     src: /data/home.png
