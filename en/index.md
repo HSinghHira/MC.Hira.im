@@ -6,7 +6,7 @@ hero:
   name: "Basically Everything"
   text: "Minecraft"
   textsuffix: 'Gamer Needs'
-  tagline: Goal is to provide every Link, Download, Tutorial, Tool, etc about this block game known as Minecraft.
+  tagline: The mission is to gather every link, resource, tutorial, and tool you’ll ever need for the ultimate Minecraft experience, all in one place..
   image:
     src: /data/home.png
     alt: All About Minecraft
