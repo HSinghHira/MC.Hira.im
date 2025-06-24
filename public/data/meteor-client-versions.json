@@ -1,0 +1,440 @@
+[
+  {
+    "version": "0.1.0",
+    "minecraft_versions": ["1.14.4"],
+    "downloads": ["https://mc.hira.im/meteor-archive/meteor-client-0.1.0.jar"],
+    "source_code": "https://github.com/MeteorDevelopment/meteor-client/releases/tag/v0.1.0",
+    "release_date": "2020-03-17"
+  },
+  {
+    "version": "0.1.1",
+    "minecraft_versions": ["1.14.4"],
+    "downloads": ["https://mc.hira.im/meteor-archive/meteor-client-0.1.1.jar"],
+    "source_code": "https://github.com/MeteorDevelopment/meteor-client/releases/tag/v0.1.1",
+    "release_date": "2020-03-18"
+  },
+  {
+    "version": "0.1.2",
+    "minecraft_versions": ["1.14.4"],
+    "downloads": ["https://mc.hira.im/meteor-archive/meteor-client-0.1.2.jar"],
+    "source_code": "https://github.com/MeteorDevelopment/meteor-client/releases/tag/v0.1.2",
+    "release_date": "2020-03-19"
+  },
+  {
+    "version": "0.1.3",
+    "minecraft_versions": ["1.14.4"],
+    "downloads": ["https://mc.hira.im/meteor-archive/meteor-client-0.1.3.jar"],
+    "source_code": "https://github.com/MeteorDevelopment/meteor-client/releases/tag/v0.1.3",
+    "release_date": "2020-03-20"
+  },
+  {
+    "version": "0.1.4",
+    "minecraft_versions": ["1.14.4"],
+    "downloads": ["https://mc.hira.im/meteor-archive/meteor-client-0.1.4.jar"],
+    "source_code": "https://github.com/MeteorDevelopment/meteor-client/releases/tag/v0.1.4",
+    "release_date": "2020-03-21"
+  },
+  {
+    "version": "0.1.5",
+    "minecraft_versions": ["1.14.4"],
+    "downloads": ["https://mc.hira.im/meteor-archive/meteor-client-0.1.5.jar"],
+    "source_code": "https://github.com/MeteorDevelopment/meteor-client/releases/tag/v0.1.5",
+    "release_date": "2020-03-22"
+  },
+  {
+    "version": "0.1.6",
+    "minecraft_versions": ["1.14.4"],
+    "downloads": ["https://mc.hira.im/meteor-archive/meteor-client-0.1.6.jar"],
+    "source_code": "https://github.com/MeteorDevelopment/meteor-client/releases/tag/v0.1.6",
+    "release_date": "2020-03-23"
+  },
+  {
+    "version": "0.1.7",
+    "minecraft_versions": ["1.14.4", "1.15.2"],
+    "downloads": [
+      "https://mc.hira.im/meteor-archive/meteor-client-0.1.7-1.14.4.jar",
+      "https://mc.hira.im/meteor-archive/meteor-client-0.1.7-1.15.2.jar"
+    ],
+    "source_code": "https://github.com/MeteorDevelopment/meteor-client/releases/tag/v0.1.7",
+    "release_date": "2020-03-25"
+  },
+  {
+    "version": "0.1.8",
+    "minecraft_versions": ["1.14.4", "1.15.2"],
+    "downloads": [
+      "https://mc.hira.im/meteor-archive/meteor-client-0.1.8-1.14.4.jar",
+      "https://mc.hira.im/meteor-archive/meteor-client-0.1.8-1.15.2.jar"
+    ],
+    "source_code": "https://github.com/MeteorDevelopment/meteor-client/releases/tag/v0.1.8",
+    "release_date": "2020-03-27"
+  },
+  {
+    "version": "0.1.9",
+    "minecraft_versions": ["1.14.4", "1.15.2"],
+    "downloads": [
+      "https://mc.hira.im/meteor-archive/meteor-client-0.1.9-1.14.4.jar",
+      "https://mc.hira.im/meteor-archive/meteor-client-0.1.9-1.15.2.jar"
+    ],
+    "source_code": "https://github.com/MeteorDevelopment/meteor-client/releases/tag/v0.1.9",
+    "release_date": "2020-03-29"
+  },
+  {
+    "version": "0.2.0",
+    "minecraft_versions": ["1.14.4", "1.15.2"],
+    "downloads": [
+      "https://mc.hira.im/meteor-archive/meteor-client-0.2.0-1.14.4.jar",
+      "https://mc.hira.im/meteor-archive/meteor-client-0.2.0-1.15.2.jar"
+    ],
+    "source_code": "https://github.com/MeteorDevelopment/meteor-client/releases/tag/v0.2.0",
+    "release_date": "2020-04-01"
+  },
+  {
+    "version": "0.2.1",
+    "minecraft_versions": ["1.14.4", "1.15.2"],
+    "downloads": [
+      "https://mc.hira.im/meteor-archive/meteor-client-0.2.1-1.14.4.jar",
+      "https://mc.hira.im/meteor-archive/meteor-client-0.2.1-1.15.2.jar"
+    ],
+    "source_code": "https://github.com/MeteorDevelopment/meteor-client/releases/tag/v0.2.1",
+    "release_date": "2020-04-05"
+  },
+  {
+    "version": "0.2.2",
+    "minecraft_versions": ["1.14.4", "1.15.2"],
+    "downloads": [
+      "https://mc.hira.im/meteor-archive/meteor-client-0.2.2-1.14.4.jar",
+      "https://mc.hira.im/meteor-archive/meteor-client-0.2.2-1.15.2.jar"
+    ],
+    "source_code": "https://github.com/MeteorDevelopment/meteor-client/releases/tag/v0.2.2",
+    "release_date": "2020-04-10"
+  },
+  {
+    "version": "0.2.3",
+    "minecraft_versions": ["1.14.4", "1.15.2"],
+    "downloads": [
+      "https://mc.hira.im/meteor-archive/meteor-client-0.2.3-1.14.4.jar",
+      "https://mc.hira.im/meteor-archive/meteor-client-0.2.3-1.15.2.jar"
+    ],
+    "source_code": "https://github.com/MeteorDevelopment/meteor-client/releases/tag/v0.2.3",
+    "release_date": "2020-04-15"
+  },
+  {
+    "version": "0.2.4",
+    "minecraft_versions": ["1.14.4", "1.15.2"],
+    "downloads": [
+      "https://mc.hira.im/meteor-archive/meteor-client-0.2.4-1.14.4.jar",
+      "https://mc.hira.im/meteor-archive/meteor-client-0.2.4-1.15.2.jar"
+    ],
+    "source_code": "https://github.com/MeteorDevelopment/meteor-client/releases/tag/v0.2.4",
+    "release_date": "2020-04-20"
+  },
+  {
+    "version": "0.2.5",
+    "minecraft_versions": ["1.15.2"],
+    "downloads": [],
+    "source_code": "https://github.com/MeteorDevelopment/meteor-client/releases/tag/v0.2.5",
+    "release_date": "2020-04-25"
+  },
+  {
+    "version": "0.2.6",
+    "minecraft_versions": ["1.15.2"],
+    "downloads": ["https://mc.hira.im/meteor-archive/meteor-client-0.2.6-1.15.2.jar"],
+    "source_code": "https://github.com/MeteorDevelopment/meteor-client/releases/tag/v0.2.6",
+    "release_date": "2020-05-01"
+  },
+  {
+    "version": "0.2.7",
+    "minecraft_versions": ["1.15.2"],
+    "downloads": [],
+    "source_code": "https://github.com/MeteorDevelopment/meteor-client/releases/tag/v0.2.7",
+    "release_date": "2020-05-05"
+  },
+  {
+    "version": "0.2.8",
+    "minecraft_versions": ["1.14.4"],
+    "downloads": ["https://mc.hira.im/meteor-archive/meteor-client-0.2.8.jar"],
+    "source_code": "https://github.com/MeteorDevelopment/meteor-client/releases/tag/v0.2.8",
+    "release_date": "2020-05-10"
+  },
+  {
+    "version": "0.2.9",
+    "minecraft_versions": ["1.15.2"],
+    "downloads": [],
+    "source_code": "https://github.com/MeteorDevelopment/meteor-client/releases/tag/v0.2.9",
+    "release_date": "2020-05-15"
+  },
+  {
+    "version": "0.3.0",
+    "minecraft_versions": ["1.16.1"],
+    "downloads": ["https://mc.hira.im/meteor-archive/meteor-client-0.3.0.1.jar"],
+    "source_code": "https://github.com/MeteorDevelopment/meteor-client/releases/tag/v0.3.0",
+    "release_date": "2020-06-01"
+  },
+  {
+    "version": "0.3.1",
+    "minecraft_versions": ["1.16.1"],
+    "downloads": [],
+    "source_code": "https://github.com/MeteorDevelopment/meteor-client/releases/tag/v0.3.1",
+    "release_date": "2020-06-05"
+  },
+  {
+    "version": "0.3.2",
+    "minecraft_versions": ["1.16.1"],
+    "downloads": [],
+    "source_code": "https://github.com/MeteorDevelopment/meteor-client/releases/tag/v0.3.2",
+    "release_date": "2020-06-10"
+  },
+  {
+    "version": "0.3.3",
+    "minecraft_versions": ["1.16.1"],
+    "downloads": [],
+    "source_code": "https://github.com/MeteorDevelopment/meteor-client/releases/tag/v0.3.3",
+    "release_date": "2020-06-15"
+  },
+  {
+    "version": "0.3.4",
+    "minecraft_versions": ["1.16.2"],
+    "downloads": [],
+    "source_code": "https://github.com/MeteorDevelopment/meteor-client/releases/tag/v0.3.4",
+    "release_date": "2020-08-01"
+  },
+  {
+    "version": "0.3.5",
+    "minecraft_versions": ["1.16.2"],
+    "downloads": [],
+    "source_code": "https://github.com/MeteorDevelopment/meteor-client/releases/tag/v0.3.5",
+    "release_date": "2020-08-10"
+  },
+  {
+    "version": "0.3.6",
+    "minecraft_versions": ["1.16.3"],
+    "downloads": ["https://mc.hira.im/meteor-archive/meteor-client-0.3.6.jar"],
+    "source_code": "https://github.com/MeteorDevelopment/meteor-client/releases/tag/v0.3.6",
+    "release_date": "2020-09-01"
+  },
+  {
+    "version": "0.3.7",
+    "minecraft_versions": ["1.16.3"],
+    "downloads": [],
+    "source_code": "https://github.com/MeteorDevelopment/meteor-client/releases/tag/v0.3.7",
+    "release_date": "2020-09-10"
+  },
+  {
+    "version": "0.3.8",
+    "minecraft_versions": ["1.16.4"],
+    "downloads": ["https://mc.hira.im/meteor-archive/meteor-client-0.3.8.jar"],
+    "source_code": "https://github.com/MeteorDevelopment/meteor-client/releases/tag/v0.3.8",
+    "release_date": "2020-11-01"
+  },
+  {
+    "version": "0.3.9",
+    "minecraft_versions": ["1.16.4"],
+    "downloads": [],
+    "source_code": "https://github.com/MeteorDevelopment/meteor-client/releases/tag/v0.3.9",
+    "release_date": "2020-11-10"
+  },
+  {
+    "version": "0.4.0",
+    "minecraft_versions": ["1.16.5"],
+    "downloads": [],
+    "source_code": "https://github.com/MeteorDevelopment/meteor-client/releases/tag/v0.4.0",
+    "release_date": "2021-01-15"
+  },
+  {
+    "version": "0.4.1",
+    "minecraft_versions": ["1.16.5"],
+    "downloads": [],
+    "source_code": "https://github.com/MeteorDevelopment/meteor-client/releases/tag/v0.4.1",
+    "release_date": "2021-01-20"
+  },
+  {
+    "version": "0.4.2",
+    "minecraft_versions": ["1.16.5"],
+    "downloads": ["https://mc.hira.im/meteor-archive/meteor-client-0.4.2.jar"],
+    "source_code": "https://github.com/MeteorDevelopment/meteor-client/releases/tag/v0.4.2",
+    "release_date": "2021-02-01"
+  },
+  {
+    "version": "0.4.3",
+    "minecraft_versions": ["1.16.5"],
+    "downloads": [],
+    "source_code": "https://github.com/MeteorDevelopment/meteor-client/releases/tag/v0.4.3",
+    "release_date": "2021-02-10"
+  },
+  {
+    "version": "0.4.4",
+    "minecraft_versions": ["1.16.5"],
+    "downloads": ["https://mc.hira.im/meteor-archive/meteor-client-0.4.4.jar"],
+    "source_code": "https://github.com/MeteorDevelopment/meteor-client/releases/tag/v0.4.4",
+    "release_date": "2021-03-01"
+  },
+  {
+    "version": "0.4.5",
+    "minecraft_versions": ["1.17.1"],
+    "downloads": ["https://mc.hira.im/meteor-archive/meteor-client-0.4.5.jar"],
+    "source_code": "https://github.com/MeteorDevelopment/meteor-client/releases/tag/v0.4.5",
+    "release_date": "2021-07-01"
+  },
+  {
+    "version": "0.4.6",
+    "minecraft_versions": ["1.17.1"],
+    "downloads": [
+      "https://mc.hira.im/meteor-archive/meteor-client-0.4.6.jar",
+      "https://mc.hira.im/meteor-archive/meteor-client-0.4.6-1180.jar"
+    ],
+    "source_code": "https://github.com/MeteorDevelopment/meteor-client/releases/tag/v0.4.6",
+    "release_date": "2021-08-01"
+  },
+  {
+    "version": "0.4.7",
+    "minecraft_versions": ["1.18.1"],
+    "downloads": [
+      "https://mc.hira.im/meteor-archive/meteor-client-0.4.7-1373.jar",
+      "https://mc.hira.im/meteor-archive/meteor-client-0.4.7-1381.jar",
+      "https://mc.hira.im/meteor-archive/meteor-client-0.4.7-1388.jar",
+      "https://mc.hira.im/meteor-archive/meteor-client-0.4.7-1396.jar"
+    ],
+    "source_code": "https://github.com/MeteorDevelopment/meteor-client/releases/tag/v0.4.7",
+    "release_date": "2021-12-01"
+  },
+  {
+    "version": "0.4.8",
+    "minecraft_versions": ["1.18.2"],
+    "downloads": [
+      "https://mc.hira.im/meteor-archive/meteor-client-0.4.8.jar",
+      "https://mc.hira.im/meteor-archive/meteor-client-0.4.8-1427.jar",
+      "https://mc.hira.im/meteor-archive/meteor-client-0.4.8-1441.jar"
+    ],
+    "source_code": "https://github.com/MeteorDevelopment/meteor-client/releases/tag/v0.4.8",
+    "release_date": "2022-03-01"
+  },
+  {
+    "version": "0.4.9",
+    "minecraft_versions": ["1.18.2"],
+    "downloads": ["https://mc.hira.im/meteor-archive/meteor-client-0.4.9.jar"],
+    "source_code": "https://github.com/MeteorDevelopment/meteor-client/releases/tag/v0.4.9",
+    "release_date": "2022-04-01"
+  },
+  {
+    "version": "0.5.0",
+    "minecraft_versions": ["1.19"],
+    "downloads": [
+      "https://mc.hira.im/meteor-archive/meteor-client-0.5.0.jar",
+      "https://mc.hira.im/meteor-archive/meteor-client-0.5.0-1562.jar"
+    ],
+    "source_code": "https://github.com/MeteorDevelopment/meteor-client/releases/tag/v0.5.0",
+    "release_date": "2022-06-01"
+  },
+  {
+    "version": "0.5.1",
+    "minecraft_versions": ["1.19.2"],
+    "downloads": [
+      "https://mc.hira.im/meteor-archive/meteor-client-0.5.1.jar",
+      "https://mc.hira.im/meteor-archive/meteor-client-0.5.1-1571.jar",
+      "https://mc.hira.im/meteor-archive/meteor-client-0.5.1-1690.jar"
+    ],
+    "source_code": "https://github.com/MeteorDevelopment/meteor-client/releases/tag/v0.5.1",
+    "release_date": "2022-08-01"
+  },
+  {
+    "version": "0.5.2",
+    "minecraft_versions": ["1.19.3"],
+    "downloads": ["https://mc.hira.im/meteor-archive/meteor-client-0.5.2.jar"],
+    "source_code": "https://github.com/MeteorDevelopment/meteor-client/releases/tag/v0.5.2",
+    "release_date": "2022-12-01"
+  },
+  {
+    "version": "0.5.3",
+    "minecraft_versions": ["1.19.4"],
+    "downloads": ["https://mc.hira.im/meteor-archive/meteor-client-0.5.3.jar"],
+    "source_code": "https://github.com/MeteorDevelopment/meteor-client/releases/tag/v0.5.3",
+    "release_date": "2023-03-01"
+  },
+  {
+    "version": "0.5.4",
+    "minecraft_versions": ["1.20", "1.20.1"],
+    "downloads": ["https://mc.hira.im/meteor-archive/meteor-client-0.5.4.jar"],
+    "source_code": "https://github.com/MeteorDevelopment/meteor-client/releases/tag/v0.5.4",
+    "release_date": "2023-06-01"
+  },
+  {
+    "version": "0.5.5",
+    "minecraft_versions": ["1.20.2"],
+    "downloads": [
+      "https://mc.hira.im/meteor-archive/meteor-client-0.5.5.jar",
+      "https://mc.hira.im/meteor-archive/meteor-client-0.5.5-1964.jar"
+    ],
+    "source_code": "https://github.com/MeteorDevelopment/meteor-client/releases/tag/v0.5.5",
+    "release_date": "2023-09-01"
+  },
+  {
+    "version": "0.5.6",
+    "minecraft_versions": ["1.20.4"],
+    "downloads": [
+      "https://mc.hira.im/meteor-archive/meteor-client-0.5.6.jar",
+      "https://mc.hira.im/meteor-archive/meteor-client-0.5.6-1985.jar",
+      "https://mc.hira.im/meteor-archive/meteor-client-0.5.6-1993.jar",
+      "https://mc.hira.im/meteor-archive/meteor-client-0.5.6-1995.jar",
+      "https://mc.hira.im/meteor-archive/meteor-client-0.5.6-1996.jar",
+      "https://mc.hira.im/meteor-archive/meteor-client-0.5.6-1997.jar",
+      "https://mc.hira.im/meteor-archive/meteor-client-0.5.6-1998.jar",
+      "https://mc.hira.im/meteor-archive/meteor-client-0.5.6-1999.jar",
+      "https://mc.hira.im/meteor-archive/meteor-client-0.5.6-2001.jar",
+      "https://mc.hira.im/meteor-archive/meteor-client-0.5.6-2002.jar",
+      "https://mc.hira.im/meteor-archive/meteor-client-0.5.6-2003.jar",
+      "https://mc.hira.im/meteor-archive/meteor-client-0.5.6-2005.jar",
+      "https://mc.hira.im/meteor-archive/meteor-client-0.5.6-2007.jar",
+      "https://mc.hira.im/meteor-archive/meteor-client-0.5.6-2008.jar"
+    ],
+    "source_code": "https://github.com/MeteorDevelopment/meteor-client/releases/tag/v0.5.6",
+    "release_date": "2023-12-01"
+  },
+  {
+    "version": "0.5.7",
+    "minecraft_versions": ["1.20.6"],
+    "downloads": [
+      "https://mc.hira.im/meteor-archive/meteor-client-0.5.7.jar",
+      "https://mc.hira.im/meteor-archive/meteor-client-0.5.7-2079.jar"
+    ],
+    "source_code": "https://github.com/MeteorDevelopment/meteor-client/releases/tag/v0.5.7",
+    "release_date": "2024-04-01"
+  },
+  {
+    "version": "0.5.8",
+    "minecraft_versions": ["1.21.1"],
+    "downloads": [
+      "https://mc.hira.im/meteor-archive/meteor-client-0.5.8.jar",
+      "https://mc.hira.im/meteor-archive/meteor-client-0.5.8-2119.jar"
+    ],
+    "source_code": "https://github.com/MeteorDevelopment/meteor-client/releases/tag/v0.5.8",
+    "release_date": "2024-08-01"
+  },
+  {
+    "version": "0.5.9",
+    "minecraft_versions": ["1.21.2", "1.21.3"],
+    "downloads": ["https://mc.hira.im/meteor-archive/meteor-client-0.5.9.jar"],
+    "source_code": "https://github.com/MeteorDevelopment/meteor-client/releases/tag/v0.5.9",
+    "release_date": "2024-10-01"
+  },
+  {
+    "version": "1.21.4",
+    "minecraft_versions": ["1.21.4"],
+    "downloads": ["https://mc.hira.im/meteor-archive/meteor-client-1.21.4-42.jar"],
+    "source_code": "https://github.com/MeteorDevelopment/meteor-client/releases/tag/v1.21.4",
+    "release_date": "2024-12-01"
+  },
+  {
+    "version": "1.21.5",
+    "minecraft_versions": ["1.21.5"],
+    "downloads": ["https://mc.hira.im/meteor-archive/meteor-client-1.21.5-54.jar"],
+    "source_code": "https://github.com/MeteorDevelopment/meteor-client/releases/tag/v1.21.5",
+    "release_date": "2025-01-01"
+  },
+  {
+    "version": "1.21.6",
+    "minecraft_versions": ["1.21.6"],
+    "downloads": ["https://mc.hira.im/meteor-archive/meteor-client-1.21.6-4.jar"],
+    "source_code": "https://github.com/MeteorDevelopment/meteor-client/releases/tag/v1.21.6",
+    "release_date": "2025-02-01"
+  }
+]
