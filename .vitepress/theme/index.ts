@@ -25,7 +25,7 @@ import Download from './components/Download.vue'
 import LitematicViewer from './components/LitematicViewer.vue'
 import MinecraftServerPing from './components/MinecraftServerPing.vue'
 import MeteorArchivesTable from './components/MeteorArchivesTable.vue'
-import ProfileCard from './components/ProfileCard.vue'
+
 
 import './tailwind.css'
 import 'primeicons/primeicons.css'
@@ -62,6 +62,6 @@ export default {
     app.component('LitematicViewer', LitematicViewer)
     app.component('MinecraftServerPing', MinecraftServerPing)
     app.component('MeteorArchivesTable', MeteorArchivesTable)
-    app.component('ProfileCard', ProfileCard)
+
   },
 } satisfies Theme

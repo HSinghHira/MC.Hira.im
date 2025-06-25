@@ -1,6 +1,6 @@
 import { readdirSync, statSync, existsSync, readFileSync } from 'fs'
 import { join, basename } from 'path'
-import { textMappings } from '../config.mts'
+import { textMappings, baseDirs, headingBasedDirs } from '../config.mts'
 
 // Function to convert kebab-case to Title Case with custom mappings
 function toTitleCase(str: string): string {
@@ -102,8 +102,6 @@ export function generateSidebar(contentRoot: string): any[] {
       console.warn(`Content root does not exist: ${contentRoot}`)
       return sidebar
     }
-
-    const baseDirs = ['tutorials', 'meteor', 'tools', 'useful-sites']
     
     for (const baseDir of baseDirs) {
       const basePath = join(contentRoot, baseDir)
@@ -119,8 +117,7 @@ export function generateSidebar(contentRoot: string): any[] {
         items: []
       }
 
-      // Special case for 'useful-sites': index headings from index.md
-      if (baseDir === 'useful-sites') {
+      if (headingBasedDirs.includes(baseDir)) {
         const indexPath = join(basePath, 'index.md')
         if (existsSync(indexPath)) {
           // Add top-level link to the page itself as "Overview"

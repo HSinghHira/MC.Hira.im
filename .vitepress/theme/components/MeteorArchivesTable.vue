@@ -1,5 +1,5 @@
 <template>
-  <DataTable :value="archives" :paginator="true" :rows="10" :rowsPerPageOptions="[5, 10, 20]" responsiveLayout="scroll">
+  <DataTable :value="archives" :paginator="true" :rows="10" :rowsPerPageOptions="[5, 10, 20]" responsiveLayout="scroll" class="pb-4">
     <Column field="version" header="Meteor Version" :sortable="true"></Column>
     <Column field="minecraft_versions" header="Minecraft Version" :sortable="true">
       <template #body="slotProps">
@@ -11,11 +11,7 @@
         />
       </template>
     </Column>
-    <Column field="release_date" header="Release Date" :sortable="true">
-      <template #body="slotProps">
-        {{ formatDate(slotProps.data.release_date) }}
-      </template>
-    </Column>
+    
     <Column header="Download">
       <template #body="slotProps">
         <Button
@@ -76,7 +72,6 @@ interface Archive {
   minecraft_versions: string[]
   downloads: string[]
   source_code: string | null
-  release_date: string
 }
 
 // Reactive state
