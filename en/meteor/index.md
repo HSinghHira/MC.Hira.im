@@ -62,5 +62,11 @@ features:
     title: Glazed
     link: en/meteor/glazed
     details: Advanced addon for Meteor Client specifically designed for the DonutSMP server.
+
+  - icon:
+      src: /data/icons/meteor-villager-roller.png
+    title: Meteor Villager Roller
+    link: en/meteor/meteor-villager-roller
+    details: Advanced addon for Meteor Client specifically designed for the DonutSMP server.
       
 ---
