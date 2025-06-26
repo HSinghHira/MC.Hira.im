@@ -3,6 +3,7 @@ layout: doc
 
 title: BlackOut Addon for Meteor Client
 description: A detailed guide on using BlackOut, the powerful addon for Meteor Client that enhances your Minecraft PvP experience.
+pagefind-indexed: true
 
 head:
   - - meta

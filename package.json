@@ -1,7 +1,9 @@
 {
+  "name": "mc-hira-im",
+  "version": "1.0.0",
   "scripts": {
     "docs:dev": "vitepress dev docs",
-    "docs:build": "vitepress build docs && pagefind --site docs/.vitepress/dist --bundle-dir pagefind",
+    "docs:build": "vitepress build docs --debug && pagefind --site docs/.vitepress/dist --bundle-dir pagefind --verbose --glob \"**/*.html\"",
     "docs:preview": "vitepress preview docs"
   },
   "devDependencies": {
