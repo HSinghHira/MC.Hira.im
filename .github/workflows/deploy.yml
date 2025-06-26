@@ -31,7 +31,9 @@ jobs:
           cache: 'npm'
 
       - name: Clean install dependencies
-        run: npm ci
+        run: |
+          rm -rf node_modules package-lock.json
+          npm install
 
       - name: Build with VitePress
         run: npm run docs:build # Use package.json script to include Pagefind indexing
