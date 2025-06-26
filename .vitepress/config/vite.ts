@@ -1,8 +1,10 @@
 import tailwindcss from "@tailwindcss/vite"
 import type { UserConfig } from 'vite'
 
+
 export const viteConfig: UserConfig = {
-  plugins: [tailwindcss()],
+  plugins: 
+    [tailwindcss()],
   ssr: {
     noExternal: ['primevue']
   },

@@ -6,6 +6,7 @@ import { buildEnd } from './config/sitemap'
 import { generateSidebar } from './config/autosidebar'
 import { googleAnalyticsHead } from './config/tracking'
 
+
 export const textMappings: Record<string, string> = {
   // Custom Text Mappings
   'meteor': 'Meteor Client Addons',
