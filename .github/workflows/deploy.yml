@@ -31,18 +31,15 @@ jobs:
           cache: 'npm'
 
       - name: Clean install dependencies
-        run: npm ci # Use npm ci for consistent dependency installation
+        run: npm ci
 
       - name: Build with VitePress
-        run: npx vitepress build
-
-      - name: Generate Pagefind index
-        run: npx pagefind --site .vitepress/dist --bundle-dir pagefind
+        run: npm run docs:build # Use package.json script to include Pagefind indexing
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .vitepress/dist
+          path: docs/.vitepress/dist
 
   deploy:
     environment:
