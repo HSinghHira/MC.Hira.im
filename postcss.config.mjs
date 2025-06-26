@@ -5,7 +5,7 @@ export default {
   plugins: [
     tailwindcss,
     postcssIsolateStyles({
-      includeFiles: [/vp-doc\.css/, /base\.css/]
+      includeFiles: [/vp-doc\.css/, /base\.css/, /tailwind\.css/]
     })
   ]
 }

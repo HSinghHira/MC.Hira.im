@@ -3,10 +3,10 @@ import type { UserConfig } from 'vite'
 import { pagefindPlugin } from 'vitepress-plugin-pagefind'
 
 export const viteConfig: UserConfig = {
-  plugins: [
-    tailwindcss(),
-    pagefindPlugin()
-  ],
+ plugins: [
+  pagefindPlugin(),
+  tailwindcss()
+],
   ssr: {
     noExternal: ['primevue']
   },
