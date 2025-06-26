@@ -1,8 +1,8 @@
 <template>
   <Layout>
-   <template #home-hero-after>
-  <div class="mt-5"/>
-</template>
+    <template #home-hero-after>
+      <div class="mt-5" />
+    </template>
 
   </Layout>
 </template>

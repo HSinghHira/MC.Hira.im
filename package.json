@@ -13,7 +13,6 @@
     "sitemap": "^8.0.0",
     "tailwindcss": "^4.1.3",
     "vitepress": "^1.6.3",
-    "vitepress-plugin-pagefind": "^0.4.13",
     "vue": "^3.3.4"
   },
   "dependencies": {
