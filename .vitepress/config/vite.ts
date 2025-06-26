@@ -1,10 +1,12 @@
 import tailwindcss from "@tailwindcss/vite"
 import type { UserConfig } from 'vite'
-
+import { pagefindPlugin } from 'vitepress-plugin-pagefind'
 
 export const viteConfig: UserConfig = {
-  plugins: 
-    [tailwindcss()],
+  plugins: [
+    tailwindcss(),
+    pagefindPlugin()
+  ],
   ssr: {
     noExternal: ['primevue']
   },
