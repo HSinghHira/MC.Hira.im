@@ -6,6 +6,9 @@ description: Meteorist is a comprehensive addon for Meteor Client that adds 28 m
 
 head:
   - - meta
+    - name: robots
+      content: index
+  - - meta
     - name: description
       content: Meteorist is a comprehensive addon for Meteor Client that adds 28 modules and 4 commands specifically designed for non-vanilla anarchy Minecraft servers.
   - - meta

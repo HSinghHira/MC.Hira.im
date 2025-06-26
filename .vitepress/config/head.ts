@@ -1,8 +1,6 @@
 import type { HeadConfig, TransformContext } from 'vitepress'
 
 export const head: HeadConfig[] = [
-
-
   ['meta', { name: 'author', content: 'Harman Singh Hira' }],
   ['meta', { charset: 'UTF-8' }],
   ['meta', { name: 'viewport', content: 'width=device-width, initial-scale=1.0' }],
@@ -28,6 +26,7 @@ export const head: HeadConfig[] = [
   ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
   ['meta', { name: 'twitter:site', content: '@HSinghHira' }],
   ['meta', { name: 'twitter:creator', content: '@HSinghHira' }],
+  ['meta', { name: 'twitter:domain', content: 'mc.hira.im' }],
   // ['meta', { name: 'twitter:image', content: 'https://mc.hira.im/data/icons/og-image.png' }],
   
   // Links
@@ -41,7 +40,22 @@ export const head: HeadConfig[] = [
   ['link', { rel: 'preconnect', href: 'https://fonts.googleapis.com' }],
   ['link', { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' }],
   ['link', { rel: 'dns-prefetch', href: 'https://discord.gg' }],
-  ['link', { rel: 'dns-prefetch', href: 'https://github.com' }]
+  ['link', { rel: 'dns-prefetch', href: 'https://github.com' }],
+  
+  // Schema Markup
+  ['script', { type: 'application/ld+json' }, `
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "All About Minecraft",
+      "url": "https://mc.hira.im",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://mc.hira.im/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+  `]
 ]
 
 export const transformHead = ({ pageData }: TransformContext): HeadConfig[] => {
@@ -131,5 +145,15 @@ export const transformHead = ({ pageData }: TransformContext): HeadConfig[] => {
     head.push(['link', { rel: 'alternate', hreflang: 'x-default', href: enUrl }])
   }
   
+  // Schema Markup for individual pages
+  head.push(['script', { type: 'application/ld+json' }, JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": title,
+    "description": description,
+    "url": currentUrl,
+    "lastReviewed": lastModified
+  })])
+
   return head
 }

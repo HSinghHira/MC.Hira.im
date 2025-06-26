@@ -6,6 +6,9 @@ description: Adds advanced cheat features, enhancing PvE and PvP gameplay
 
 head:
   - - meta
+    - name: robots
+      content: index
+  - - meta
     - name: description
       content: Adds advanced cheat features, enhancing PvE and PvP gameplay
   - - meta

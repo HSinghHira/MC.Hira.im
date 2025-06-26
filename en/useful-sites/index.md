@@ -8,6 +8,9 @@ description: Explore a curated collection of the best Minecraft websites, organi
 
 head:
   - - meta
+    - name: robots
+      content: index
+  - - meta
     - name: description
       content: Explore a curated collection of the best Minecraft websites, organized into categories like server management, world exploration, design customization, and building aids. Whether you're a server admin, builder, or casual player, these resources will elevate your Minecraft experience with tools for skins, maps, commands, and more.
   - - meta

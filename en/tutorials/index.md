@@ -7,6 +7,9 @@ description: Discover a comprehensive collection of step-by-step Minecraft tutor
 
 head:
   - - meta
+    - name: robots
+      content: index
+  - - meta
     - name: description
       content: Discover a comprehensive collection of step-by-step Minecraft tutorials, guiding you through mod installation, gameplay tips, building techniques, and more. Perfect for beginners and seasoned players looking to enhance their Minecraft experience.
   - - meta

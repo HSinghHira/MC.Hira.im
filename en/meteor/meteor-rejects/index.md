@@ -6,6 +6,9 @@ description: An addon for Meteor Client that adds rejected and ported features
 
 head:
   - - meta
+    - name: robots
+      content: index
+  - - meta
     - name: description
       content: An addon for Meteor Client that adds rejected and ported features
   - - meta

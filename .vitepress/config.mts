@@ -26,11 +26,8 @@ export default defineConfig({
   title: "All About Minecraft",
   description: "Minecraft Related Tutorial and Downloads",
   base: '/',
-  
   locales,
-  
   vite: viteConfig,
-  
   head: [
     ...head,
     ...googleAnalyticsHead
@@ -46,5 +43,6 @@ export default defineConfig({
       '/en/': generateSidebar('./en'),
       '/pb/': generateSidebar('./pb')
     }
+  
   },
 })

@@ -6,6 +6,9 @@ description: A lightweight and performant Minecraft mod for enhanced gameplay.
 
 head:
   - - meta
+    - name: robots
+      content: index
+  - - meta
     - name: description
       content: A lightweight and performant Minecraft mod for enhanced gameplay.
   - - meta

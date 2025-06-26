@@ -1,6 +1,11 @@
 ---
 layout: home
 
+head:
+  - - meta
+    - name: robots
+      content: noindex
+
 hero:
   name: "Apologies!!"
   text: "Not Availble"

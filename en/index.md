@@ -2,6 +2,11 @@
 layout: home
 redirect: /en/ 
 
+head:
+  - - meta
+    - name: robots
+      content: index
+
 hero:
   name: "Basically Everything"
   text: "Minecraft"

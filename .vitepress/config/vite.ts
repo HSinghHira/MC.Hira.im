@@ -1,8 +1,18 @@
 import tailwindcss from "@tailwindcss/vite"
+import { SearchPlugin } from "vitepress-plugin-search"
 import type { UserConfig } from 'vite'
 
 export const viteConfig: UserConfig = {
-  plugins: [tailwindcss()],
+  plugins: [
+    tailwindcss(),
+    SearchPlugin({
+      previewLength: 62,
+      buttonLabel: "Search",
+      placeholder: "Search docs",
+      allow: [],
+      ignore: [],
+    })
+  ],
   ssr: {
     noExternal: ['primevue']
   },

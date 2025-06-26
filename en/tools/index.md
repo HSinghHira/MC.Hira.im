@@ -7,6 +7,9 @@ description: Discover a versatile suite of web-based Minecraft tools designed to
 
 head:
   - - meta
+    - name: robots
+      content: index
+  - - meta
     - name: description
       content: Discover a versatile suite of web-based Minecraft tools designed to enhance your gameplay, server management, and creative projects. From real-time server status checks to 3D schematic visualization and beyond, streamline your Minecraft experience with user-friendly, high-performance utilities.
   - - meta

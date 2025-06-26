@@ -8,6 +8,9 @@ description: A simple step-by-step tutorial on how to install mods in Minecraft.
 
 head:
   - - meta
+    - name: robots
+      content: index
+  - - meta
     - name: description
       content: A simple step-by-step tutorial on how to install mods in Minecraft.
   - - meta

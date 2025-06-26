@@ -8,9 +8,11 @@
     "@iconify/vue": "^5.0.0",
     "@tailwindcss/postcss": "^4.1.3",
     "@tailwindcss/vite": "^4.1.3",
+    "flexsearch": "^0.8.205",
     "sitemap": "^8.0.0",
     "tailwindcss": "^4.1.3",
     "vitepress": "^1.6.3",
+    "vitepress-plugin-search": "^1.0.4-alpha.22",
     "vue": "^3.3.4"
   },
   "dependencies": {

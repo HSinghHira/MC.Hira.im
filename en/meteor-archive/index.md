@@ -8,6 +8,9 @@ description: Archive of Meteor Client versions with corresponding Minecraft vers
 
 head:
   - - meta
+    - name: robots
+      content: index
+  - - meta
     - name: description
       content: Archive of Meteor Client versions with corresponding Minecraft versions, download links, and source code references.
   - - meta

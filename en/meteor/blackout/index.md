@@ -6,6 +6,9 @@ description: A detailed guide on using BlackOut, the powerful addon for Meteor C
 
 head:
   - - meta
+    - name: robots
+      content: index
+  - - meta
     - name: description
       content: Learn how to use BlackOut, the powerful addon for Meteor Client that enhances your Minecraft PvP experience with advanced modules like CrystalAura+, BedAura, and more.
   - - meta

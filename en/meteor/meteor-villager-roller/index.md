@@ -6,6 +6,9 @@ description: Learn how to use the meteor-villager-roller mod for Meteor Client t
 
 head:
   - - meta
+    - name: robots
+      content: index
+  - - meta
     - name: description
       content: Learn how to use the meteor-villager-roller mod for Meteor Client to efficiently find desired villager trades in Minecraft.
   - - meta

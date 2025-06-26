@@ -6,6 +6,9 @@ description: Explore the Lucid addon for Meteor Client - Enhance your Minecraft 
 
 head:
   - - meta
+    - name: robots
+      content: index
+  - - meta
     - name: description
       content: Explore the Lucid addon for Meteor Client - Enhance your Minecraft experience with advanced chat features and ESP modules for version 1.21.4.
   - - meta

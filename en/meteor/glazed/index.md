@@ -6,6 +6,9 @@ description: Learn how to use Glazed, a powerful Meteor Client addon for automat
 
 head:
   - - meta
+    - name: robots
+      content: index
+  - - meta
     - name: description
       content: Learn how to use Glazed, a powerful Meteor Client addon for automating tasks on DonutSMP in Minecraft.
   - - meta

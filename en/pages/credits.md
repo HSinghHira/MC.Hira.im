@@ -6,6 +6,9 @@ description:
 
 head:
   - - meta
+    - name: robots
+      content: index
+  - - meta
     - name: description
       content: 
   - - meta

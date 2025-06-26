@@ -7,6 +7,9 @@ description: A Vue.js and Three.js-based web tool for visualizing Minecraft Lite
 
 head:
   - - meta
+    - name: robots
+      content: index
+  - - meta
     - name: description
       content: A Vue.js and Three.js-based web tool for visualizing Minecraft Litematic schematics in 3D, with accurate block textures and interactive controls.
   - - meta

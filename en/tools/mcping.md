@@ -7,6 +7,9 @@ description: A powerful Vue.js-based tool for pinging multiple Minecraft servers
 
 head:
   - - meta
+    - name: robots
+      content: index
+  - - meta
     - name: description
       content: A powerful Vue.js-based tool for pinging multiple Minecraft servers, providing real-time status, player counts, and server details with a user-friendly interface.
   - - meta
