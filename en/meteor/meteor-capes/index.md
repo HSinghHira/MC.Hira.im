@@ -2,7 +2,7 @@
 layout: doc
 
 title: Meteor Capes Addon for Meteor Client
-description: Meteor Capes is aN addon for Meteor Client, allows players to add custom capes to their in-game character, providing a cosmetic enhancement that personalizes the Minecraft experience.
+description: Meteor Capes is an addon for Meteor Client, allows players to add custom capes to their in-game character, providing a cosmetic enhancement that personalizes the Minecraft experience.
 
 head:
   - - meta
@@ -10,7 +10,7 @@ head:
       content: index
   - - meta
     - name: description
-      content: Meteor Capes is aN addon for Meteor Client, allows players to add custom capes to their in-game character, providing a cosmetic enhancement that personalizes the Minecraft experience.
+      content: Meteor Capes is an addon for Meteor Client, allows players to add custom capes to their in-game character, providing a cosmetic enhancement that personalizes the Minecraft experience.
   - - meta
     - name: keywords
       content: Minecraft mod, Meteor Client, Server-crashing modules, Meteor Capes addon, custom capes
@@ -33,7 +33,7 @@ Meteor Capes is a free, open-source addon for Meteor Client, a widely used utili
 Meteor Capes is compatible with the following Minecraft versions, based on its release history:
 
 - **1.21.5**: The latest version, ensuring compatibility with the most recent Minecraft updates.
-- **1.20.1**: An earlier version, catering to players using older Minecraft releases.
+- **1.21.4**: An earlier version, catering to players using older Minecraft releases.
 
 ## Key Features and Modules
 

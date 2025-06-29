@@ -11,7 +11,7 @@
   {
     "title": "Meteor Capes",
     "link": "en/meteor/meteor-capes",
-    "description": "Add custom capes to Meteor Client with this addon.",
+    "description": "Allows players to add custom capes to their in-game character, providing a cosmetic enhancement.",
     "icon": "/data/icons/meteor-capes.png",
     "github_repo": "https://github.com/Gllody/meteor-capes",
     "mc_version": ["1.21.5", "1.21.4"]
