@@ -1,0 +1,180 @@
+name: Update Addon Data
+on:
+  schedule:
+    # Runs every day at 6 AM UTC (adjust time as needed)
+    - cron: '0 6 * * *'
+  workflow_dispatch: # Allows manual trigger
+  push:
+    paths:
+      - 'public/data/addons.json' # Runs when original file changes
+
+jobs:
+  update-addon-data:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        
+    - name: Install dependencies
+      run: npm install axios
+      
+    - name: Enhance addon data
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        cat << 'EOF' > enhance-addons.js
+        const fs = require('fs');
+        const axios = require('axios');
+        
+        async function enhanceAddonData() {
+          try {
+            console.log('🚀 Starting addon data enhancement...');
+            
+            // Read the original addons.json
+            const addonsData = JSON.parse(fs.readFileSync('public/data/addons.json', 'utf8'));
+            console.log(`📚 Found ${addonsData.length} addons to process`);
+            
+            const enhancedAddons = [];
+            
+            for (const addon of addonsData) {
+              console.log(`🔍 Processing: ${addon.title}`);
+              
+              try {
+                // Extract owner and repo from GitHub URL
+                const githubUrl = addon.github_repo;
+                const match = githubUrl.match(/github\.com\/([^\/]+)\/([^\/]+)/);
+                
+                if (!match) {
+                  console.log(`⚠️  Invalid GitHub URL for ${addon.title}`);
+                  enhancedAddons.push(addon);
+                  continue;
+                }
+                
+                const [, owner, repo] = match;
+                const cleanRepo = repo.replace(/\.git$/, ''); // Remove .git if present
+                
+                // Fetch repository data from GitHub API
+                const repoResponse = await axios.get(
+                  `https://api.github.com/repos/${owner}/${cleanRepo}`,
+                  {
+                    headers: {
+                      'Authorization': `token ${process.env.GITHUB_TOKEN}`,
+                      'Accept': 'application/vnd.github.v3+json'
+                    }
+                  }
+                );
+                
+                const repoData = repoResponse.data;
+                
+                // Fetch release data for download count
+                let totalDownloads = 0;
+                try {
+                  const releasesResponse = await axios.get(
+                    `https://api.github.com/repos/${owner}/${cleanRepo}/releases`,
+                    {
+                      headers: {
+                        'Authorization': `token ${process.env.GITHUB_TOKEN}`,
+                        'Accept': 'application/vnd.github.v3+json'
+                      }
+                    }
+                  );
+                  
+                  // Sum up all download counts from all releases
+                  totalDownloads = releasesResponse.data.reduce((total, release) => {
+                    return total + release.assets.reduce((assetTotal, asset) => {
+                      return assetTotal + asset.download_count;
+                    }, 0);
+                  }, 0);
+                } catch (releaseError) {
+                  console.log(`📦 No releases found for ${addon.title}`);
+                }
+                
+                // Create enhanced addon object
+                const enhancedAddon = {
+                  ...addon,
+                  stars: repoData.stargazers_count,
+                  forks: repoData.forks_count,
+                  watchers: repoData.watchers_count,
+                  open_issues: repoData.open_issues_count,
+                  last_updated: repoData.updated_at.split('T')[0], // Format: YYYY-MM-DD
+                  created_date: repoData.created_at.split('T')[0],
+                  language: repoData.language,
+                  downloads: totalDownloads,
+                  default_branch: repoData.default_branch,
+                  archived: repoData.archived,
+                  size: repoData.size // Repository size in KB
+                };
+                
+                enhancedAddons.push(enhancedAddon);
+                console.log(`✅ Enhanced: ${addon.title} (${repoData.stargazers_count} stars, ${totalDownloads} downloads)`);
+                
+                // Add delay to respect GitHub API rate limits
+                await new Promise(resolve => setTimeout(resolve, 1000));
+                
+              } catch (error) {
+                console.error(`❌ Error processing ${addon.title}:`, error.message);
+                // Keep the original addon data if GitHub API fails
+                enhancedAddons.push(addon);
+              }
+            }
+            
+            // Write enhanced data to new file
+            fs.writeFileSync(
+              'public/data/addons-enhanced.json', 
+              JSON.stringify(enhancedAddons, null, 2)
+            );
+            
+            console.log('🎉 Successfully created enhanced addon data!');
+            console.log(`📊 Processed ${enhancedAddons.length} addons`);
+            
+            // Create a summary report
+            const summary = {
+              total_addons: enhancedAddons.length,
+              last_updated: new Date().toISOString(),
+              stats: {
+                total_stars: enhancedAddons.reduce((sum, addon) => sum + (addon.stars || 0), 0),
+                total_downloads: enhancedAddons.reduce((sum, addon) => sum + (addon.downloads || 0), 0),
+                most_starred: enhancedAddons.reduce((max, addon) => 
+                  (addon.stars || 0) > (max.stars || 0) ? addon : max, enhancedAddons[0]
+                )?.title,
+                most_downloaded: enhancedAddons.reduce((max, addon) => 
+                  (addon.downloads || 0) > (max.downloads || 0) ? addon : max, enhancedAddons[0]
+                )?.title
+              }
+            };
+            
+            fs.writeFileSync(
+              'public/data/addon-stats.json',
+              JSON.stringify(summary, null, 2)
+            );
+            
+            console.log('📈 Summary Report:');
+            console.log(`   Total Stars: ${summary.stats.total_stars}`);
+            console.log(`   Total Downloads: ${summary.stats.total_downloads}`);
+            console.log(`   Most Starred: ${summary.stats.most_starred}`);
+            console.log(`   Most Downloaded: ${summary.stats.most_downloaded}`);
+            
+          } catch (error) {
+            console.error('💥 Fatal error:', error);
+            process.exit(1);
+          }
+        }
+        
+        enhanceAddonData();
+        EOF
+        
+        node enhance-addons.js
+        
+    - name: Commit and push changes
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add public/data/addons-enhanced.json public/data/addon-stats.json
+        git diff --staged --quiet || git commit -m "🤖 Auto-update addon data with GitHub stats"
+        git push
