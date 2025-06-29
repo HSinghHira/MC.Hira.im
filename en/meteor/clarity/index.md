@@ -1,7 +1,7 @@
 ---
 layout: doc
 
-title: Glazed Addon for Meteor Client
+title: Clarity Addon for Meteor Client
 description: Clarity is a powerful addon for Meteor Client, enhancing Minecraft gameplay with advanced server-crashing modules, utility features, and customizable HUD elements.
 
 head:

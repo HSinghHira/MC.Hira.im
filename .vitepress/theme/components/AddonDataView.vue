@@ -41,6 +41,7 @@
             optionLabel="version"
             optionValue="version"
             :maxSelectedLabels="1"
+            filter
             class="filter-select w-full"
 
           />
@@ -493,9 +494,6 @@ a {
 
 <script setup lang="ts">
 import { ref, onMounted, computed } from "vue";
-import MultiSelect from "primevue/multiselect";
-import FloatLabel from "primevue/floatlabel";
-import Select from "primevue/select";
 
 // Enhanced addon interface
 interface Addon {
@@ -521,7 +519,7 @@ interface Addon {
 // Reactive data
 const originalAddons = ref<Addon[]>([]);
 const loading = ref(true);
-const sortType = ref("alphabetical");
+const sortType = ref("stars");
 const sortOrder = ref("desc");
 const selectedVersion = ref<string[]>([]);
 

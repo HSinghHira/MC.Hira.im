@@ -1,53 +1,109 @@
 [
-
   {
     "title": "Clarity",
     "link": "en/meteor/clarity",
     "description": "Advanced addon for Meteor Client focused on exploits and server-crashing modules.",
     "icon": "/data/icons/clarity.png",
-    "github_repo":"https://github.com/ck-clarity/addon",
+    "github_repo": "https://github.com/ck-clarity/addon",
     "mc_version": ["1.21.4"]
+  },
+
+  {
+    "title": "Meteor Capes",
+    "link": "en/meteor/meteor-capes",
+    "description": "Add custom capes to Meteor Client with this addon.",
+    "icon": "/data/icons/meteor-capes.png",
+    "github_repo": "https://github.com/Gllody/meteor-capes",
+    "mc_version": ["1.21.5", "1.21.4"]
   },
   {
     "title": "Trouser-Streak",
     "link": "en/meteor/trouser-streak",
     "description": "Comprehensive modules for griefing, base hunting, and chunk tracing in Minecraft.",
     "icon": "/data/icons/trouser-streak.png",
-    "github_repo":"https://github.com/etianl/Trouser-Streak",
-    "mc_version": ["1.21.5", "1.21.4", "1.21.3", "1.21.1", "1.20.4", "1.20.6", "1.19.3", "1.17"]
+    "github_repo": "https://github.com/etianl/Trouser-Streak",
+    "mc_version": [
+      "1.21.5",
+      "1.21.4",
+      "1.21.3",
+      "1.21.1",
+      "1.20.4",
+      "1.20.6",
+      "1.19.3",
+      "1.17"
+    ]
   },
   {
     "title": "Meteorist",
     "link": "en/meteor/meteorist",
     "description": "Useful addon for Meteor Client specifically designed for anarchy Minecraft servers.",
     "icon": "/data/icons/meteorist.png",
-    "github_repo":"https://github.com/Zgoly/Meteorist",
-    "mc_version": ["1.21.5", "1.21.4", "1.21", "1.20.6", "1.20.4", "1.20.2", "1.20.1", "1.20", "1.19.3", "1.19.2"]
-
+    "github_repo": "https://github.com/Zgoly/Meteorist",
+    "mc_version": [
+      "1.21.5",
+      "1.21.4",
+      "1.21",
+      "1.20.6",
+      "1.20.4",
+      "1.20.2",
+      "1.20.1",
+      "1.20",
+      "1.19.3",
+      "1.19.2"
+    ]
   },
   {
     "title": "Meteor+",
     "link": "en/meteor/meteorplus",
     "description": "Adds advanced cheat features, enhancing PvE and PvP gameplay.",
     "icon": "/data/icons/meteorplus.png",
-    "github_repo":"https://github.com/MeteorClientPlus/MeteorPlus",
-    "mc_version": ["1.21.6", "1.21.5", "1.21.4", "1.21.3", "1.21.1", "1.20.6", "1.20.4", "1.20.2", "1.20.1", "1.20", "1.19.4", "1.18.2"]
-
+    "github_repo": "https://github.com/MeteorClientPlus/MeteorPlus",
+    "mc_version": [
+      "1.21.6",
+      "1.21.5",
+      "1.21.4",
+      "1.21.3",
+      "1.21.1",
+      "1.20.6",
+      "1.20.4",
+      "1.20.2",
+      "1.20.1",
+      "1.20",
+      "1.19.4",
+      "1.18.2"
+    ]
   },
   {
     "title": "Meteor Rejects",
     "link": "en/meteor/meteor-rejects",
     "description": "An addon for Meteor Client that adds rejected and ported features.",
     "icon": "/data/icons/meteor-rejects.png",
-    "github_repo":"https://github.com/AntiCope/meteor-rejects",
-    "mc_version": ["1.21.4", "1.21", "1.20.6", "1.20.4", "1.20.2", "1.20.1", "1.20", "1.19.4", "1.19.3", "1.19.2", "1.19.1", "1.19", "1.18", "1.18.1", "1.17", "1.16"]
+    "github_repo": "https://github.com/AntiCope/meteor-rejects",
+    "mc_version": [
+      "1.21.4",
+      "1.21",
+      "1.20.6",
+      "1.20.4",
+      "1.20.2",
+      "1.20.1",
+      "1.20",
+      "1.19.4",
+      "1.19.3",
+      "1.19.2",
+      "1.19.1",
+      "1.19",
+      "1.18",
+      "1.18.1",
+      "1.17",
+      "1.16"
+    ]
   },
   {
     "title": "Electron",
     "link": "en/meteor/electron",
     "description": "Lightweight and performant Minecraft mod for enhanced gameplay.",
     "icon": "/data/icons/electron.png",
-    "github_repo":"https://github.com/RacoonDog/Electron",
+    "github_repo": "https://github.com/RacoonDog/Electron",
     "mc_version": ["1.21.5"]
   },
   {
@@ -55,7 +111,7 @@
     "link": "en/meteor/lucid",
     "description": "Enhance your Minecraft experience with advanced chat features & ESP.",
     "icon": "/data/icons/lucid.png",
-    "github_repo":"https://github.com/HUHNcode/Lucid-addon",
+    "github_repo": "https://github.com/HUHNcode/Lucid-addon",
     "mc_version": ["1.21.4"]
   },
   {
@@ -63,7 +119,7 @@
     "link": "en/meteor/blackout",
     "description": "Powerful addon for Meteor Client that enhances Minecraft PvP experience.",
     "icon": "/data/icons/blackout.png",
-    "github_repo":"https://github.com/H1ggsK/BlackOut",
+    "github_repo": "https://github.com/H1ggsK/BlackOut",
     "mc_version": ["1.21.4", "1.21.1"]
   },
   {
@@ -71,7 +127,7 @@
     "link": "en/meteor/glazed",
     "description": "Advanced addon for Meteor Client specifically designed for the DonutSMP server.",
     "icon": "/data/icons/glazed.png",
-    "github_repo":"https://github.com/realnnpg/Glazed",
+    "github_repo": "https://github.com/realnnpg/Glazed",
     "mc_version": ["1.21.4"]
   },
 
@@ -80,8 +136,24 @@
     "link": "en/meteor/meteor-villager-roller",
     "description": "Advanced addon for Meteor Client specifically designed for the DonutSMP server.",
     "icon": "/data/icons/meteor-villager-roller.png",
-    "github_repo":"https://github.com/maxsupermanhd/meteor-villager-roller",
-    "mc_version": ["1.21.6", "1.21.5", "1.21.4", "1.21.3", "1.21.1", "1.20.6", "1.20.4", "1.20.2", "1.20.1", "1.19.4", "1.19.3", "1.19.2", "1.19.1", "1.19", "1.18.2", "1.18.1"]
-
+    "github_repo": "https://github.com/maxsupermanhd/meteor-villager-roller",
+    "mc_version": [
+      "1.21.6",
+      "1.21.5",
+      "1.21.4",
+      "1.21.3",
+      "1.21.1",
+      "1.20.6",
+      "1.20.4",
+      "1.20.2",
+      "1.20.1",
+      "1.19.4",
+      "1.19.3",
+      "1.19.2",
+      "1.19.1",
+      "1.19",
+      "1.18.2",
+      "1.18.1"
+    ]
   }
 ]

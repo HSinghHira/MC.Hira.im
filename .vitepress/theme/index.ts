@@ -19,6 +19,7 @@ import Dialog from 'primevue/dialog'
 import MultiSelect from 'primevue/multiselect';
 import IftaLabel from 'primevue/iftalabel';
 import Select from 'primevue/select';
+import FloatLabel from "primevue/floatlabel";
 
 
 import { HomeUnderline } from '@theojs/lumen'
@@ -62,7 +63,7 @@ export default {
     app.component('Dialog', Dialog)
     app.component('IftaLabel', IftaLabel)
     app.component('Select', Select)
-    
+    app.component('FloatLabel', FloatLabel)    
     
     app.component('Home', HomeUnderline)
     app.component('Download', Download)
