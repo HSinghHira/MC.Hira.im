@@ -31,17 +31,139 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v4
       
+      - name: Install dependencies
+        run: |
+          rm -rf node_modules package-lock.json
+          npm install
+          npm install axios # Add axios for fallback data enhancement
+      
       - name: Download addon data artifact
+        id: download-artifact
         uses: actions/download-artifact@v4
         with:
           name: addon-data
           path: public/data/
         continue-on-error: true
       
-      - name: Clean install dependencies
+      - name: Enhance addon data (fallback)
+        if: steps.download-artifact.outcome != 'success'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          rm -rf node_modules package-lock.json
-          npm install
+          cat << 'EOF' > enhance-addons.js
+          const fs = require('fs');
+          const axios = require('axios');
+          
+          async function enhanceAddonData() {
+            try {
+              console.log('🚀 Starting addon data enhancement (fallback)...');
+              const addonsData = JSON.parse(fs.readFileSync('public/data/addons.json', 'utf8'));
+              console.log(`📚 Found ${addonsData.length} addons to process`);
+              const enhancedAddons = [];
+              
+              for (const addon of addonsData) {
+                console.log(`🔍 Processing: ${addon.title}`);
+                try {
+                  const githubUrl = addon.github_repo;
+                  const match = githubUrl.match(/github\.com\/([^\/]+)\/([^\/]+)/);
+                  if (!match) {
+                    console.log(`⚠️  Invalid GitHub URL for ${addon.title}`);
+                    enhancedAddons.push(addon);
+                    continue;
+                  }
+                  const [, owner, repo] = match;
+                  const cleanRepo = repo.replace(/\.git$/, '');
+                  const repoResponse = await axios.get(
+                    `https://api.github.com/repos/${owner}/${cleanRepo}`,
+                    {
+                      headers: {
+                        'Authorization': `token ${process.env.GITHUB_TOKEN}`,
+                        'Accept': 'application/vnd.github.v3+json'
+                      }
+                    }
+                  );
+                  const repoData = repoResponse.data;
+                  let totalDownloads = 0;
+                  try {
+                    const releasesResponse = await axios.get(
+                      `https://api.github.com/repos/${owner}/${cleanRepo}/releases`,
+                      {
+                        headers: {
+                          'Authorization': `token ${process.env.GITHUB_TOKEN}`,
+                          'Accept': 'application/vnd.github.v3+json'
+                        }
+                      }
+                    );
+                    totalDownloads = releasesResponse.data.reduce((total, release) => {
+                      return total + release.assets.reduce((assetTotal, asset) => {
+                        return assetTotal + asset.download_count;
+                      }, 0);
+                    }, 0);
+                  } catch (releaseError) {
+                    console.log(`📦 No releases found for ${addon.title}`);
+                  }
+                  const enhancedAddon = {
+                    ...addon,
+                    stars: repoData.stargazers_count,
+                    forks: repoData.forks_count,
+                    watchers: repoData.watchers_count,
+                    open_issues: repoData.open_issues_count,
+                    last_updated: repoData.updated_at.split('T')[0],
+                    created_date: repoData.created_at.split('T')[0],
+                    language: repoData.language,
+                    downloads: totalDownloads,
+                    default_branch: repoData.default_branch,
+                    archived: repoData.archived,
+                    size: repoData.size
+                  };
+                  enhancedAddons.push(enhancedAddon);
+                  console.log(`✅ Enhanced: ${addon.title} (${repoData.stargazers_count} stars, ${totalDownloads} downloads)`);
+                  await new Promise(resolve => setTimeout(resolve, 1000));
+                } catch (error) {
+                  console.error(`❌ Error processing ${addon.title}:`, error.message);
+                  enhancedAddons.push(addon);
+                }
+              }
+              fs.writeFileSync(
+                'public/data/addons-enhanced.json', 
+                JSON.stringify(enhancedAddons, null, 2)
+              );
+              const summary = {
+                total_addons: enhancedAddons.length,
+                last_updated: new Date().toISOString(),
+                stats: {
+                  total_stars: enhancedAddons.reduce((sum, addon) => sum + (addon.stars || 0), 0),
+                  total_downloads: enhancedAddons.reduce((sum, addon) => sum + (addon.downloads || 0), 0),
+                  most_starred: enhancedAddons.reduce((max, addon) => 
+                    (addon.stars || 0) > (max.stars || 0) ? addon : max, enhancedAddons[0]
+                  )?.title,
+                  most_downloaded: enhancedAddons.reduce((max, addon) => 
+                    (addon.downloads || 0) > (max.downloads || 0) ? addon : max, enhancedAddons[0]
+                  )?.title
+                }
+              };
+              fs.writeFileSync(
+                'public/data/addon-stats.json',
+                JSON.stringify(summary, null, 2)
+              );
+              console.log('🎉 Successfully created enhanced addon data!');
+              console.log(`📊 Processed ${enhancedAddons.length} addons`);
+              console.log('📈 Summary Report:');
+              console.log(`   Total Stars: ${summary.stats.total_stars}`);
+              console.log(`   Total Downloads: ${summary.stats.total_downloads}`);
+              console.log(`   Most Starred: ${summary.stats.most_starred}`);
+              console.log(`   Most Downloaded: ${summary.stats.most_downloaded}`);
+            } catch (error) {
+              console.error('💥 Fatal error:', error);
+              process.exit(1);
+            }
+          }
+          enhanceAddonData();
+          EOF
+          node enhance-addons.js
+          echo "Contents of addons-enhanced.json:"
+          cat public/data/addons-enhanced.json || echo "File not found"
+          ls -l public/data/
       
       - name: Build with VitePress
         run: npx vitepress build
