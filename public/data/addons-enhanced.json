@@ -1,5 +1,26 @@
 [
   {
+    "title": "Clarity",
+    "link": "en/meteor/clarity",
+    "description": "Advanced addon for Meteor Client focused on exploits and server-crashing modules.",
+    "icon": "/data/icons/clarity.png",
+    "github_repo": "https://github.com/ck-clarity/addon",
+    "mc_version": [
+      "1.21.4"
+    ],
+    "stars": 20,
+    "forks": 2,
+    "watchers": 20,
+    "open_issues": 0,
+    "last_updated": "2025-06-29",
+    "created_date": "2025-03-21",
+    "language": "Java",
+    "downloads": 953,
+    "default_branch": "main",
+    "archived": false,
+    "size": 7696
+  },
+  {
     "title": "Trouser-Streak",
     "link": "en/meteor/trouser-streak",
     "description": "Comprehensive modules for griefing, base hunting, and chunk tracing in Minecraft.",
@@ -22,7 +43,7 @@
     "last_updated": "2025-06-28",
     "created_date": "2022-10-25",
     "language": "Java",
-    "downloads": 92997,
+    "downloads": 93017,
     "default_branch": "main",
     "archived": false,
     "size": 2426
@@ -52,7 +73,7 @@
     "last_updated": "2025-06-25",
     "created_date": "2022-03-24",
     "language": "Java",
-    "downloads": 70144,
+    "downloads": 70145,
     "default_branch": "main",
     "archived": false,
     "size": 545
@@ -84,7 +105,7 @@
     "last_updated": "2025-06-24",
     "created_date": "2024-09-10",
     "language": "Java",
-    "downloads": 3603,
+    "downloads": 3608,
     "default_branch": "1.21.6",
     "archived": false,
     "size": 40776
@@ -120,7 +141,7 @@
     "last_updated": "2025-06-25",
     "created_date": "2021-03-11",
     "language": "Java",
-    "downloads": 223960,
+    "downloads": 223994,
     "default_branch": "master",
     "archived": false,
     "size": 5545
@@ -241,7 +262,7 @@
     "last_updated": "2025-06-24",
     "created_date": "2021-08-19",
     "language": "Java",
-    "downloads": 68062,
+    "downloads": 68064,
     "default_branch": "main",
     "archived": false,
     "size": 446
