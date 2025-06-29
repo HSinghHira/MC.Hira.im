@@ -3,48 +3,56 @@
     <!-- Enhanced Filters Section -->
     <div class="filters-container">
       <div class="filter-group">
-        <label>Sort by:</label>
-        <select v-model="sortType" class="filter-select">
-          <option value="alphabetical">Alphabetical</option>
-          <option value="stars">Most Stars</option>
-          <option value="downloads">Most Downloads</option>
-          <option value="last_updated">Recently Updated</option>
-          <option value="created_date">Newest Repos</option>
-          <option value="oldest">Oldest Repos</option>
-        </select>
+        <FloatLabel class="w-full md:w-56" variant="in">
+          <Select
+            v-model="sortType"
+            inputId="sort-type"
+            :options="sortOptions"
+            optionLabel="label"
+            optionValue="value"
+            class="filter-select w-full"
+
+          />
+          <label for="sort-type">Sort by</label>
+        </FloatLabel>
       </div>
-      
+
       <div class="filter-group">
-        <label>Order:</label>
-        <select v-model="sortOrder" class="filter-select">
-          <option value="desc">High to Low</option>
-          <option value="asc">Low to High</option>
-        </select>
+        <FloatLabel class="w-full md:w-56" variant="in">
+          <Select
+            v-model="sortOrder"
+            inputId="sort-order"
+            :options="orderOptions"
+            optionLabel="label"
+            optionValue="value"
+            class="filter-select w-full"
+
+          />
+          <label for="sort-order">Order</label>
+        </FloatLabel>
       </div>
-      
+
       <div class="filter-group">
-        <label>Minecraft Version:</label>
-        <select v-model="selectedVersion" class="filter-select">
-          <option value="">All Versions</option>
-          <option v-for="version in availableVersions" :key="version" :value="version">
-            {{ version }}
-          </option>
-        </select>
+        <FloatLabel class="w-full md:w-80" variant="in">
+          <MultiSelect
+            id="minecraft-version"
+            v-model="selectedVersion"
+            :options="availableVersions"
+            optionLabel="version"
+            optionValue="version"
+            :maxSelectedLabels="1"
+            class="filter-select w-full"
+
+          />
+          <label for="minecraft-version">MC Version</label>
+        </FloatLabel>
       </div>
 
       <!-- Quick Stats Display -->
       <div class="stats-display">
         <div class="stat-item">
           <span class="stat-number">{{ filteredCount }}</span>
-          <span class="stat-label">Results</span>
-        </div>
-        <div class="stat-item" v-if="totalStats.stars">
-          <span class="stat-number">{{ totalStats.stars.toLocaleString() }}</span>
-          <span class="stat-label">Total ⭐</span>
-        </div>
-        <div class="stat-item" v-if="totalStats.downloads">
-          <span class="stat-number">{{ totalStats.downloads.toLocaleString() }}</span>
-          <span class="stat-label">Downloads</span>
+          <span class="stat-label">Addons</span>
         </div>
       </div>
     </div>
@@ -80,7 +88,7 @@
                   <div class="addon-content">
                     <h3 class="addon-title">{{ addon.title }}</h3>
                     <p class="addon-description">{{ addon.description }}</p>
-                    
+
                     <!-- Enhanced Stats Row -->
                     <div class="addon-stats">
                       <span v-if="addon.stars" class="stat-badge stars">
@@ -89,7 +97,10 @@
                       <span v-if="addon.downloads" class="stat-badge downloads">
                         📥 {{ formatNumber(addon.downloads) }}
                       </span>
-                      <span v-if="addon.last_updated" class="stat-badge updated">
+                      <span
+                        v-if="addon.last_updated"
+                        class="stat-badge updated"
+                      >
                         🕒 {{ formatDate(addon.last_updated) }}
                       </span>
                     </div>
@@ -105,7 +116,9 @@
       <template #empty>
         <div class="empty-state">
           <p>No addons found matching your filters.</p>
-          <button @click="clearFilters" class="clear-filters-btn">Clear Filters</button>
+          <button @click="clearFilters" class="clear-filters-btn">
+            Clear Filters
+          </button>
         </div>
       </template>
     </DataView>
@@ -168,19 +181,21 @@ a {
 /* Stats Display */
 .stats-display {
   display: flex;
-  gap: 1rem;
+  gap: 2rem;
   margin-left: auto;
   flex-wrap: wrap;
+  border-color: var(--vp-c-brand);
 }
 
 .stat-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0.5rem;
+  padding: 13px 12px;
   background: var(--vp-c-bg);
   border-radius: 8px;
   min-width: 60px;
+  border: 1px solid var(--vp-c-border);
 }
 
 .stat-number {
@@ -214,7 +229,7 @@ a {
 
 .addon-icon-container {
   flex-shrink: 0;
-  margin: 0; 
+  margin: 0;
 }
 
 .addon-card {
@@ -225,12 +240,6 @@ a {
   height: 100%;
   display: block;
   transition: all 0.2s ease;
-}
-
-.addon-card:hover {
-  border: 1px solid var(--vp-c-border);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .addon-icon-container {
@@ -313,7 +322,7 @@ a {
   .addon-card:hover {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
   }
-  
+
   .stat-badge.stars {
     background: #451a03;
     color: #fcd34d;
@@ -337,18 +346,21 @@ a {
 }
 
 .clear-filters-btn {
-  margin-top: 1rem;
-  padding: 8px 16px;
+  margin-top: 0.75rem;
+  padding: 6px 12px;
   background: var(--vp-c-brand);
   color: white;
   border: none;
-  border-radius: 8px;
+  border-radius: 6px;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 13px;
+  font-weight: 500;
+  transition: background 0.2s ease, transform 0.1s ease;
 }
 
 .clear-filters-btn:hover {
   background: var(--vp-c-brand-dark);
+  transform: scale(1.05);
 }
 
 /* PrimeVue DataView overrides */
@@ -362,16 +374,18 @@ a {
   background: var(--vp-c-bg-soft);
   border: none;
   color: var(--vp-c-text-1);
-  padding: 8px 12px;
-  font-size: 16px;
+  padding: 6px 10px;
+  font-size: 14px;
   border-radius: 50%;
-  min-width: 40px;
-  height: 40px;
-  margin: 0 4px;
+  min-width: 32px;
+  height: 32px;
+  margin: 0 3px;
+  transition: background 0.2s ease, transform 0.1s ease;
 }
 
 :deep(.p-paginator .p-paginator-pages .p-paginator-page:hover) {
   background: var(--vp-c-bg-alt);
+  transform: scale(1.1);
 }
 
 :deep(.p-paginator .p-paginator-pages .p-paginator-page.p-highlight) {
@@ -388,12 +402,13 @@ a {
   border: none;
   color: var(--vp-c-text-1);
   border-radius: 50%;
-  min-width: 40px;
-  height: 40px;
-  margin: 0 4px;
+  min-width: 32px;
+  height: 32px;
+  margin: 0 3px;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: background 0.2s ease, transform 0.1s ease;
 }
 
 :deep(.p-paginator .p-paginator-prev:hover),
@@ -401,6 +416,7 @@ a {
 :deep(.p-paginator .p-paginator-first:hover),
 :deep(.p-paginator .p-paginator-last:hover) {
   background: var(--vp-c-bg-alt);
+  transform: scale(1.1);
 }
 
 /* Hide first/prev buttons on first page */
@@ -419,12 +435,14 @@ a {
   --p-dataview-content-border-width: 0;
   border-width: 0 !important;
   border: none !important;
+  
 }
 
 :deep(.p-dataview-content) {
   --p-dataview-content-border-width: 0;
   border-width: 0 !important;
   border: none !important;
+  background-color: transparent !important;
 }
 
 :deep(.p-dataview-paginator-bottom) {
@@ -432,10 +450,52 @@ a {
   border-width: 0 !important;
   border: none !important;
 }
+
+/* Ensure MultiSelect maintains consistent height */
+:deep(.p-multiselect) {
+  min-height: 74px !important;
+  height: 44px;
+  display: flex;
+  align-items: center;
+}
+:deep(.p-multiselect-label) {
+  min-height: 36px !important;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  padding: 4px 12px;
+  line-height: normal;
+}
+
+/* Make filters stack on small screens */
+@media (max-width: 600px) {
+  .filters-container {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+
+  .filter-group {
+    width: 100%;
+  }
+
+  .filter-select {
+    width: 100%;
+    min-width: auto;
+  }
+
+  .stats-display {
+    margin-left: 0;
+    justify-content: center;
+  }
+}
 </style>
 
 <script setup lang="ts">
 import { ref, onMounted, computed } from "vue";
+import MultiSelect from "primevue/multiselect";
+import FloatLabel from "primevue/floatlabel";
+import Select from "primevue/select";
 
 // Enhanced addon interface
 interface Addon {
@@ -461,76 +521,82 @@ interface Addon {
 // Reactive data
 const originalAddons = ref<Addon[]>([]);
 const loading = ref(true);
-const sortType = ref('alphabetical');
-const sortOrder = ref('desc');
-const selectedVersion = ref('');
+const sortType = ref("alphabetical");
+const sortOrder = ref("desc");
+const selectedVersion = ref<string[]>([]);
+
+// Options for Sort by
+const sortOptions = ref([
+  { label: "Alphabetical", value: "alphabetical" },
+  { label: "Most Stars", value: "stars" },
+  { label: "Most Downloads", value: "downloads" },
+  { label: "Recently Updated", value: "last_updated" },
+]);
+
+// Options for Order
+const orderOptions = ref([
+  { label: "High to Low", value: "desc" },
+  { label: "Low to High", value: "asc" },
+]);
 
 // Get all unique Minecraft versions
 const availableVersions = computed(() => {
   const versions = new Set<string>();
-  originalAddons.value.forEach(addon => {
-    addon.mc_version.forEach(version => versions.add(version));
+  originalAddons.value.forEach((addon) => {
+    addon.mc_version.forEach((version) => versions.add(version));
   });
-  return Array.from(versions).sort((a, b) => {
-    return b.localeCompare(a, undefined, { numeric: true });
-  });
+  return Array.from(versions)
+    .map((version) => ({ version }))
+    .sort((a, b) => {
+      return b.version.localeCompare(a.version, undefined, { numeric: true });
+    });
 });
 
 // Filter and sort addons
 const sortedAddons = computed(() => {
   let result = [...originalAddons.value];
-  
+
   // Apply version filter
-  if (selectedVersion.value) {
-    result = result.filter(addon => 
-      addon.mc_version.includes(selectedVersion.value)
+  if (selectedVersion.value.length > 0) {
+    result = result.filter((addon) =>
+      addon.mc_version.some((version) =>
+        selectedVersion.value.includes(version)
+      )
     );
   }
-  
+
   // Apply sorting
   result.sort((a, b) => {
     let comparison = 0;
-    
+
     switch (sortType.value) {
-      case 'alphabetical':
+      case "alphabetical":
         comparison = a.title.toLowerCase().localeCompare(b.title.toLowerCase());
         break;
-        
-      case 'stars':
+
+      case "stars":
         comparison = (a.stars || 0) - (b.stars || 0);
         break;
-        
-      case 'downloads':
+
+      case "downloads":
         comparison = (a.downloads || 0) - (b.downloads || 0);
         break;
-        
-      case 'last_updated':
-        const dateA = new Date(a.last_updated || '1970-01-01').getTime();
-        const dateB = new Date(b.last_updated || '1970-01-01').getTime();
+
+      case "last_updated":
+        const dateA = new Date(a.last_updated || "1970-01-01").getTime();
+        const dateB = new Date(b.last_updated || "1970-01-01").getTime();
         comparison = dateA - dateB;
         break;
-        
-      case 'created_date':
-        const createdA = new Date(a.created_date || '1970-01-01').getTime();
-        const createdB = new Date(b.created_date || '1970-01-01').getTime();
-        comparison = createdA - createdB;
-        break;
-        
-      case 'oldest':
-        const oldA = new Date(a.created_date || '2999-12-31').getTime();
-        const oldB = new Date(b.created_date || '2999-12-31').getTime();
-        comparison = oldA - oldB;
-        break;
     }
-    
+
     // Apply sort order (except for alphabetical which has its own logic)
-    if (sortType.value === 'alphabetical') {
-      return sortOrder.value === 'asc' ? comparison : -comparison;
+    if (sortType.value === "alphabetical") {
+      return sortOrder.value === "asc" ? comparison : -comparison;
     } else {
-      return sortOrder.value === 'desc' ? -comparison : comparison;
+      return sortOrder.value === "desc" ? -comparison : comparison;
     }
   });
-  
+
   return result;
 });
 
@@ -542,14 +608,14 @@ const totalStats = computed(() => {
   return {
     stars: filtered.reduce((sum, addon) => sum + (addon.stars || 0), 0),
     downloads: filtered.reduce((sum, addon) => sum + (addon.downloads || 0), 0),
-    forks: filtered.reduce((sum, addon) => sum + (addon.forks || 0), 0)
+    forks: filtered.reduce((sum, addon) => sum + (addon.forks || 0), 0),
   };
 });
 
 // Helper functions
 const formatNumber = (num: number): string => {
-  if (num >= 1000000) return (num / 1000000).toFixed(1) + 'M';
-  if (num >= 1000) return (num / 1000).toFixed(1) + 'K';
+  if (num >= 1000000) return (num / 1000000).toFixed(1) + "M";
+  if (num >= 1000) return (num / 1000).toFixed(1) + "K";
   return num.toString();
 };
 
@@ -558,47 +624,71 @@ const formatDate = (dateString: string): string => {
   const now = new Date();
   const diffTime = Math.abs(now.getTime() - date.getTime());
   const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-  
-  if (diffDays === 1) return '1d ago';
+
+  if (diffDays === 1) return "1d ago";
   if (diffDays < 30) return `${diffDays}d ago`;
   if (diffDays < 365) return `${Math.floor(diffDays / 30)}mo ago`;
   return `${Math.floor(diffDays / 365)}y ago`;
 };
 
 const clearFilters = () => {
-  sortType.value = 'alphabetical';
-  sortOrder.value = 'desc';
-  selectedVersion.value = '';
+  sortType.value = "alphabetical";
+  sortOrder.value = "desc";
+  selectedVersion.value = [];
 };
 
-// Load addons data
+// Load addons data with multiple fallbacks
 const loadAddons = async () => {
+  loading.value = true;
+
+  // Try primary URL
   try {
-    loading.value = true;
     const response = await fetch("/data/addons-enhanced.json");
-    if (!response.ok) {
-      throw new Error("Failed to load enhanced addons");
+    if (response.ok) {
+      const data = await response.json();
+      originalAddons.value = data;
+      console.log("Loaded addons from primary URL:", data.length);
+      loading.value = false;
+      return;
     }
-    const data = await response.json();
-    originalAddons.value = data;
-    console.log('Loaded enhanced addons:', data.length);
-  } catch (error) {
-    console.error("Error loading enhanced addons:", error);
-    // Fallback to original addons.json
-    try {
-      const fallbackResponse = await fetch("/data/addons.json");
-      if (fallbackResponse.ok) {
-        const fallbackData = await fallbackResponse.json();
-        originalAddons.value = fallbackData;
-        console.log('Loaded fallback addons:', fallbackData.length);
-      }
-    } catch (fallbackError) {
-      console.error("Error loading fallback addons:", fallbackError);
-      originalAddons.value = [];
-    }
-  } finally {
-    loading.value = false;
+  } catch {
+    // Silently catch errors to avoid console logs
   }
+
+  // Try first fallback: GitHub raw URL
+  try {
+    const response = await fetch(
+      "https://raw.githubusercontent.com/HSinghHira/MC.Hira.im/main/public/data/addons-enhanced.json"
+    );
+    if (response.ok) {
+      const data = await response.json();
+      originalAddons.value = data;
+      console.log("Loaded addons from GitHub raw URL:", data.length);
+      loading.value = false;
+      return;
+    }
+  } catch {
+    // Silently catch errors to avoid console logs
+  }
+
+  // Try second fallback: addons.json
+  try {
+    const response = await fetch("/data/addons.json");
+    if (response.ok) {
+      const data = await response.json();
+      originalAddons.value = data;
+      console.log("Loaded addons from fallback URL:", data.length);
+      loading.value = false;
+      return;
+    }
+  } catch {
+    // Silently catch errors to avoid console logs
+  }
+
+  // If all fetches fail, set empty array
+  originalAddons.value = [];
+  console.log("All fetch attempts failed, using empty addons list");
+  loading.value = false;
 };
 
 // Load data when component mounts
