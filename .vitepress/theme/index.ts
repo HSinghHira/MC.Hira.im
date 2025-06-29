@@ -11,8 +11,7 @@ import Tag from 'primevue/tag'
 import FileUpload from 'primevue/fileupload'
 import Avatar from 'primevue/avatar'
 import Card from 'primevue/card'
-
-// New components for DataTable
+import DataView from 'primevue/dataview';
 import DataTable from 'primevue/datatable'
 import Column from 'primevue/column'
 import InputText from 'primevue/inputtext'
@@ -25,6 +24,7 @@ import Download from './components/Download.vue'
 import LitematicViewer from './components/LitematicViewer.vue'
 import MinecraftServerPing from './components/MinecraftServerPing.vue'
 import MeteorArchivesTable from './components/MeteorArchivesTable.vue'
+import AddonDataView from './components/AddonDataView.vue';
 
 
 import './tailwind.css'
@@ -36,7 +36,7 @@ export default {
   enhanceApp({ app, router }) {
     app.use(PrimeVue, {
       theme: {
-        preset: Aura,
+        preset: {},
         options: {
           darkModeSelector: '.dark',
         }
@@ -50,6 +50,7 @@ export default {
     app.component('FileUpload', FileUpload)
     app.component('Avatar', Avatar)
     app.component('Card', Card)
+    app.component('DataView', DataView)
     
     // New DataTable components
     app.component('DataTable', DataTable)
@@ -62,6 +63,7 @@ export default {
     app.component('LitematicViewer', LitematicViewer)
     app.component('MinecraftServerPing', MinecraftServerPing)
     app.component('MeteorArchivesTable', MeteorArchivesTable)
+    app.component('AddonDataView', AddonDataView)
 
   },
 } satisfies Theme

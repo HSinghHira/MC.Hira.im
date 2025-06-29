@@ -41,6 +41,9 @@ A curated collection of essential Minecraft websites, organized into intuitive c
   **Image to Map Converter**  
   Transform any image into a Minecraft map item for custom map art, perfect for decorating your in-game world.
 
+- **[MineAtlas](https://mineatlas.com/)**  
+  Seed map viewer and biome locator for Minecraft Java Edition.
+
 ## Design and Customization
 
 ### Skins and Avatars
@@ -61,9 +64,6 @@ A curated collection of essential Minecraft websites, organized into intuitive c
   **Minecraft Skin Editor**  
   A web-based editor to create or modify Minecraft skins, featuring layer management and community sharing options.
 
-- **[NameMC](https://namemc.com/)**  
-  **Username, Skin & Cape Database**  
-  Check Minecraft usernames, view skin history, and explore capes, serving as both a skin resource and community tool.
 
 ### Graphics and Media
 
@@ -101,6 +101,10 @@ A curated collection of essential Minecraft websites, organized into intuitive c
   **Custom Totem of Undying Generator**  
   Upload your own face or art to create a personalized totem texture for in-game use.
 
+
+- **[Vanilla Tweaks](https://vanillatweaks.net)**  
+  Customize UI, Custom resource packs and datapacks for Java Edition.
+
 - **[Bedrock Tweaks](https://bedrocktweaks.net/)**  
   **Vanilla Tweaks for Bedrock**  
   Customize UI, sounds, and resource packs for Bedrock Edition, enhancing gameplay without mods.
@@ -123,11 +127,26 @@ A curated collection of essential Minecraft websites, organized into intuitive c
   **Map Art Generator**  
   Convert images into Minecraft murals using map items, perfect for large-scale decorations.
 
+- **[MCStacker Murals](https://mcstacker.net/murals/)**  
+  Convert images into murals using maps.
+
+- **[Give Generator](https://ezekielelin.com/give/)**  
+  Simple tool to generate `/give` commands with custom items.
+
+- **[PotionCraft](https://potioncraft.net/)**  
+  Potion generator for custom brewing instructions.
+
+- **[Minecraft ID List](https://minecraft-ids.grahamedgecombe.com/)**  
+  Easily search and copy item and block IDs.
+
 ## Gameplay Enhancements
 
 - **[YeetSMP Enchants](https://yeetsmp-enchants.vercel.app)**  
   **Custom Enchantment Database**  
   Explore enchantment combinations specific to the YeetSMP server, aiding in strategic gameplay.
+
+- **[Minecraft UUID Lookup](https://minecraftuuid.com)**  
+  Convert Minecraft usernames to UUIDs and vice versa.
 
 ## Player & Community Resources
 
@@ -151,11 +170,23 @@ A curated collection of essential Minecraft websites, organized into intuitive c
   **Comprehensive Game Guide**  
   The go-to resource for in-game mechanics, items, and tutorials, essential for all players.
 
+- **[Minecraft Wiki](https://minecraft.fandom.com/)**  
+  Comprehensive Game Guide and mechanics database.
+
+- **[Minecraft Maps](https://www.minecraftmaps.com)**  
+  Download and explore custom Minecraft maps.
+
+- **[FreshCoal](https://freshcoal.com/)**  
+  Huge selection of custom Minecraft player heads.
+
 ## Technical and Redstone Tools
 
 - **[MapartCraft](https://rebane2001.com/mapartcraft/)**  
   **Redstone Tools & Visual Simulators**  
   Features tools like MapartCraft for generating map art and other technical utilities for advanced players.
+
+- **[Armor Stand Editor](https://haselkern.com/Minecraft-ArmorStand/)**  
+  GUI-based editor to position and pose armor stands using commands.
 
 ## Building and Design Aids
 
@@ -174,3 +205,12 @@ A curated collection of essential Minecraft websites, organized into intuitive c
 - **[Minecraft Heads](https://minecraft-heads.com/)**  
   **Custom Heads Database**  
   Find custom heads for decoration, categorized by theme for easy integration into builds.
+
+- **[BuildItApp](https://builditapp.com)**  
+  Online collaboration and building tool for Minecraft. Plan builds with others, mark tasks, and share progress.
+
+- **[Plotz Model Generator](https://www.plotz.co.uk/)**  
+  Generate 3D models like spheres, domes, and toruses in block format for easier construction in Minecraft.
+
+- **[VoxelSphere Generator](https://oranj.io/VoxelSphereGenerator)**  
+  Create perfectly rounded voxel spheres for large-scale builds.

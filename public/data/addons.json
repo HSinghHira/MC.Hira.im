@@ -1,0 +1,57 @@
+[
+  {
+    "title": "Trouser-Streak",
+    "link": "en/meteor/trouser-streak",
+    "description": "Comprehensive modules for griefing, base hunting, and chunk tracing in Minecraft.",
+    "icon": "/data/icons/trouser-streak.png"
+  },
+  {
+    "title": "Meteorist",
+    "link": "en/meteor/meteorist",
+    "description": "Useful addon for Meteor Client specifically designed for anarchy Minecraft servers.",
+    "icon": "/data/icons/meteorist.png"
+  },
+  {
+    "title": "Meteor+",
+    "link": "en/meteor/meteorplus",
+    "description": "Adds advanced cheat features, enhancing PvE and PvP gameplay.",
+    "icon": "/data/icons/meteorplus.png"
+  },
+  {
+    "title": "Meteor Rejects",
+    "link": "en/meteor/meteor-rejects",
+    "description": "An addon for Meteor Client that adds rejected and ported features.",
+    "icon": "/data/icons/meteor-rejects.png"
+  },
+  {
+    "title": "Electron",
+    "link": "en/meteor/electron",
+    "description": "Lightweight and performant Minecraft mod for enhanced gameplay.",
+    "icon": "/data/icons/electron.png"
+  },
+  {
+    "title": "Lucid",
+    "link": "en/meteor/lucid",
+    "description": "Enhance your Minecraft experience with advanced chat features & ESP.",
+    "icon": "/data/icons/lucid.png"
+  },
+  {
+    "title": "BlackOut",
+    "link": "en/meteor/blackout",
+    "description": "Powerful addon for Meteor Client that enhances Minecraft PvP experience.",
+    "icon": "/data/icons/blackout.png"
+  },
+  {
+    "title": "Glazed",
+    "link": "en/meteor/glazed",
+    "description": "Advanced addon for Meteor Client specifically designed for the DonutSMP server.",
+    "icon": "/data/icons/glazed.png"
+  },
+    
+  {
+    "title": "Meteor Villager Roller",
+    "link": "en/meteor/meteor-villager-roller",
+    "description": "Advanced addon for Meteor Client specifically designed for the DonutSMP server.",
+    "icon": "/data/icons/meteor-villager-roller.png"
+  }
+]
