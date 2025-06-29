@@ -36,7 +36,7 @@ jobs:
         with:
           name: addon-data
           path: public/data/
-        continue-on-error: true # Optional: continue if no artifact is found
+        continue-on-error: true
       
       - name: Clean install dependencies
         run: |

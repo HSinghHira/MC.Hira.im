@@ -32,7 +32,7 @@ jobs:
         
         async function enhanceAddonData() {
           try {
-            console.log('🚀 Starting addon data enhancement...');
+            console.log('🚀 Starting addon data enhancement..');
             const addonsData = JSON.parse(fs.readFileSync('public/data/addons.json', 'utf8'));
             console.log(`📚 Found ${addonsData.length} addons to process`);
             const enhancedAddons = [];
