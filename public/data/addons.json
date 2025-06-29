@@ -1,4 +1,13 @@
 [
+
+  {
+    "title": "Clarity",
+    "link": "en/meteor/clarity",
+    "description": "Advanced addon for Meteor Client focused on exploits and server-crashing modules.",
+    "icon": "/data/icons/clarity.png",
+    "github_repo":"https://github.com/ck-clarity/addon",
+    "mc_version": ["1.21.4"]
+  },
   {
     "title": "Trouser-Streak",
     "link": "en/meteor/trouser-streak",
