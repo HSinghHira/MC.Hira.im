@@ -1,4 +1,12 @@
 [
+    {
+    "title": "HKUtils",
+    "link": "en/meteor/HKUtils",
+    "description": "Various modules and commands for Meteor Client, enhancing Minecraft gameplay.",
+    "icon": "/data/icons/hkutils.png",
+    "github_repo": "https://github.com/H1ggsK/HKUtils",
+    "mc_version": ["1.21.4"]
+  },
   {
     "title": "Clarity",
     "link": "en/meteor/clarity",
