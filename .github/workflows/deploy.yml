@@ -35,7 +35,7 @@ jobs:
         run: |
           rm -rf node_modules package-lock.json
           npm install
-          npm install axios # Add axios for fallback data enhancement
+          npm install axios typescript # Add axios and typescript for fallback data enhancement
       
       - name: Download addon data artifact
         id: download-artifact
