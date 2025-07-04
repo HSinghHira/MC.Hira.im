@@ -30,9 +30,8 @@ export const buildEnd = async ({ outDir }: { outDir: string }) => {
     }
   })
   
-  // Add root URLs manually for each locale
   sitemap.write('/en/')
-  sitemap.write('/pb/')
+  // sitemap.write('/pb/')
   
   sitemap.end()
 

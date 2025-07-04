@@ -116,10 +116,7 @@
       <!-- Empty state when no addons -->
       <template #empty>
         <div class="empty-state">
-          <p>No addons found matching your filters.</p>
-          <button @click="clearFilters" class="clear-filters-btn">
-            Clear Filters
-          </button>
+          <i class="pi pi-spin pi-spinner" style="font-size: 2rem"></i>
         </div>
       </template>
     </DataView>
