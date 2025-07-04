@@ -14,7 +14,67 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  trigger-addon-data:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger update-addon-data workflow
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          curl -X POST \
+            -H "Accept: application/vnd.github+json" \
+            -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+            -H "X-GitHub-Api-Version: 2022-11-28" \
+            https://api.github.com/repos/HSinghHira/MC.Hira.im/actions/workflows/update-addon-data.yml/dispatches \
+            -d '{"ref":"main"}'
+      
+      - name: Wait for workflow to complete
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          echo "Waiting for update-addon-data workflow to complete..."
+          sleep 30 # Initial delay to allow workflow to start
+          for i in {1..30}; do
+            RUN_ID=$(curl -s \
+              -H "Accept: application/vnd.github+json" \
+              -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+              -H "X-GitHub-Api-Version: 2022-11-28" \
+              https://api.github.com/repos/HSinghHira/MC.Hira.im/actions/workflows/update-addon-data.yml/runs \
+              | jq -r '.workflow_runs | sort_by(.created_at) | last | .id')
+            if [ -n "$RUN_ID" ]; then
+              STATUS=$(curl -s \
+                -H "Accept: application/vnd.github+json" \
+                -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+                -H "X-GitHub-Api-Version: 2022-11-28" \
+                https://api.github.com/repos/HSinghHira/MC.Hira.im/actions/runs/$RUN_ID \
+                | jq -r '.status')
+              if [ "$STATUS" = "completed" ]; then
+                CONCLUSION=$(curl -s \
+                  -H "Accept: application/vnd.github+json" \
+                  -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+                  -H "X-GitHub-Api-Version: 2022-11-28" \
+                  https://api.github.com/repos/HSinghHira/MC.Hira.im/actions/runs/$RUN_ID \
+                  | jq -r '.conclusion')
+                if [ "$CONCLUSION" = "success" ]; then
+                  echo "Workflow completed successfully!"
+                  exit 0
+                else
+                  echo "Workflow failed with conclusion: $CONCLUSION"
+                  exit 1
+                fi
+              fi
+              echo "Workflow status: $STATUS, waiting..."
+              sleep 10
+            else
+              echo "No recent workflow run found, waiting..."
+              sleep 10
+            fi
+          done
+          echo "Timed out waiting for workflow to complete"
+          exit 1
+
   build:
+    needs: trigger-addon-data
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -37,14 +97,15 @@ jobs:
           npm install
           npm install axios typescript @theojs/lumen@latest
       
-      - name: Trigger deployment
-        run: |
-        curl -X POST \
-          -H "Accept: application/vnd.github+json" \
-          -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
-          -H "X-GitHub-Api-Version: 2022-11-28" \
-          https://api.github.com/repos/HSinghHira/MC.Hira.im/actions/workflows/update-addon-data.yml/dispatches \
-          -d '{"ref":"main"}'
+      - name: Download addon data artifact
+        id: download-artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: addon-data
+          path: public/data/
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          repository: HSinghHira/MC.Hira.im
+        continue-on-error: true
       
       - name: Enhance addon data (fallback)
         if: steps.download-artifact.outcome != 'success'
