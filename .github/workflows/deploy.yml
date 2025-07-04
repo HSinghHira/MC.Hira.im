@@ -31,19 +31,11 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v4
       
-      - name: Check for index.md
-        run: |
-          echo "Checking for index.md files..."
-          find . -name "index.md" -exec echo "Found: {}" \;
-          if [ ! -f "index.md" ] && [ ! -f "en/index.md" ]; then
-            echo "Warning: index.md not found in root or en/ directory"
-          fi
-      
       - name: Install dependencies
         run: |
           rm -rf node_modules package-lock.json
           npm install
-          npm install axios typescript @theojs/lumen@latest # Add axios, typescript, and latest @theojs/lumen
+          npm install axios # Add axios for fallback data enhancement
       
       - name: Download addon data artifact
         id: download-artifact
