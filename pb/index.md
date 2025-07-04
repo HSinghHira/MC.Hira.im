@@ -8,9 +8,9 @@ head:
 
 hero:
   name: "Apologies!!"
-  text: "Not Availble"
-  textsuffix: ' Yet'
-  tagline: By Hira
+  text: "Not Availble Yet"
+  textsuffix: ' '
+  tagline: 
   image:
     src: /data/home.png
     alt: All About Minecraft

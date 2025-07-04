@@ -9,8 +9,8 @@ head:
 
 hero:
   name: "Basically Everything"
-  text: "Minecraft"
-  textsuffix: 'Gamer Needs'
+  text: "Minecraft Gamer Needs"
+  textsuffix: ''
   tagline: The mission is to gather every link, resource, tutorial, and tool you’ll ever need for the ultimate Minecraft experience, all in one place..
   image:
     src: /data/home.png

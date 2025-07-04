@@ -21,9 +21,6 @@ import IftaLabel from 'primevue/iftalabel';
 import Select from 'primevue/select';
 import FloatLabel from "primevue/floatlabel";
 
-
-import { HomeUnderline } from '@theojs/lumen'
-
 import Layout from './Layout.vue'
 import Download from './components/Download.vue'
 import LitematicViewer from './components/LitematicViewer.vue'
@@ -65,7 +62,6 @@ export default {
     app.component('Select', Select)
     app.component('FloatLabel', FloatLabel)    
     
-    app.component('Home', HomeUnderline)
     app.component('Download', Download)
     app.component('LitematicViewer', LitematicViewer)
     app.component('MinecraftServerPing', MinecraftServerPing)
