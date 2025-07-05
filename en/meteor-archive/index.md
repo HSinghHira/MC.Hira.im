@@ -3,7 +3,7 @@ layout: doc
 prev: false
 next: false
 
-title: Meteor Client Archives
+title: Meteor Client Archive
 description: Archive of Meteor Client versions with corresponding Minecraft versions, download links, and source code references.
 
 head:
@@ -17,7 +17,7 @@ head:
     - name: keywords
       content: Meteor Client, Minecraft, archives, versions, downloads
 ---
-# Meteor Client Archives
+# Meteor Client Archive
 
 ## Introduction
 
