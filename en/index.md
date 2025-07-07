@@ -1,6 +1,6 @@
 ---
 layout: home
-redirect: /en/ 
+redirect: /en/
 
 head:
   - - meta
@@ -10,7 +10,7 @@ head:
 hero:
   name: "Basically Everything"
   text: "Minecraft Gamer Needs"
-  textsuffix: ''
+  textsuffix: "Gamer Needs"
   tagline: The mission is to gather every link, resource, tutorial, and tool you’ll ever need for the ultimate Minecraft experience, all in one place..
   image:
     src: /data/home.png
@@ -25,7 +25,6 @@ hero:
   #     link: https://discord.gg/q5nF6mj4AV
 
 features:
-
   - icon:
       src: /data/icons/tutorial.png
     title: Minecraft Tutorials Hub
@@ -56,6 +55,7 @@ features:
     link: en/tools
     details: Discover a versatile suite of web-based Minecraft tools designed to enhance your gameplay, server management, and creative projects.
 ---
+
 <Home />
 
 <!-- :::raw

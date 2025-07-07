@@ -73,7 +73,7 @@
             :key="addon.title"
             class="addon-grid-item"
           >
-            <a :href="`/${addon.link}`">
+            <a :href="`/${addon.link}`" class="addon-card-link">
               <!-- Enhanced Addon Card -->
               <div class="addon-card">
                 <!-- Icon and Content Row -->
@@ -124,7 +124,10 @@
 </template>
 
 <style scoped>
-a {
+.addon-card-link {
+  text-decoration: none;
+}
+.addon-card-link:hover {
   text-decoration: none;
 }
 
@@ -132,7 +135,6 @@ a {
   margin: 2rem 0;
 }
 
-/* Enhanced Filters Styling */
 .filters-container {
   display: flex;
   gap: 1.5rem;
@@ -224,6 +226,12 @@ a {
 .addon-grid-item {
   width: 100%;
 }
+
+.addon-grid-item:hover {
+  border: 1px solid var(--vp-c-brand-1);
+  border-radius: 12px;
+}
+
 
 .addon-icon-container {
   flex-shrink: 0;
