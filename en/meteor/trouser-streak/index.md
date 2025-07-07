@@ -35,7 +35,9 @@ The addon is open source and actively maintained by etianl and team. It gets reg
 
 Trouser-Streak supports these Minecraft versions:
 
-- **1.21.5** (Latest)
+- **1.21.7**
+- **1.21.6**
+- **1.21.5**
 - **1.21.4**
 - **1.21.3**
 - **1.21.1**
@@ -54,6 +56,7 @@ Trouser-Streak includes three main categories of modules:
 
 These modules work in survival mode and general gameplay:
 
+- **WaypointCoordExploit** - New waypoint system that shows the direction to other players that are online on a server.
 - **ActivatedSpawnerDetector** - Finds if players were near spawners
 - **AdvancedItemESP** - Detects specific items you're searching for
 - **BaseFinder** - Automatically detects bases by scanning chunks for unnatural blocks

@@ -79,14 +79,18 @@ const archives = ref<Archive[]>([])
 const showDownloadDialog = ref(false)
 const selectedArchive = ref<Archive | null>(null)
 
-// Fetch data from JSON file
+// Fetch data from JSON file and sort by version (descending)
 onMounted(async () => {
   try {
     const response = await fetch('/data/meteor-client-versions.json')
     if (!response.ok) {
       throw new Error(`Failed to fetch: ${response.statusText}`)
     }
-    archives.value = await response.json()
+    const data = await response.json()
+    // Sort archives by version in descending order
+    archives.value = data.sort((a: Archive, b: Archive) => {
+      return b.version.localeCompare(a.version, undefined, { numeric: true, sensitivity: 'base' })
+    })
   } catch (error) {
     console.error('Error loading Meteor Client versions:', error)
     // Optionally set a fallback or show an error message
@@ -104,7 +108,6 @@ const formatDate = (dateString: string): string => {
 
   return `${day} ${month}. ${year}`
 }
-
 
 const openDownloadDialog = (archive: Archive) => {
   selectedArchive.value = archive
@@ -124,7 +127,3 @@ const openSourceLink = (url: string | null) => {
   }
 }
 </script>
-
-<style scoped>
-/* Optional: Add custom styles */
-</style>
