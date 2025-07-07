@@ -1,5 +1,13 @@
 [
     {
+    "title": "Asteroide",
+    "link": "en/meteor/asteroide",
+    "description": "powerful Meteor Client addon for Minecraft for enhancing Minecraft gameplay.",
+    "icon": "/data/icons/asteroide.png",
+    "github_repo": "https://github.com/asteroide-development/Asteroide/",
+    "mc_version": ["1.21.4", "1.20.4"]
+  },
+  {
     "title": "HKUtils",
     "link": "en/meteor/HKUtils",
     "description": "Various modules and commands for Meteor Client, enhancing Minecraft gameplay.",
