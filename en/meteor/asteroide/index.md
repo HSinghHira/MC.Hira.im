@@ -36,7 +36,7 @@ For players using older Minecraft versions, the mod can be used with [ViaFabricP
 
 - 🔗 [Advanced Previewer](/en/meteor/preview/?asteroide-development/Asteroide/tree/master/src/main/java/spigey/asteroide/modules) 🔗 [Simple Previewer](/en/meteor/preview/simple.html?asteroide-development/Asteroide/tree/master/src/main/java/spigey/asteroide/modules)
 - 🔗 [Github Repository](https://github.com/asteroide-development/Asteroide/)
-- ⬇️ [Download Latest Version](/en/download/?asteroide-development/Asteroide/){target="\_blank"}
+- ⬇️ [Download Latest Version](/en/download/?asteroide-development/Asteroide/)
 - 🗂️ [Download Other Versions](https://github.com/asteroide-development/Asteroide/tags)
 
 ## Key Features and Modules

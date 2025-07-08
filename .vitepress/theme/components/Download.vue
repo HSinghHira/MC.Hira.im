@@ -14,18 +14,36 @@ const closeTabOrRedirect = (delay = 1000) => {
     
     setTimeout(() => {
       if (!window.closed) {
-        status.value = 'Redirecting to homepage...'
-        redirectToHomePage()
+        status.value = 'Redirecting back...'
+        redirectBack()
       }
     }, 3000)
   }, delay)
 }
 
-const redirectToHomePage = async () => {
+const redirectBack = async () => {
   try {
+    // First try to get the referrer URL
+    const referrer = document.referrer
+    
+    if (referrer && referrer !== window.location.href) {
+      logDebug('Redirecting to referrer:', referrer)
+      window.location.href = referrer
+      return
+    }
+    
+    // If no referrer, try to go back in history
+    if (window.history.length > 1) {
+      logDebug('Using history.back()')
+      window.history.back()
+      return
+    }
+    
+    // Fallback to homepage if no referrer and no history
+    logDebug('No referrer or history, falling back to homepage')
     await router.go('/')
   } catch (error) {
-    console.log('Router navigation failed, using window.location')
+    console.log('Router navigation failed, using window.location for homepage')
     window.location.href = '/'
   }
 }
@@ -40,6 +58,10 @@ onMounted(async () => {
     let user, repo
     const fileExtensions = ['.jar']
 
+    // Log referrer information for debugging
+    logDebug('Page referrer:', document.referrer)
+    logDebug('History length:', window.history.length)
+
     // Parse URL parameters
     const urlParams = new URLSearchParams(window.location.search)
     
@@ -51,8 +73,10 @@ onMounted(async () => {
       const firstParam = searchString.split('&')[0]
       
       if (firstParam.includes('/')) {
-        const parts = firstParam.split('/')
-        if (parts.length === 2) {
+        // Remove trailing slash if present and split
+        const cleanParam = firstParam.replace(/\/$/, '')
+        const parts = cleanParam.split('/')
+        if (parts.length === 2 && parts[0] && parts[1]) {
           user = parts[0]
           repo = parts[1]
         }
