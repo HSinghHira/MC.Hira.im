@@ -55,7 +55,25 @@ export default defineConfig({
           return id.endsWith('index.md') && id.includes('meteor/')
         },
       }),
-    ]
+    ],
+    // Add these configurations to fix the .vue file extension error
+    optimizeDeps: {
+      exclude: [
+        '@nolebase/vitepress-plugin-git-changelog/client',
+        // Add other Nolebase plugins if you use them
+        '@nolebase/vitepress-plugin-enhanced-readabilities/client',
+        '@nolebase/vitepress-plugin-inline-link-preview/client',
+      ],
+    },
+    ssr: {
+      noExternal: [
+        '@nolebase/vitepress-plugin-git-changelog',
+        '@nolebase/ui', // This is crucial for .vue file support
+        // Add other Nolebase plugins if you use them
+        '@nolebase/vitepress-plugin-enhanced-readabilities',
+        '@nolebase/vitepress-plugin-inline-link-preview',
+      ],
+    },
   },
   head: [
     ...head,
