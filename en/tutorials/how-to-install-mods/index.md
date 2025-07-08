@@ -3,6 +3,9 @@ layout: home
 isHome: false
 editLink: true
 
+gitChangelog: false
+gitContributors: false
+
 title: How to Install Mods in Minecraft?
 description: A simple step-by-step tutorial on how to install mods in Minecraft.
 
@@ -22,13 +25,10 @@ features:
       src: /data/icons/modrinth.webp
     title: Install Mods in Modrinth?
     link: /en/tutorials/how-to-install-mods/for-modrinth/
-    details:  A simple step-by-step tutorial on how to install Minecraft mods in Modrinth.
+    details: A simple step-by-step tutorial on how to install Minecraft mods in Modrinth.
 
   - icon: 🔜
     title: Coming Soon
     link: /
-    details:  Coming Soon
-
-
+    details: Coming Soon
 ---
-

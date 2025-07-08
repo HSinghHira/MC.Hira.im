@@ -64,6 +64,3 @@ Before we jump into the steps, here’s what you’ll need:
 4. **Find or Create the Mods Folder**: Inside the profile folder, look for a folder called **mods**. If it’s not there, create one by right-clicking, selecting <Tag severity="secondary" icon="pi pi-file" value="New"></Tag> > <Tag severity="secondary" icon="pi pi-folder" value="Folder"></Tag> , and naming it <Tag severity="secondary" icon="pi pi-folder" value="mods"></Tag>
 5. **Paste the Mod File**: Copy your downloaded **.jar** file (<Tag value="Ctrl"></Tag> + <Tag value="C"></Tag> or right-click > Copy), then paste it (<Tag value="Ctrl"></Tag> + <Tag value="V"></Tag> or right-click > Paste) into the **mods** folder.
 6. **Start Minecraft**: Open the Modrinth Launcher, select your profile, and click **Play** . Your mod should now be loaded in Minecraft!
-
-<NolebaseGitContributors />
-<NolebaseGitChangelog />

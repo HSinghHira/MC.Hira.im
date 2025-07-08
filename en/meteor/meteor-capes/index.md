@@ -64,6 +64,3 @@ Specific options may include:
 - Toggling cape visibility or adjusting display settings.
 
 Since exact details are not provided in the repository, check Meteor Client’s module settings or the [Meteor Capes GitHub page](https://github.com/Gllody/meteor-capes) for any updates or community guidance on usage.
-
-<NolebaseGitContributors />
-<NolebaseGitChangelog />

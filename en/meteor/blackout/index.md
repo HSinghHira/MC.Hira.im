@@ -75,6 +75,3 @@ BlackOut’s modules are configurable through Meteor Client’s user interface, 
 - **PistonCrystal**: Use for strategic attacks combining pistons and crystals. Experiment with settings to align with your combat strategy.
 
 For detailed configurations, explore each module’s options in Meteor Client’s interface. Some modules may have advanced settings for fine-tuning.
-
-<NolebaseGitContributors />
-<NolebaseGitChangelog />

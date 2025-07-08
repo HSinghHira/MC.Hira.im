@@ -34,7 +34,7 @@ I have taken this all infomation from new & old Github commits and explored the 
 ## Supported Version(s)
 
 - minecraft_version=1.21.5
-- minecraft_version=1.19.1 _(deleted)_
+- minecraft*version=1.19.1 *(deleted)\_
 - As the README notes, Electron only supports the latest dev build of Meteor Client.
 
 ## Requirements
@@ -60,6 +60,3 @@ In short, Electron bundles a suite of performance tweaks – from rendering and 
 
 - **Open Source Transparency**: The entire source code of Electron is public, modular, and well-documented. Anyone can review the code, see the mixins being injected, and verify that there is no malicious behavior or telemetry.
 - **Reputation and Track RecordActive Developmen**: Aside from Electron, RacoonDog has contributed to other Meteor-related projects or mods such as MeteorEnemies. Their name is recognized within GitHub’s Minecraft modding ecosystem, particularly in advanced performance tooling and Meteor add-ons.
-
-<NolebaseGitContributors />
-<NolebaseGitChangelog />

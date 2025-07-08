@@ -2,6 +2,9 @@
 layout: home
 isHome: false
 
+gitChangelog: false
+gitContributors: false
+
 title: Minecraft Tutorials Hub
 description: Discover a comprehensive collection of step-by-step Minecraft tutorials, guiding you through mod installation, gameplay tips, building techniques, and more. Perfect for beginners and seasoned players looking to enhance their Minecraft experience.
 
@@ -21,16 +24,15 @@ features:
       src: /data/icons/mods.png
     title: How to Install Mods in Minecraft?
     link: en/tutorials/how-to-install-mods
-    details:  A simple step-by-step tutorial on how to install mods in Minecraft.
+    details: A simple step-by-step tutorial on how to install mods in Minecraft.
 
   - icon: 🔜
     title: Coming Soon
     link: /
-    details:  Coming Soon
+    details: Coming Soon
 
   - icon: 🔜
     title: Coming Soon
     link: /
-    details:  Coming Soon
-
+    details: Coming Soon
 ---

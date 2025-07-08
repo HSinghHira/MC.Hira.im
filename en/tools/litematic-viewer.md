@@ -57,6 +57,3 @@ The tool is ideal for Minecraft builders, modders, or server administrators who 
 - **No Real-Time Editing** : The tool is view-only and does not support editing or saving modified schematics.
 - **Browser Compatibility** : Requires a modern browser with WebGL support for Three.js rendering.
 - **Error Handling** : Invalid Litematic files or missing assets may result in fallback rendering (e.g., a red cube) or error messages, which may not be intuitive for all users.
-
-<NolebaseGitContributors />
-<NolebaseGitChangelog />

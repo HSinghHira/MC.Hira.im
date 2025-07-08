@@ -62,6 +62,3 @@ These modules can be configured directly within the Meteor Client interface, off
 ## Why the Author is Trustworthy
 
 The author, known as HUHNcode on [GitHub](https://github.com/HUHNcode), has shown dedication to the Lucid project through consistent updates, with four releases between March and June 2025. The repository includes detailed documentation for key modules like Chat Bot and Chat Fonts, reflecting a commitment to user clarity and support. Lucid’s integration with Meteor Client, a widely respected Minecraft mod, further bolsters its credibility. Although the repository has only six stars, indicating a small but growing community, the structured development approach and regular updates suggest HUHNcode is a reliable developer. The lack of reported issues or negative feedback on the repository also supports this assessment.
-
-<NolebaseGitContributors />
-<NolebaseGitChangelog />

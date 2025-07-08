@@ -1,8 +1,11 @@
 ---
 layout: doc
 
+gitChangelog: false
+gitContributors: false
+
 title: Credits
-description: 
+description:
 
 head:
   - - meta
@@ -10,15 +13,17 @@ head:
       content: index
   - - meta
     - name: description
-      content: 
+      content:
   - - meta
     - name: keywords
       content: how to?, modrinth, install mods in modrinth, how to install mods, install mods in minecraft, meteor client, meteor client addon, minecraft mods
 ---
+
 # Credits
+
 ## Logos and Images
 
-* https://modrinth.com/
-* https://pngtree.com/freepng/minecraft_8709743.html
-* https://rosepng.com/minecraft-logo-png/
-* https://modrinth.com/plugin/displayping
+- https://modrinth.com/
+- https://pngtree.com/freepng/minecraft_8709743.html
+- https://rosepng.com/minecraft-logo-png/
+- https://modrinth.com/plugin/displayping

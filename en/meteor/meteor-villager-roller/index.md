@@ -133,6 +133,3 @@ To use the meteor-villager-roller mod effectively, follow these detailed steps, 
     - Once the desired trade is found, you can lock the villager’s profession by keeping the lectern in place and begin trading.
 
 By following these steps, you can efficiently use the meteor-villager-roller mod to obtain the villager trades you need, particularly for enchantment farming.
-
-<NolebaseGitContributors />
-<NolebaseGitChangelog />

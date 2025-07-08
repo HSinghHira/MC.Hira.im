@@ -79,6 +79,3 @@ Once installed, Glazed integrates seamlessly with the Meteor Client interface, a
 - **RTP Base Finder**: Set parameters for base detection (e.g., storage or spawner presence) to locate player bases efficiently.
 
 To use a module, navigate to the Meteor Client GUI, find the Glazed modules, and enable or adjust settings as needed. Experiment with different modules to optimize your DonutSMP experience.
-
-<NolebaseGitContributors />
-<NolebaseGitChangelog />

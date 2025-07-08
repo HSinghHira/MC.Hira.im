@@ -116,6 +116,3 @@ The specific author or development team behind Meteor Plus is not explicitly nam
 - **Community Support** : The project has over 16,000 downloads and 85+ stars on GitHub, indicating significant popularity and trust among Minecraft mod users. It also welcomes contributions from the community, fostering collaborative development.
 - **Built on Meteor Client** : Meteor Plus is an addon for Meteor Client, a well-established and reputable Minecraft mod. This association adds credibility, as Meteor Client is widely used and trusted.
 - **Active Community** : An active Discord community provides support, updates, and interaction with developers and users.
-
-<NolebaseGitContributors />
-<NolebaseGitChangelog />

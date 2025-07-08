@@ -215,6 +215,3 @@ A curated collection of essential Minecraft websites, organized into intuitive c
 
 - **[VoxelSphere Generator](https://oranj.io/VoxelSphereGenerator)**  
   Create perfectly rounded voxel spheres for large-scale builds.
-
-<NolebaseGitContributors />
-<NolebaseGitChangelog />

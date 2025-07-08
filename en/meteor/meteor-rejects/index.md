@@ -136,6 +136,3 @@ The author of Meteor Rejects, known as AntiCope, is a recognized figure in the M
 - **Reputation** : While some community members have raised questions about the safety of AntiCope’s addons (e.g., a Reddit post on [r/minecraftclients](https://www.reddit.com/r/minecraftclients/comments/19e853u/are_anticope_addons_for_meteor_client_safe/)), the open-source nature and community support suggest a level of trustworthiness. However, as with any mod, users should exercise caution, verify downloads from official sources, and review the code if possible.
 
 AntiCope’s commitment to open-source development and active engagement with the Minecraft community makes them a reliable developer, though standard precautions for mod safety should always be followed.
-
-<NolebaseGitContributors />
-<NolebaseGitChangelog />

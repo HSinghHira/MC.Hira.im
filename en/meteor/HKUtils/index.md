@@ -64,6 +64,3 @@ H1ggsK, the developer behind HKUtils, is an active member of the Minecraft moddi
 ## Usage Considerations
 
 While HKUtils offers exciting features, some modules may not work on servers with anti-cheat protections. For example, ForwardChat could be restricted due to its ability to send chat data externally. Always check server rules before using mods to avoid bans. The mod’s commands, like `.troll1`, are designed for fun but should be used responsibly to maintain a positive gaming environment.
-
-<NolebaseGitContributors />
-<NolebaseGitChangelog />

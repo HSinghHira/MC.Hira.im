@@ -1,6 +1,9 @@
 ---
 layout: false
 
+gitChangelog: false
+gitContributors: false
+
 head:
   - - meta
     - name: robots

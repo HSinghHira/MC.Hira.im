@@ -52,6 +52,3 @@ If you still want to build from source, you’ll need a **Java 21 JDK** from [Ad
 2. Extract the ZIP file and open a terminal in the folder.
 3. Run `gradlew build` (or `.\gradlew build` in PowerShell). The built JAR file will appear in the `build/libs` folder.
 4. Copy the `meteor-client-x.x.x.jar` file to your Minecraft `mods` folder.
-
-<NolebaseGitContributors />
-<NolebaseGitChangelog />

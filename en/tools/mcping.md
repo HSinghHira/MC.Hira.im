@@ -63,6 +63,3 @@ This tool offers several advantages over other Minecraft server status checkers:
 - **API Dependence** : Relies on third-party APIs, which may have rate limits or downtime.
 - **Whitelist Detection** : Whitelist status is inferred and may not always be accurate.
 - **No Real-Time Updates** : The tool pings servers once per request; continuous monitoring requires manual re-pinging.
-
-<NolebaseGitContributors />
-<NolebaseGitChangelog />

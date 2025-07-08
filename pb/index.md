@@ -1,6 +1,9 @@
 ---
 layout: home
 
+gitChangelog: false
+gitContributors: false
+
 head:
   - - meta
     - name: robots
@@ -9,8 +12,8 @@ head:
 hero:
   name: "Apologies!!"
   text: "Not Availble Yet"
-  textsuffix: ' '
-  tagline: 
+  textsuffix: " "
+  tagline:
   image:
     src: /data/home.png
     alt: All About Minecraft
@@ -22,7 +25,6 @@ hero:
   #   - theme: alt
   #     text: Need Help?
   #     link: https://discord.gg/q5nF6mj4AV
-
 ---
 
 <Home />
