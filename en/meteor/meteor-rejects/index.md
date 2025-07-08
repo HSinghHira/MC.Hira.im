@@ -15,7 +15,9 @@ head:
     - name: keywords
       content: Meteor Rejects, Meteor Rejects Meteor Client Addon, meteor client, meteor client addon, minecraft mods
 ---
+
 # Meteor Rejects Addon for Meteor Client
+
 ::: warning
 I have taken this all infomation from developer's new & old Github commits and explored the modules manually. So if there is something that is not correct, please do let me know.
 :::
@@ -26,17 +28,16 @@ Meteor Rejects is an addon designed to enhance the Meteor Client, a widely-used 
 
 ## Usefull Links
 
-* [Advanced Demo/Preview](/en/meteor/preview/?AntiCope/meteor-rejects/tree/master/src/main/java/anticope/rejects/modules), [Simple Previewer](/en/meteor/preview/simple.html?AntiCope/meteor-rejects/tree/master/src/main/java/anticope/rejects/modules)
-* [Github Repository](https://github.com/AntiCope/meteor-rejects)
-* [Latest Download](/en/download/?AntiCope/meteor-rejects){target="_blank"}
-* [All Versions](https://github.com/AntiCope/meteor-rejects/tags)
-* [Discord](https://discord.gg/9mrRPGKYU3)
+- [Advanced Demo/Preview](/en/meteor/preview/?AntiCope/meteor-rejects/tree/master/src/main/java/anticope/rejects/modules), [Simple Previewer](/en/meteor/preview/simple.html?AntiCope/meteor-rejects/tree/master/src/main/java/anticope/rejects/modules)
+- [Github Repository](https://github.com/AntiCope/meteor-rejects)
+- [Latest Download](/en/download/?AntiCope/meteor-rejects){target="\_blank"}
+- [All Versions](https://github.com/AntiCope/meteor-rejects/tags)
+- [Discord](https://discord.gg/9mrRPGKYU3)
 
 ## Supported Minecraft Versions
 
-
 | Minecraft Version | Release Date |
-| ------------------- | -------------- |
+| ----------------- | ------------ |
 | 1.19.2            | Nov 20, 2022 |
 | 1.19.3            | Mar 18, 2023 |
 | 1.19.4            | Jun 17, 2023 |
@@ -56,9 +57,8 @@ Meteor Rejects significantly expands the capabilities of the Meteor Client by in
 
 Meteor Rejects introduces a variety of new modules, each designed to enhance gameplay in different ways, such as combat, utility, and automation.
 
-
 | **Module Name** | **Description**                                                        |
-| ----------------- | ------------------------------------------------------------------------ |
+| --------------- | ---------------------------------------------------------------------- |
 | AimAssist       | Removed from Meteor, likely aids in aiming for combat.                 |
 | AntiBot         | Removed from Meteor, possibly filters bot entities.                    |
 | AntiCrash       | Ported from Anti-ClientCrasher, likely prevents client crashes.        |
@@ -89,41 +89,41 @@ Meteor Rejects introduces a variety of new modules, each designed to enhance gam
 
 Meteor Rejects enhances several existing Meteor Client modules with additional settings and functionalities:
 
-* **NoRender** : Adds options such as`noCommandSuggestions` to disable command autocomplete suggestions and`disableToasts` to suppress notification pop-ups, improving performance and reducing visual clutter.
-* **Flight** : Includes a`stopMomentum` feature, allowing players to halt their movement instantly while flying, providing better control during navigation.
-* **KillAura** : Offers advanced combat settings, including Fov and invisible entity filters, random teleport to confuse opponents, hit chance adjustments, and random delay for more unpredictable attacks. Note that some features, like random delay, may have been removed in later updates.
-* **Alts** : Supports Yggdrasil login, enabling seamless management of alternative Minecraft accounts through the Mojang authentication system.
+- **NoRender** : Adds options such as`noCommandSuggestions` to disable command autocomplete suggestions and`disableToasts` to suppress notification pop-ups, improving performance and reducing visual clutter.
+- **Flight** : Includes a`stopMomentum` feature, allowing players to halt their movement instantly while flying, providing better control during navigation.
+- **KillAura** : Offers advanced combat settings, including Fov and invisible entity filters, random teleport to confuse opponents, hit chance adjustments, and random delay for more unpredictable attacks. Note that some features, like random delay, may have been removed in later updates.
+- **Alts** : Supports Yggdrasil login, enabling seamless management of alternative Minecraft accounts through the Mojang authentication system.
 
 ### New Commands
 
 Meteor Rejects introduces a variety of new commands that provide players with additional control over their gameplay. These commands can be executed via the in-game chat or command interface (default key to open the GUI is Right Shift, configurable in Minecraft’s controls menu). The commands include:
 
-* **`.center`** : Aligns the player to the center of the current block, useful for precise positioning.
-* **`.ghost`** : Likely related to anti-ghosting functionality, possibly clearing ghost blocks, ported from another mod.
-* **`.save-skin`** : Saves the player’s current skin for later use or reference.
-* **`.heads`** : Manages player heads, potentially for decorative or server purposes.
-* **`.seed`** : Retrieves the world seed, allowing players to share or analyze the world generation.
-* **`.setblock`** : Places a specified block at a given coordinate, useful for quick building or testing.
-* **`.set-velocity`** : Adjusts the player’s velocity, enabling custom movement speeds or jumps.
-* **`.teleport`** : Teleports the player to specified coordinates, simplifying navigation.
-* **`.terrain-export`** : Exports terrain data, possibly for map-making or analysis, adapted from another client.
-* **`.kick`** : Allows kicking a player from a server, likely intended for server administrators, ported from another mod.
+- **`.center`** : Aligns the player to the center of the current block, useful for precise positioning.
+- **`.ghost`** : Likely related to anti-ghosting functionality, possibly clearing ghost blocks, ported from another mod.
+- **`.save-skin`** : Saves the player’s current skin for later use or reference.
+- **`.heads`** : Manages player heads, potentially for decorative or server purposes.
+- **`.seed`** : Retrieves the world seed, allowing players to share or analyze the world generation.
+- **`.setblock`** : Places a specified block at a given coordinate, useful for quick building or testing.
+- **`.set-velocity`** : Adjusts the player’s velocity, enabling custom movement speeds or jumps.
+- **`.teleport`** : Teleports the player to specified coordinates, simplifying navigation.
+- **`.terrain-export`** : Exports terrain data, possibly for map-making or analysis, adapted from another client.
+- **`.kick`** : Allows kicking a player from a server, likely intended for server administrators, ported from another mod.
 
 Some commands, such as `.clear-chat` and `.panic`, were removed in later updates, so their availability depends on the version used.
 
 ### HUD Module
 
-* **Radar HUD** : Adds a radar display to the heads-up display, showing nearby entities or players, which enhances situational awareness in multiplayer environments.
+- **Radar HUD** : Adds a radar display to the heads-up display, showing nearby entities or players, which enhances situational awareness in multiplayer environments.
 
 ### Configuration Options
 
 Meteor Rejects provides additional settings to customize the addon’s behavior:
 
-* **Http Allowed** : Enables or disables HTTP requests, controlling network interactions.
-* **Http User Agent** : Allows setting a custom user agent for HTTP requests, useful for specific server interactions.
-* **Hidden Modules** : Permits hiding specific modules from the Meteor Client GUI, reducing clutter. A game restart is required to unhide modules.
-* **Load System Fonts** : Offers an option to disable system font loading for faster game startup. Custom fonts can be placed in the`meteor-client/fonts` folder, requiring a restart to apply.
-* **Duplicate Module Names** : Allows modules to share the same name, providing flexibility in module management.
+- **Http Allowed** : Enables or disables HTTP requests, controlling network interactions.
+- **Http User Agent** : Allows setting a custom user agent for HTTP requests, useful for specific server interactions.
+- **Hidden Modules** : Permits hiding specific modules from the Meteor Client GUI, reducing clutter. A game restart is required to unhide modules.
+- **Load System Fonts** : Offers an option to disable system font loading for faster game startup. Custom fonts can be placed in the`meteor-client/fonts` folder, requiring a restart to apply.
+- **Duplicate Module Names** : Allows modules to share the same name, providing flexibility in module management.
 
 These features make Meteor Rejects a versatile addon, catering to players who want more control, customization, and utility in their Minecraft experience.
 
@@ -131,8 +131,11 @@ These features make Meteor Rejects a versatile addon, catering to players who wa
 
 The author of Meteor Rejects, known as AntiCope, is a recognized figure in the Minecraft modding community. Their credibility is supported by several factors:
 
-* **Open-Source Contributions** : AntiCope maintains multiple open-source projects on GitHub, including Meteor Rejects, which has garnered significant community engagement with hundreds of stars and forks. The transparency of the source code allows users to review it for safety and functionality.
-* **Active Maintenance** : AntiCope regularly updates Meteor Rejects, addressing bugs and incorporating community feedback, as evidenced by the frequent releases and commit history on GitHub.
-* **Reputation** : While some community members have raised questions about the safety of AntiCope’s addons (e.g., a Reddit post on [r/minecraftclients](https://www.reddit.com/r/minecraftclients/comments/19e853u/are_anticope_addons_for_meteor_client_safe/)), the open-source nature and community support suggest a level of trustworthiness. However, as with any mod, users should exercise caution, verify downloads from official sources, and review the code if possible.
+- **Open-Source Contributions** : AntiCope maintains multiple open-source projects on GitHub, including Meteor Rejects, which has garnered significant community engagement with hundreds of stars and forks. The transparency of the source code allows users to review it for safety and functionality.
+- **Active Maintenance** : AntiCope regularly updates Meteor Rejects, addressing bugs and incorporating community feedback, as evidenced by the frequent releases and commit history on GitHub.
+- **Reputation** : While some community members have raised questions about the safety of AntiCope’s addons (e.g., a Reddit post on [r/minecraftclients](https://www.reddit.com/r/minecraftclients/comments/19e853u/are_anticope_addons_for_meteor_client_safe/)), the open-source nature and community support suggest a level of trustworthiness. However, as with any mod, users should exercise caution, verify downloads from official sources, and review the code if possible.
 
 AntiCope’s commitment to open-source development and active engagement with the Minecraft community makes them a reliable developer, though standard precautions for mod safety should always be followed.
+
+<NolebaseGitContributors />
+<NolebaseGitChangelog />

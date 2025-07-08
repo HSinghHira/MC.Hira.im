@@ -15,6 +15,7 @@ head:
     - name: keywords
       content: Minecraft mod, Meteor Client, Server-crashing modules, Meteor Capes addon, custom capes
 ---
+
 # Meteor Capes Addon for Meteor Client
 
 ## Introduction
@@ -23,10 +24,10 @@ Meteor Capes is a free, open-source addon for Meteor Client, a widely used utili
 
 ## Useful Links
 
-* 🔗 [Github Repository](https://github.com/Gllody/meteor-capes)
-* ⬇️ [Download Latest Version](/en/download/?Gllody/meteor-capes){target="_blank"}
-* 🗂️ [Download Other Versions](https://github.com/Gllody/meteor-capes/tags)
-* 💬 [Discord Server for Support](https://discord.gg/XFaXTqfag5)
+- 🔗 [Github Repository](https://github.com/Gllody/meteor-capes)
+- ⬇️ [Download Latest Version](/en/download/?Gllody/meteor-capes){target="\_blank"}
+- 🗂️ [Download Other Versions](https://github.com/Gllody/meteor-capes/tags)
+- 💬 [Discord Server for Support](https://discord.gg/XFaXTqfag5)
 
 ## Supported Minecraft Versions
 
@@ -39,9 +40,9 @@ Meteor Capes is compatible with the following Minecraft versions, based on its r
 
 Meteor Capes focuses on a single, clear purpose: adding custom capes to Minecraft. While the repository does not explicitly list additional modules, the core functionality can be summarized as follows:
 
-| Feature       | Description                     |
-|---------------|---------------------------------|
-| Adds Capes    | Enables custom capes in Minecraft, allowing players to display personalized cosmetic items. |
+| Feature    | Description                                                                                 |
+| ---------- | ------------------------------------------------------------------------------------------- |
+| Adds Capes | Enables custom capes in Minecraft, allowing players to display personalized cosmetic items. |
 
 The addon likely integrates with Meteor Client’s module system, enabling cape functionality through the client’s settings or in-game interface. Due to limited documentation, it’s possible that the addon provides a single module or setting for managing capes, such as selecting pre-defined capes or uploading custom designs.
 
@@ -57,8 +58,12 @@ After installation, Meteor Capes enables capes within Meteor Client. Depending o
 - **In-Game Interface**: Some addons allow real-time customization, such as selecting pre-defined capes or uploading custom cape images (typically `.png` files).
 
 Specific options may include:
+
 - Choosing from a library of pre-designed capes.
 - Uploading custom cape images via a URL or file (if supported).
 - Toggling cape visibility or adjusting display settings.
 
 Since exact details are not provided in the repository, check Meteor Client’s module settings or the [Meteor Capes GitHub page](https://github.com/Gllody/meteor-capes) for any updates or community guidance on usage.
+
+<NolebaseGitContributors />
+<NolebaseGitChangelog />

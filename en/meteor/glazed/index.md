@@ -15,52 +15,54 @@ head:
     - name: keywords
       content: Minecraft mod, Meteor Client, Glazed addon, DonutSMP, automation, Minecraft hacks
 ---
+
 # Glazed Addon for Meteor Client
+
 ## Introduction
 
 Glazed is a free, open-source addon for the Meteor Client, specifically designed for the DonutSMP server in Minecraft. It aims to simplify gameplay by automating repetitive tasks and providing high-quality tools without any cost. Whether you're navigating the skies with Elytra or sniping deals in the auction house, Glazed offers a suite of modules to enhance your experience on DonutSMP. This tutorial covers its features, installation, usage, and why you can trust its author.
 
 ## Useful Links
 
-* [Advanced Previewer](/en/meteor/preview/?realnnpg/Glazed/tree/main/src/main/java/com/nnpg/glazed/modules), [Simple Previewer](/en/meteor/preview/simple.html?realnnpg/Glazed/tree/main/src/main/java/com/nnpg/glazed/modules)
-* [Github Repository](https://github.com/realnnpg/Glazed)
-* [Download Latest Version](/en/download/?realnnpg/Glazed){target="_blank"}
-* [Download Other Versions](https://github.com/realnnpg/Glazed/tags)
-* [Author's Personal Website](https://nnpg.dev)
-* [Glazed Discord Server for Support](https://discord.gg/TCQDpG8ByY)
-* [Author's YouTube Channel](https://www.youtube.com/@realnnpg)
+- [Advanced Previewer](/en/meteor/preview/?realnnpg/Glazed/tree/main/src/main/java/com/nnpg/glazed/modules), [Simple Previewer](/en/meteor/preview/simple.html?realnnpg/Glazed/tree/main/src/main/java/com/nnpg/glazed/modules)
+- [Github Repository](https://github.com/realnnpg/Glazed)
+- [Download Latest Version](/en/download/?realnnpg/Glazed){target="\_blank"}
+- [Download Other Versions](https://github.com/realnnpg/Glazed/tags)
+- [Author's Personal Website](https://nnpg.dev)
+- [Glazed Discord Server for Support](https://discord.gg/TCQDpG8ByY)
+- [Author's YouTube Channel](https://www.youtube.com/@realnnpg)
 
 ## Supported Minecraft Versions
 
 Glazed is compatible with Minecraft versions supported by the Meteor Client, as it relies on Meteor’s framework.
-| Minecraft Version | 
+| Minecraft Version |
 |-------------------|
-| 1.21.4            | 
+| 1.21.4 |
 
 ## Key Features and Modules
 
 Glazed provides a range of modules to streamline gameplay on DonutSMP. Below is a detailed list of its modules, their functionalities, and their current status, sourced from the Glazed GitHub repository:
 
-| Module Name         | Description                                                                 | Status         |
-|---------------------|-----------------------------------------------------------------------------|----------------|
-| Elytra Swap         | Automatically swaps between Elytra and Chestplate based on context.         | ✅ Added       |
-| Auto Inv Totem      | Places a Totem in the offhand when the inventory is opened.                 | ✅ Added       |
-| Auto Firework       | Automatically uses fireworks for Elytra flying.                             | ✅ Added       |
-| Cord Snapper        | Copies current coordinates to the clipboard instantly.                      | ✅ Added       |
-| Pearl Throw         | Throws an Ender Pearl instantly.                                            | ✅ Added       |
-| Player Detection    | Detects when players are rendered in the game.                              | ✅ Added       |
-| RTP Base Finder     | Uses /rtp to check for bases via storage/spawner detection.                 | ✅ Added       |
-| Anti Trap           | Helps escape from armor stands and chest minecarts.                       | ✅ Added       |
-| AHSniper            | Refreshes and snipes underpriced items from the auction house.              | ✅ Added       |
-| SpawnerProtect      | Mines and stores spawners when a player is nearby.                          | ✅ Added       |
-| RTPer               | Automatically uses /rtp until near specified coordinates.                   | ✅ Added       |
-| RTPTunnelMiner      | RTPs, mines to a Y level, then uses #tunnel to mine horizontally.           | ✅ Added       |
-| Netherite Finder    | Highlights netherite blocks in the Nether.                                  | 🟠 Coming soon |
-| Diamond Finder      | Highlights diamond ores underground.                                        | 🟠 Coming soon |
-| Auto Sell           | Automatically sells sea pickles via /sell.                                  | 🟠 Coming soon |
-| Hover Totem         | Equips a Totem of Undying when hovered in inventory.                        | ❌ Not Yet     |
-| Bone Dropper        | Automatically drops bones collected from spawners.                          | ❌ Not Yet     |
-| Auto Order          | Automatically executes /order for configured items.                         | ❌ Not Yet     |
+| Module Name      | Description                                                         | Status         |
+| ---------------- | ------------------------------------------------------------------- | -------------- |
+| Elytra Swap      | Automatically swaps between Elytra and Chestplate based on context. | ✅ Added       |
+| Auto Inv Totem   | Places a Totem in the offhand when the inventory is opened.         | ✅ Added       |
+| Auto Firework    | Automatically uses fireworks for Elytra flying.                     | ✅ Added       |
+| Cord Snapper     | Copies current coordinates to the clipboard instantly.              | ✅ Added       |
+| Pearl Throw      | Throws an Ender Pearl instantly.                                    | ✅ Added       |
+| Player Detection | Detects when players are rendered in the game.                      | ✅ Added       |
+| RTP Base Finder  | Uses /rtp to check for bases via storage/spawner detection.         | ✅ Added       |
+| Anti Trap        | Helps escape from armor stands and chest minecarts.                 | ✅ Added       |
+| AHSniper         | Refreshes and snipes underpriced items from the auction house.      | ✅ Added       |
+| SpawnerProtect   | Mines and stores spawners when a player is nearby.                  | ✅ Added       |
+| RTPer            | Automatically uses /rtp until near specified coordinates.           | ✅ Added       |
+| RTPTunnelMiner   | RTPs, mines to a Y level, then uses #tunnel to mine horizontally.   | ✅ Added       |
+| Netherite Finder | Highlights netherite blocks in the Nether.                          | 🟠 Coming soon |
+| Diamond Finder   | Highlights diamond ores underground.                                | 🟠 Coming soon |
+| Auto Sell        | Automatically sells sea pickles via /sell.                          | 🟠 Coming soon |
+| Hover Totem      | Equips a Totem of Undying when hovered in inventory.                | ❌ Not Yet     |
+| Bone Dropper     | Automatically drops bones collected from spawners.                  | ❌ Not Yet     |
+| Auto Order       | Automatically executes /order for configured items.                 | ❌ Not Yet     |
 
 These modules cater to various aspects of gameplay, from automation to resource gathering, making Glazed a versatile tool for DonutSMP players.
 
@@ -77,3 +79,6 @@ Once installed, Glazed integrates seamlessly with the Meteor Client interface, a
 - **RTP Base Finder**: Set parameters for base detection (e.g., storage or spawner presence) to locate player bases efficiently.
 
 To use a module, navigate to the Meteor Client GUI, find the Glazed modules, and enable or adjust settings as needed. Experiment with different modules to optimize your DonutSMP experience.
+
+<NolebaseGitContributors />
+<NolebaseGitChangelog />

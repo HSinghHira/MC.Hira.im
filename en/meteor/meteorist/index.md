@@ -15,7 +15,9 @@ head:
     - name: keywords
       content: Meteorist, Meteorist Meteor Client Addon, meteor client, meteor client addon, minecraft mods
 ---
+
 # Meteorist Addon for Meteor Client
+
 ::: warning
 I have taken this all infomation from developer's new & old Github commits and explored the modules manually. So if there is something that is not correct, please do let me know.
 :::
@@ -26,10 +28,10 @@ I have taken this all infomation from developer's new & old Github commits and e
 
 ## Useful Links
 
-* [Advanced Demo/Preview](/en/meteor/preview/?Zgoly/Meteorist/tree/main/src/main/java/zgoly/meteorist/modules), [Simple Previewer](/en/meteor/preview/simple.html?Zgoly/Meteorist/tree/main/src/main/java/zgoly/meteorist/modules)
-* [Github Repository](https://github.com/Zgoly/Meteorist)
-* [Latest Download](/en/download/?Zgoly/Meteorist){target="_blank"}
-* [All Versions](https://github.com/Zgoly/Meteorist/tags)
+- [Advanced Demo/Preview](/en/meteor/preview/?Zgoly/Meteorist/tree/main/src/main/java/zgoly/meteorist/modules), [Simple Previewer](/en/meteor/preview/simple.html?Zgoly/Meteorist/tree/main/src/main/java/zgoly/meteorist/modules)
+- [Github Repository](https://github.com/Zgoly/Meteorist)
+- [Latest Download](/en/download/?Zgoly/Meteorist){target="\_blank"}
+- [All Versions](https://github.com/Zgoly/Meteorist/tags)
 
 ## Supported Minecraft Versions
 
@@ -111,3 +113,6 @@ The Meteorist repository has 149 stars and 12 forks, showing community trust. Th
 Zgoly also contributes to other projects like the Meteor Client itself and maintains proper documentation. The developer accepts community contributions and has worked with other contributors like crazymoose77756 and Starmania.
 
 The addon is featured in community lists of trusted Meteor Client addons. YouTube content creators have reviewed Meteorist positively, calling it one of the "best addons for the popular Meteor client".
+
+<NolebaseGitContributors />
+<NolebaseGitChangelog />

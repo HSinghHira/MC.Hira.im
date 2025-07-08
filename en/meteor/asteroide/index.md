@@ -4,6 +4,8 @@ layout: doc
 title: Asteroide Addon for Meteor Client
 description: Asteroide is a powerful Meteor Client addon for Minecraft 1.20 and above.
 
+authors: []
+
 head:
   - - meta
     - name: description
@@ -94,5 +96,7 @@ Asteroide includes many custom modules and commands that extend Meteor Client’
 
 ## Why the Author is Trustworthy
 
-Asteroide is an open-source project with visible, frequent updates, which boosts confidence in its reliability. The GitHub repo shows 378 commits on the master branch as of mid-2025 , indicating active development. It is licensed under Apache-2.0 , meaning its source code is publicly available for review. The author (“Spigey”) explicitly states the goal of enhancing the chat experience, and many of the modules (like ChatEncryption and Troll) reflect this focus. In short, the addon's transparent development history and clear purpose – coupled with its open license – suggest the author is
-committed and trustworthy in maintaining Asteroide.
+Asteroide is an open-source project with visible, frequent updates, which boosts confidence in its reliability. The GitHub repo shows 378 commits on the master branch as of mid-2025 , indicating active development. It is licensed under Apache-2.0 , meaning its source code is publicly available for review. The author (“Spigey”) explicitly states the goal of enhancing the chat experience, and many of the modules (like ChatEncryption and Troll) reflect this focus. In short, the addon's transparent development history and clear purpose – coupled with its open license – suggest the author is committed and trustworthy in maintaining Asteroide.
+
+<NolebaseGitContributors />
+<NolebaseGitChangelog />

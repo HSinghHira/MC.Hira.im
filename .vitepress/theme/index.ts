@@ -1,10 +1,22 @@
-import type { Theme } from "vitepress";
+import type { Theme as ThemeConfig } from "vitepress";
 import DefaultTheme from "vitepress/theme";
+import { h } from 'vue'
 
 import { Underline } from '@theojs/lumen'
 
 import PrimeVue from "primevue/config";
 import Aura from "@primevue/themes/aura";
+
+import {
+  NolebaseEnhancedReadabilitiesMenu,
+  NolebaseEnhancedReadabilitiesScreenMenu,
+} from '@nolebase/vitepress-plugin-enhanced-readabilities/client'
+import '@nolebase/vitepress-plugin-enhanced-readabilities/client/style.css'
+
+import {
+  NolebaseGitChangelogPlugin
+} from '@nolebase/vitepress-plugin-git-changelog/client'
+import '@nolebase/vitepress-plugin-git-changelog/client/style.css'
 
 // Existing components
 import Chip from "primevue/chip";
@@ -35,9 +47,18 @@ import "primeicons/primeicons.css";
 import '@theojs/lumen/style'
 import './var.css'
 
-export default {
+export const Theme: ThemeConfig = {
   extends: DefaultTheme,
-  Layout,
+  Layout: () => {
+    return h(DefaultTheme.Layout, null, {
+      'nav-bar-content-after': () => [
+        h(NolebaseEnhancedReadabilitiesMenu), // Enhanced Readabilities menu
+      ],
+      'nav-screen-content-after': () => [
+        h(NolebaseEnhancedReadabilitiesScreenMenu), // Enhanced Readabilities menu for small screens
+      ],
+    })
+  },
   enhanceApp({ app, router }) {
     app.use(PrimeVue, {
       theme: {
@@ -48,7 +69,19 @@ export default {
       },
     });
 
-    // Existing components
+    app.use(NolebaseGitChangelogPlugin, {
+      locales: {
+        'en': {
+          changelog: {
+            title: 'Page Edit History',
+          },
+          contributors: {
+            title: 'Authors',
+          }
+        },
+      }
+    })
+
     app.component("Button", Button);
     app.component("Tag", Tag);
     app.component("Chip", Chip);
@@ -66,6 +99,7 @@ export default {
     app.component("FloatLabel", FloatLabel);
 
     app.component("Underline", Underline);
+    app.use(NolebaseGitChangelogPlugin);
 
     app.component("Download", Download);
     app.component("LitematicViewer", LitematicViewer);
@@ -73,4 +107,6 @@ export default {
     app.component("MeteorArchivesTable", MeteorArchivesTable);
     app.component("AddonDataView", AddonDataView);
   },
-} satisfies Theme;
+} satisfies ThemeConfig;
+
+export default Theme;

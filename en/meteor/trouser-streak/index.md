@@ -12,7 +12,9 @@ head:
     - name: keywords
       content: Trouser-Streak, Trouser-Streak Meteor Client Addon, meteor client, meteor client addon, minecraft mods
 ---
+
 # Trouser-Streak Addon for Meteor Client
+
 ::: warning
 I have taken this all infomation from developer's new & old Github commits and explored the modules manually. So if there is something that is not correct, please do let me know.
 :::
@@ -25,11 +27,11 @@ The addon is open source and actively maintained by etianl and team. It gets reg
 
 ## Useful Links
 
-* [Demo/Preview](/en/meteor/preview/?etianl/Trouser-Streak/tree/main/src/main/java/pwn/noobs/trouserstreak/modules/)
-* [Github Repository](https://github.com/etianl/Trouser-Streak)
-* [Latest Download](/en/download/?etianl/Trouser-Streak){target="_blank"}
-* [Download Other Versions](https://github.com/etianl/Trouser-Streak/tags)
-* [Official Discord](https://discord.gg/3RUjaRzdKv)
+- [Demo/Preview](/en/meteor/preview/?etianl/Trouser-Streak/tree/main/src/main/java/pwn/noobs/trouserstreak/modules/)
+- [Github Repository](https://github.com/etianl/Trouser-Streak)
+- [Latest Download](/en/download/?etianl/Trouser-Streak){target="\_blank"}
+- [Download Other Versions](https://github.com/etianl/Trouser-Streak/tags)
+- [Official Discord](https://discord.gg/3RUjaRzdKv)
 
 ## Supported Minecraft Versions
 
@@ -122,3 +124,6 @@ The developer actively maintains the project with regular updates. Recent versio
 etianl provides customer support through Discord. The developer responds to issues and pull requests on GitHub. The project has clear documentation and installation instructions.
 
 The addon has been featured in YouTube tutorials by other creators. This shows the community recognizes its quality. The project follows open source best practices with proper version control.
+
+<NolebaseGitContributors />
+<NolebaseGitChangelog />

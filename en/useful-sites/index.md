@@ -17,8 +17,11 @@ head:
     - name: keywords
       content: Minecraft tools, Minecraft websites, Minecraft resources, server hosting, map viewers, seed explorers, skin editors, command generators, design tools, building aids, redstone tools, mods, add-ons, blueprints, circle generators, custom heads, Minecraft wiki, Minecraft community, Minecraft skins, Minecraft maps.
 ---
+
 # Useful Websites for Minecraft
+
 ## Introduction
+
 A curated collection of essential Minecraft websites, organized into intuitive categories to enhance your gaming experience. Whether you're hosting a server, exploring worlds, designing custom skins, or building intricate structures, these resources provide the tools you need to succeed. Below, find detailed descriptions of each website, categorized for easy navigation.
 
 ## Server Management & Hosting
@@ -64,7 +67,6 @@ A curated collection of essential Minecraft websites, organized into intuitive c
   **Minecraft Skin Editor**  
   A web-based editor to create or modify Minecraft skins, featuring layer management and community sharing options.
 
-
 ### Graphics and Media
 
 - **[TextStudio 3D Logo](https://www.textstudio.com/logo/minecraft-3d-text-41)**  
@@ -100,7 +102,6 @@ A curated collection of essential Minecraft websites, organized into intuitive c
 - **[Totem Generator](https://spea.cc/totem/)**  
   **Custom Totem of Undying Generator**  
   Upload your own face or art to create a personalized totem texture for in-game use.
-
 
 - **[Vanilla Tweaks](https://vanillatweaks.net)**  
   Customize UI, Custom resource packs and datapacks for Java Edition.
@@ -152,7 +153,7 @@ A curated collection of essential Minecraft websites, organized into intuitive c
 
 - **[Modrinth](https://modrinth.com/)**  
   **Mods & Add-ons**  
-   Download Minecraft mods, plugins, datapacks, shaders, resourcepacks, and modpacks on Modrinth. 
+   Download Minecraft mods, plugins, datapacks, shaders, resourcepacks, and modpacks on Modrinth.
 
 - **[MCPE DL](https://mcpedl.com/)**  
   **Bedrock Mods & Add-ons**  
@@ -214,3 +215,6 @@ A curated collection of essential Minecraft websites, organized into intuitive c
 
 - **[VoxelSphere Generator](https://oranj.io/VoxelSphereGenerator)**  
   Create perfectly rounded voxel spheres for large-scale builds.
+
+<NolebaseGitContributors />
+<NolebaseGitChangelog />

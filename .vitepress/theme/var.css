@@ -1,1 +1,9 @@
 /* Custom CSS here */
+
+.VPSocialLinks.VPNavBarSocialLinks.social-links {
+  margin-right: 0;
+}
+
+.vp-nolebase-git-changelog a {
+  text-decoration: none!important;
+}
