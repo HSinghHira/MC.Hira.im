@@ -2,6 +2,9 @@
 layout: home
 redirect: /en/
 
+gitChangelog: false
+gitContributors: false
+
 head:
   - - meta
     - name: robots
