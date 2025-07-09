@@ -113,5 +113,3 @@ The Meteorist repository has 149 stars and 12 forks, showing community trust. Th
 Zgoly also contributes to other projects like the Meteor Client itself and maintains proper documentation. The developer accepts community contributions and has worked with other contributors like crazymoose77756 and Starmania.
 
 The addon is featured in community lists of trusted Meteor Client addons. YouTube content creators have reviewed Meteorist positively, calling it one of the "best addons for the popular Meteor client".
-<NolebaseGitContributors />
-<NolebaseGitChangelog />

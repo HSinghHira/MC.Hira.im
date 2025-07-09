@@ -87,5 +87,3 @@ To use Clarity’s features, follow these steps:
 ## Why Choose Clarity
 
 The Clarity addon is developed by @x5ten, with contributions from the clarity team, who are experienced in identifying Minecraft server exploits. Hosted on GitHub, the addon’s open-source nature allows anyone to review its code, ensuring transparency and safety. The presence of a community Discord server suggests ongoing support and engagement, making it easier to get help or updates. While the addon’s focus on exploits may raise ethical concerns, its open-source status and community backing make it a reliable choice for users who prioritize technical exploration within permitted environments.
-<NolebaseGitContributors />
-<NolebaseGitChangelog />

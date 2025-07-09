@@ -124,6 +124,3 @@ The developer actively maintains the project with regular updates. Recent versio
 etianl provides customer support through Discord. The developer responds to issues and pull requests on GitHub. The project has clear documentation and installation instructions.
 
 The addon has been featured in YouTube tutorials by other creators. This shows the community recognizes its quality. The project follows open source best practices with proper version control.
-
-<NolebaseGitContributors />
-<NolebaseGitChangelog />

@@ -97,6 +97,3 @@ These steps ensure the theme is applied correctly, transforming the Meteor Clien
 ## Why the Author is Trustworthy
 
 The author, known as X-C-0, is an active member of the Meteor Client community, contributing to its ecosystem through this open-source addon. They can be contacted via Discord as @Pindour, indicating accessibility for support or feedback. Users can also submit feedback through the GitHub issues section, though the author notes they are less familiar with this platform. X-C-0’s engagement with the community and their provision of a free, open-source addon demonstrate a commitment to improving the Minecraft modding experience. While specific details about their broader reputation are limited, their active participation and transparency suggest reliability. Users are encouraged to verify trustworthiness through community interactions or by reviewing the addon’s open-source code on GitHub.
-
-<NolebaseGitContributors />
-<NolebaseGitChangelog />

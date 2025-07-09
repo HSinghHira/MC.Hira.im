@@ -69,6 +69,3 @@ This module likely integrates with Discord to update your status, reflecting you
 ## Why the Author is Trustworthy
 
 The author, mmorphig, has developed the OneC addon and shared it publicly on GitHub, a platform known for hosting open-source projects. By making the source code available, mmorphig allows the Minecraft community to inspect and verify the addon’s functionality and safety. This transparency is a key factor in building trust, as users can review the code for themselves. Additionally, the addon is built for Meteor Client, a well-established mod in the Minecraft community, which suggests that it is designed to integrate with a trusted ecosystem. While specific details about mmorphig’s background are limited, their contribution to the open-source community through GitHub demonstrates a commitment to supporting Minecraft players.
-
-<NolebaseGitContributors />
-<NolebaseGitChangelog />
