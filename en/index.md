@@ -41,10 +41,10 @@ features:
     details: Explore a curated collection of the best Minecraft websites, organized into categories.
 
   - icon:
-      src: /data/icons/electron.png
-    title: Meteor Client Addons
-    link: en/meteor
-    details: Explore a dynamic collection of Meteor Client addons for Minecraft, featuring powerful tools for especially for anarchy servers.
+      src: /data/icons/tools.png
+    title: Minecraft Web-Based Tools
+    link: en/tools
+    details: Discover a versatile suite of web-based Minecraft tools designed to enhance your gameplay, server management, and creative projects.
 
   - icon:
       src: /data/icons/meteor.png
@@ -53,10 +53,16 @@ features:
     details: Explore old versions of Meteor Client versions with corresponding Minecraft versions, download links and source code.
 
   - icon:
-      src: /data/icons/tools.png
-    title: Minecraft Web-Based Tools
-    link: en/tools
-    details: Discover a versatile suite of web-based Minecraft tools designed to enhance your gameplay, server management, and creative projects.
+      src: /data/icons/electron.png
+    title: Meteor Client Addons
+    link: en/meteor
+    details: Explore a dynamic collection of Meteor Client addons for Minecraft, featuring powerful tools for especially for anarchy servers.
+
+  - icon:
+      src: /data/icons/meteorplus.png
+    title: Meteor Client Themes
+    link: en/meteor-themes
+    details: Transforms the user interface with its visually appealing features, including rounded corners, a variety of color schemes.
 ---
 
 <Home />
