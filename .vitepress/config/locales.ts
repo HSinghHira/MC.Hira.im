@@ -10,9 +10,15 @@ export const locales: LocaleConfig = {
       nav: [
         { text: "Home", link: "/en/" },
         { text: "Credits", link: "/en/pages/credits" },
-        { text: "Issues", link: "https://discord.gg/HKubbUNNGP" },
+        { text: "Report Issues", link: "https://discord.gg/HKubbUNNGP" },
       ],
-      socialLinks: [{ icon: "discord", link: "https://discord.gg/q5nF6mj4AV" }],
+      socialLinks: [
+        {
+          icon: "discord",
+          link: "https://discord.gg/q5nF6mj4AV",
+          ariaLabel: "Join us on Discord"
+        }
+      ],
       lastUpdated: {
         text: "Updated at",
         formatOptions: {

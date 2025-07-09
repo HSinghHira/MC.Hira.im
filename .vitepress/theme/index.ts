@@ -11,6 +11,10 @@ import {
   NolebaseEnhancedReadabilitiesMenu,
   NolebaseEnhancedReadabilitiesScreenMenu,
 } from '@nolebase/vitepress-plugin-enhanced-readabilities/client'
+import {
+  LayoutSwitch,
+  ScreenLayoutSwitch,
+} from '@nolebase/vitepress-plugin-enhanced-readabilities/client'
 import '@nolebase/vitepress-plugin-enhanced-readabilities/client/style.css'
 
 import {
@@ -52,10 +56,11 @@ export const Theme: ThemeConfig = {
   Layout: () => {
     return h(DefaultTheme.Layout, null, {
       'nav-bar-content-after': () => [
-        h(NolebaseEnhancedReadabilitiesMenu), // Enhanced Readabilities menu
+        h(NolebaseEnhancedReadabilitiesMenu),
       ],
       'nav-screen-content-after': () => [
-        h(NolebaseEnhancedReadabilitiesScreenMenu), // Enhanced Readabilities menu for small screens
+        h(NolebaseEnhancedReadabilitiesScreenMenu),
+        h(ScreenLayoutSwitch),
       ],
     })
   },
