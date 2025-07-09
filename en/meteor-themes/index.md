@@ -25,4 +25,9 @@ features:
     title: Catpuccin
     link: en/meteor-themes/catpuccin
     details: Transforms the user interface with its visually appealing features, including rounded corners, a variety of color schemes.
+
+  - icon: 🔜
+    title: Coming Soon
+    link: /
+    details: Coming Soon
 ---

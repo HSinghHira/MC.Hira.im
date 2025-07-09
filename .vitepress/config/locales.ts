@@ -6,6 +6,7 @@ export const locales: LocaleConfig = {
     lang: "en",
     link: "/en/",
     themeConfig: {
+      logo: '/data/icons/logo.png',
       nav: [
         { text: "Home", link: "/en/" },
         { text: "Credits", link: "/en/pages/credits" },
