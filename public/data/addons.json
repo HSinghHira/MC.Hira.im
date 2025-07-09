@@ -1,11 +1,24 @@
 [
-    {
+  {
+    "title": "OneC",
+    "link": "en/meteor/onec",
+    "description": "OneC addon is a collection of custom modules designed to enhance the functionality of Meteor Client",
+    "icon": "/data/icons/1c.png",
+    "github_repo": "https://github.com/mmorphig/OneC",
+    "mc_version": [
+      "1.21.7"
+    ]
+  },
+  {
     "title": "Asteroide",
     "link": "en/meteor/asteroide",
-    "description": "powerful Meteor Client addon for Minecraft for enhancing Minecraft gameplay.",
+    "description": "Powerful Meteor Client addon for Minecraft for enhancing Minecraft gameplay.",
     "icon": "/data/icons/asteroide.png",
     "github_repo": "https://github.com/asteroide-development/Asteroide/",
-    "mc_version": ["1.21.4", "1.20.4"]
+    "mc_version": [
+      "1.21.4",
+      "1.20.4"
+    ]
   },
   {
     "title": "HKUtils",
@@ -13,7 +26,9 @@
     "description": "Various modules and commands for Meteor Client, enhancing Minecraft gameplay.",
     "icon": "/data/icons/hkutils.png",
     "github_repo": "https://github.com/H1ggsK/HKUtils",
-    "mc_version": ["1.21.4"]
+    "mc_version": [
+      "1.21.4"
+    ]
   },
   {
     "title": "Clarity",
@@ -21,16 +36,20 @@
     "description": "Advanced addon for Meteor Client focused on exploits and server-crashing modules.",
     "icon": "/data/icons/clarity.png",
     "github_repo": "https://github.com/ck-clarity/addon",
-    "mc_version": ["1.21.4"]
+    "mc_version": [
+      "1.21.4"
+    ]
   },
-
   {
     "title": "Meteor Capes",
     "link": "en/meteor/meteor-capes",
     "description": "Allows players to add custom capes to their in-game character, providing a cosmetic enhancement.",
     "icon": "/data/icons/meteor-capes.png",
     "github_repo": "https://github.com/Gllody/meteor-capes",
-    "mc_version": ["1.21.5", "1.21.4"]
+    "mc_version": [
+      "1.21.5",
+      "1.21.4"
+    ]
   },
   {
     "title": "Trouser-Streak",
@@ -122,7 +141,9 @@
     "description": "Lightweight and performant Minecraft mod for enhanced gameplay.",
     "icon": "/data/icons/electron.png",
     "github_repo": "https://github.com/RacoonDog/Electron",
-    "mc_version": ["1.21.5"]
+    "mc_version": [
+      "1.21.5"
+    ]
   },
   {
     "title": "Lucid",
@@ -130,7 +151,9 @@
     "description": "Enhance your Minecraft experience with advanced chat features & ESP.",
     "icon": "/data/icons/lucid.png",
     "github_repo": "https://github.com/HUHNcode/Lucid-addon",
-    "mc_version": ["1.21.4"]
+    "mc_version": [
+      "1.21.4"
+    ]
   },
   {
     "title": "BlackOut",
@@ -138,7 +161,10 @@
     "description": "Powerful addon for Meteor Client that enhances Minecraft PvP experience.",
     "icon": "/data/icons/blackout.png",
     "github_repo": "https://github.com/H1ggsK/BlackOut",
-    "mc_version": ["1.21.4", "1.21.1"]
+    "mc_version": [
+      "1.21.4",
+      "1.21.1"
+    ]
   },
   {
     "title": "Glazed",
@@ -146,9 +172,10 @@
     "description": "Advanced addon for Meteor Client specifically designed for the DonutSMP server.",
     "icon": "/data/icons/glazed.png",
     "github_repo": "https://github.com/realnnpg/Glazed",
-    "mc_version": ["1.21.4"]
+    "mc_version": [
+      "1.21.4"
+    ]
   },
-
   {
     "title": "Meteor Villager Roller",
     "link": "en/meteor/meteor-villager-roller",

@@ -24,20 +24,19 @@ Glazed is a free, open-source addon for the Meteor Client, specifically designed
 
 ## Useful Links
 
-- [Advanced Previewer](/en/meteor/preview/?realnnpg/Glazed/tree/main/src/main/java/com/nnpg/glazed/modules), [Simple Previewer](/en/meteor/preview/simple.html?realnnpg/Glazed/tree/main/src/main/java/com/nnpg/glazed/modules)
-- [Github Repository](https://github.com/realnnpg/Glazed)
-- [Download Latest Version](/en/download/?realnnpg/Glazed){target="\_blank"}
-- [Download Other Versions](https://github.com/realnnpg/Glazed/tags)
-- [Author's Personal Website](https://nnpg.dev)
-- [Glazed Discord Server for Support](https://discord.gg/TCQDpG8ByY)
-- [Author's YouTube Channel](https://www.youtube.com/@realnnpg)
+- 🔗 [Advanced Previewer](/en/meteor/preview/?realnnpg/Glazed/tree/main/src/main/java/com/nnpg/glazed/modules), [Simple Previewer](/en/meteor/preview/simple.html?realnnpg/Glazed/tree/main/src/main/java/com/nnpg/glazed/modules)
+- 🔗 [Github Repository](https://github.com/realnnpg/Glazed)
+- ⬇️ [Download Latest Version](/en/download/?realnnpg/Glazed)
+- 🗂️ [Download Other Versions](https://github.com/realnnpg/Glazed/tags)
+- ✍️ [Author's Personal Website](https://nnpg.dev)
+- 💬 [Glazed Discord Server for Support](https://discord.gg/TCQDpG8ByY)
+- 📺 [Author's YouTube Channel](https://www.youtube.com/@realnnpg)
 
 ## Supported Minecraft Versions
 
 Glazed is compatible with Minecraft versions supported by the Meteor Client, as it relies on Meteor’s framework.
-| Minecraft Version |
-|-------------------|
-| 1.21.4 |
+
+- 1.21.4
 
 ## Key Features and Modules
 
@@ -57,12 +56,18 @@ Glazed provides a range of modules to streamline gameplay on DonutSMP. Below is 
 | SpawnerProtect   | Mines and stores spawners when a player is nearby.                  | ✅ Added       |
 | RTPer            | Automatically uses /rtp until near specified coordinates.           | ✅ Added       |
 | RTPTunnelMiner   | RTPs, mines to a Y level, then uses #tunnel to mine horizontally.   | ✅ Added       |
+| SpawnerDropper   | Automatically drops items from spawners.                            | ✅ Added       |
+| ExtraESP         | Added ESP for kelp and rotated deepslate                            | ✅ Added       |
+| AutoShulkerOrder | Automatically buys and orders shulkers for you.                     | ✅ Added       |
 | Netherite Finder | Highlights netherite blocks in the Nether.                          | 🟠 Coming soon |
 | Diamond Finder   | Highlights diamond ores underground.                                | 🟠 Coming soon |
-| Auto Sell        | Automatically sells sea pickles via /sell.                          | 🟠 Coming soon |
-| Hover Totem      | Equips a Totem of Undying when hovered in inventory.                | ❌ Not Yet     |
-| Bone Dropper     | Automatically drops bones collected from spawners.                  | ❌ Not Yet     |
-| Auto Order       | Automatically executes /order for configured items.                 | ❌ Not Yet     |
+| Auto Sell        | Automatically sells sea pickles via /sell.                          | ✅ Added       |
+| Xray             | Xray for DonutSMP                                                   | 🟠 Coming soon |
+| Bone Dropper     | Automatically drops bones collected from spawners.                  | 🟠 Coming soon |
+| Auto Order       | Automatically executes /order for configured items.                 | 🟠 Coming soon |
+| TPSniper         | Automatically spams specific players with /tpa or /tpahere requests | ❌ Not Yet     |
+| ShulkerOrder     | Buys and then /orders the shulkers                                  | ❌ Not Yet     |
+| OrderSniper      | Snipes for good order prices and sells your stuff                   | ❌ Not Yet     |
 
 These modules cater to various aspects of gameplay, from automation to resource gathering, making Glazed a versatile tool for DonutSMP players.
 
