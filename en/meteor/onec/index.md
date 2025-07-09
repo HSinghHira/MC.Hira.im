@@ -1,8 +1,8 @@
 ---
 layout: doc
 
-title: Glazed Addon for Meteor Client
-description: Learn how to use Glazed, a powerful Meteor Client addon for automating tasks on DonutSMP in Minecraft.
+title: OneC Addon for Meteor Client
+description: The OneC addon is a collection of custom modules designed to enhance the functionality of Meteor Client.
 
 head:
   - - meta
@@ -10,7 +10,7 @@ head:
       content: index
   - - meta
     - name: description
-      content: Learn how to use Glazed, a powerful Meteor Client addon for automating tasks on DonutSMP in Minecraft.
+      content: The OneC addon is a collection of custom modules designed to enhance the functionality of Meteor Client.
   - - meta
     - name: keywords
       content: Minecraft mod, Meteor Client, Glazed addon, DonutSMP, automation, Minecraft hacks
