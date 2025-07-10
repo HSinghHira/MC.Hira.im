@@ -646,7 +646,7 @@ const loadAddons = async () => {
 
   // Try primary URL
   try {
-    const response = await fetch("/data/addons-enhanced.json");
+    const response = await fetch("/meteor-client-addons/addons-enhanced.json");
     if (response.ok) {
       const data = await response.json();
       originalAddons.value = data;
@@ -661,7 +661,7 @@ const loadAddons = async () => {
   // Try first fallback: GitHub raw URL
   try {
     const response = await fetch(
-      "https://raw.githubusercontent.com/HSinghHira/MC.Hira.im/main/public/data/addons-enhanced.json"
+      "https://raw.githubusercontent.com/HSinghHira/MC.Hira.im/main/public/meteor-client-addons/addons-enhanced.json"
     );
     if (response.ok) {
       const data = await response.json();
@@ -676,7 +676,7 @@ const loadAddons = async () => {
 
   // Try second fallback: addons.json
   try {
-    const response = await fetch("/data/addons.json");
+    const response = await fetch("/meteor-client-addons/addons.json");
     if (response.ok) {
       const data = await response.json();
       originalAddons.value = data;
