@@ -153,7 +153,7 @@
     "description": "Advanced addon for Meteor Client specifically designed for the DonutSMP server.",
     "icon": "/meteor-client-addons/icons/glazed.png",
     "github_repo": "https://github.com/realnnpg/Glazed",
-    "mc_version": ["1.21.4"]
+    "mc_version": ["1.21.4", "1.21.5"]
   },
   {
     "title": "Meteor Villager Roller",

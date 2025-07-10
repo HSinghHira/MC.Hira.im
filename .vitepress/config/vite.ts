@@ -16,6 +16,12 @@ export const viteConfig: UserConfig = {
     GitChangelog({
       repoURL: () => 'https://github.com/HSinghHira/MC.Hira.im',
       maxGitLogCount: 1000,
+      // mapAuthors: [
+      //   {
+      //     name: 'Harman Singh Hira',
+      //     username: 'HSinghHira',
+      //   }
+      // ]
     }),
     GitChangelogMarkdownSection({
       sections: {

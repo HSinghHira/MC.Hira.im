@@ -3,6 +3,7 @@ layout: doc
 
 title: Glazed Addon for Meteor Client
 description: Learn how to use Glazed, a powerful Meteor Client addon for automating tasks on DonutSMP in Minecraft.
+authors: ["realnnpg"]
 
 head:
   - - meta
@@ -28,6 +29,7 @@ Glazed is a free, open-source addon for the Meteor Client, specifically designed
 - 🔗 [Github Repository](https://github.com/realnnpg/Glazed)
 - ⬇️ [Download Latest Version](/en/download/?realnnpg/Glazed)
 - 🗂️ [Download Other Versions](https://github.com/realnnpg/Glazed/tags)
+- 🌐 [Official Website for Glazed](https://glazedclient.com/)
 - ✍️ [Author's Personal Website](https://nnpg.dev)
 - 💬 [Glazed Discord Server for Support](https://discord.gg/TCQDpG8ByY)
 - 📺 [Author's YouTube Channel](https://www.youtube.com/@realnnpg)
@@ -36,6 +38,7 @@ Glazed is a free, open-source addon for the Meteor Client, specifically designed
 
 Glazed is compatible with Minecraft versions supported by the Meteor Client, as it relies on Meteor’s framework.
 
+- 1.21.5
 - 1.21.4
 
 ## Key Features and Modules
@@ -73,7 +76,7 @@ These modules cater to various aspects of gameplay, from automation to resource 
 
 ## Why the Author is Trustworthy
 
-The author, realnnpg, is an active member of the Minecraft modding community, as evidenced by their GitHub profile ([realnnpg GitHub](https://github.com/realnnpg/)) and personal website ([nnpg.dev](https://nnpg.dev)). At 15 years old, they are learning Java, a key language for Minecraft modding, and have a passion for the game. They maintain multiple repositories, including Glazed and HackDisabler, showing ongoing engagement in mod development. The Glazed repository includes clear installation instructions and a Discord server for support ([Glazed Discord](https://discord.gg/TCQDpG8ByY)), indicating a commitment to user assistance. While Glazed is relatively new and lacks widespread reviews, the author’s transparency and community involvement suggest reliability. However, as with any mod, users should exercise caution and verify downloads to ensure safety.
+The author, 'nnpg', is an active member of the Minecraft modding community, as evidenced by their ([GitHub profile](https://github.com/realnnpg/)) and personal website ([nnpg.dev](https://nnpg.dev)). At 15 years old, they are learning Java, a key language for Minecraft modding, and have a passion for the game. They maintain multiple repositories, including Glazed and HackDisabler, showing ongoing engagement in mod development. The Glazed repository includes clear installation instructions and a Discord server for support ([Glazed Discord](https://discord.gg/TCQDpG8ByY)), indicating a commitment to user assistance. While Glazed is relatively new and lacks widespread reviews, the author’s transparency and community involvement suggest reliability. However, as with any mod, users should exercise caution and verify downloads to ensure safety.
 
 ## Using Glazed
 
