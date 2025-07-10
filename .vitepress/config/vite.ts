@@ -22,10 +22,13 @@ export const viteConfig: UserConfig = {
         disableChangelog: false,
         disableContributors: false,
       },
+
+      //   Exclude index.md files in the meteor directory
+
       // exclude: (id) => {
-      //   // Exclude index.md files in the meteor directory
       //   return id.endsWith('index.md') && id.includes('meteor/')
       // },
+
     }),
   ],
   optimizeDeps: {

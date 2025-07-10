@@ -17,7 +17,23 @@ export const locales: LocaleConfig = {
           icon: "discord",
           link: "https://discord.gg/q5nF6mj4AV",
           ariaLabel: "Join us on Discord"
-        }
+        },
+        {
+          icon: "github",
+          link: "https://github.com/HSinghHira/",
+          ariaLabel: "Join us on GitHub"
+        },
+        {
+          icon: "youtube",
+          link: "https://www.youtube.com/@HarmanSinghHira",
+          ariaLabel: "Subscribe to my YouTube channel"
+        },
+        {
+          icon: "buymeacoffee",
+          link: "https://buymeacoffee.com/hsinghhira",
+          ariaLabel: "Buy me a coffee"
+        },
+
       ],
       lastUpdated: {
         text: "Updated at",
