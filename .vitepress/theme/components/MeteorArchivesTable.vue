@@ -36,7 +36,6 @@
     </Column>
   </DataTable>
 
-  <!-- Download Dialog -->
   <Dialog
     v-model:visible="showDownloadDialog"
     header="Download Version"
@@ -66,7 +65,6 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 
-// Define interface for archive data
 interface Archive {
   version: string
   minecraft_versions: string[]
@@ -74,33 +72,29 @@ interface Archive {
   source_code: string | null
 }
 
-// Reactive state
 const archives = ref<Archive[]>([])
 const showDownloadDialog = ref(false)
 const selectedArchive = ref<Archive | null>(null)
 
-// Fetch data from JSON file and sort by version (descending)
 onMounted(async () => {
   try {
-    const response = await fetch('/data/meteor-client-versions.json')
+    const response = await fetch('/meteor-archive/meteor-client-versions.json')
     if (!response.ok) {
       throw new Error(`Failed to fetch: ${response.statusText}`)
     }
     const data = await response.json()
-    // Sort archives by version in descending order
     archives.value = data.sort((a: Archive, b: Archive) => {
       return b.version.localeCompare(a.version, undefined, { numeric: true, sensitivity: 'base' })
     })
   } catch (error) {
     console.error('Error loading Meteor Client versions:', error)
-    // Optionally set a fallback or show an error message
   }
 })
 
-// Format date to "1st Mar. 2023" style
+
 const formatDate = (dateString: string): string => {
   const date = new Date(dateString)
-  console.log("Parsed date:", date) // 👈 log to check
+  console.log("Parsed date:", date)
 
   const day = date.getDate()
   const month = date.toLocaleString('en-US', { month: 'short' })
