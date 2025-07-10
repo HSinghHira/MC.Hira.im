@@ -1,16 +1,16 @@
 import { readdirSync, statSync, existsSync, readFileSync } from 'fs'
 import { join, basename } from 'path'
-import { textMappings, baseDirs, headingBasedDirs } from '../config.mts'
+import { textMappings, baseDirs, headingBasedDirs } from '../config.ts'
 
 // Function to convert kebab-case to Title Case with custom mappings
 function toTitleCase(str: string): string {
   const lowerStr = str.toLowerCase()
-  
+
   // Check if we have a custom mapping for this string
   if (textMappings[lowerStr]) {
     return textMappings[lowerStr]
   }
-  
+
   // Default title case conversion
   return str
     .split('-')
@@ -32,7 +32,7 @@ function toSlug(str: string): string {
 function getHeadingsFromMarkdown(filePath: string): Array<{ text: string; link: string }> {
   try {
     if (!existsSync(filePath)) return []
-    
+
     const content = readFileSync(filePath, 'utf-8')
     const headingRegex = /^##\s+(.+)$/gm // Match ## headings
     const headings: Array<{ text: string; link: string }> = []
@@ -57,9 +57,9 @@ function hasMarkdownFiles(dirPath: string): boolean {
   try {
     if (!existsSync(dirPath)) return false
     const files = readdirSync(dirPath)
-    return files.some(file => 
-      file.endsWith('.md') && 
-      file !== 'index.md' && 
+    return files.some(file =>
+      file.endsWith('.md') &&
+      file !== 'index.md' &&
       file.toLowerCase() !== 'preview.md'
     )
   } catch {
@@ -71,12 +71,12 @@ function hasMarkdownFiles(dirPath: string): boolean {
 function getMarkdownFiles(dirPath: string): Array<{ text: string; link: string }> {
   try {
     if (!existsSync(dirPath)) return []
-    
+
     const files = readdirSync(dirPath)
     const mdFiles = files
-      .filter(file => 
-        file.endsWith('.md') && 
-        file !== 'index.md' && 
+      .filter(file =>
+        file.endsWith('.md') &&
+        file !== 'index.md' &&
         file.toLowerCase() !== 'preview.md'
       )
       .map(file => {
@@ -86,7 +86,7 @@ function getMarkdownFiles(dirPath: string): Array<{ text: string; link: string }
           link: dirPath.replace('./en', '/en').replace('./pb', '/pb').replace(/\\/g, '/') + '/' + name
         }
       })
-    
+
     return mdFiles
   } catch {
     return []
@@ -96,16 +96,16 @@ function getMarkdownFiles(dirPath: string): Array<{ text: string; link: string }
 // Function to generate sidebar for a content root
 export function generateSidebar(contentRoot: string): any[] {
   const sidebar: any[] = []
-  
+
   try {
     if (!existsSync(contentRoot)) {
       console.warn(`Content root does not exist: ${contentRoot}`)
       return sidebar
     }
-    
+
     for (const baseDir of baseDirs) {
       const basePath = join(contentRoot, baseDir)
-      
+
       if (!existsSync(basePath)) {
         console.warn(`Base directory does not exist: ${basePath}`)
         continue
@@ -143,18 +143,18 @@ export function generateSidebar(contentRoot: string): any[] {
       const subdirs = items
         .filter(item => item.isDirectory())
         .map(item => item.name)
-        .filter(name => 
-          !name.startsWith('.') && 
-          name !== 'assets' && 
+        .filter(name =>
+          !name.startsWith('.') &&
+          name !== 'assets' &&
           name.toLowerCase() !== 'preview'
         )
 
       for (const subdir of subdirs) {
         const subdirPath = join(basePath, subdir)
-        
+
         // Check if this subdirectory has markdown files
         const markdownFiles = getMarkdownFiles(subdirPath)
-        
+
         if (markdownFiles.length > 0) {
           // If it has markdown files, create a subgroup
           sidebarGroup.items.push({
@@ -185,7 +185,7 @@ export function generateSidebar(contentRoot: string): any[] {
 
     console.log(`Generated sidebar for ${contentRoot}:`, JSON.stringify(sidebar, null, 2))
     return sidebar
-    
+
   } catch (error) {
     console.error(`Error generating sidebar for ${contentRoot}:`, error)
     return sidebar
