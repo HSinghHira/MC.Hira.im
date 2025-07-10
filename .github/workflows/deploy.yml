@@ -27,7 +27,7 @@ jobs:
             -H "X-GitHub-Api-Version: 2022-11-28" \
             https://api.github.com/repos/HSinghHira/MC.Hira.im/actions/workflows/update-addon-data.yml/dispatches \
             -d '{"ref":"main"}'
-      
+
       - name: Wait for workflow to complete
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -81,32 +81,32 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 18
           cache: npm
-      
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
-      
+
       - name: Install dependencies
         run: |
           rm -rf node_modules package-lock.json
           npm install
           npm install axios typescript @theojs/lumen@latest
-      
+
       - name: Download addon data artifact
         id: download-artifact
         uses: actions/download-artifact@v4
         with:
           name: addon-data
-          path: public/data/
+          path: public/meteor-client-addons/
           github-token: ${{ secrets.GITHUB_TOKEN }}
           repository: HSinghHira/MC.Hira.im
         continue-on-error: true
-      
+
       - name: Enhance addon data (fallback)
         if: steps.download-artifact.outcome != 'success'
         env:
@@ -115,11 +115,11 @@ jobs:
           cat << 'EOF' > enhance-addons.js
           const fs = require('fs');
           const axios = require('axios');
-          
+
           async function enhanceAddonData() {
             try {
               console.log('🚀 Starting addon data enhancement (fallback)...');
-              const addonsData = JSON.parse(fs.readFileSync('public/data/addons.json', 'utf8'));
+              const addonsData = JSON.parse(fs.readFileSync('public/meteor-client-addons/addons.json', 'utf8'));
               console.log(`📚 Found ${addonsData.length} addons to process`);
               const enhancedAddons = [];
               
@@ -187,7 +187,7 @@ jobs:
                 }
               }
               fs.writeFileSync(
-                'public/data/addons-enhanced.json', 
+                'public/meteor-client-addons/addons-enhanced.json',
                 JSON.stringify(enhancedAddons, null, 2)
               );
               const summary = {
@@ -205,7 +205,7 @@ jobs:
                 }
               };
               fs.writeFileSync(
-                'public/data/addon-stats.json',
+                'public/meteor-client-addons/addon-stats.json',
                 JSON.stringify(summary, null, 2)
               );
               console.log('🎉 Successfully created enhanced addon data!');
@@ -224,12 +224,12 @@ jobs:
           EOF
           node enhance-addons.js
           echo "Contents of addons-enhanced.json:"
-          cat public/data/addons-enhanced.json || echo "File not found"
-          ls -l public/data/
-      
+          cat public/meteor-client-addons/addons-enhanced.json || echo "File not found"
+          ls -l public/meteor-client-addons/
+
       - name: Build with VitePress
         run: npx vitepress build
-      
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
