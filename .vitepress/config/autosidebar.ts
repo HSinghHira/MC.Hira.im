@@ -1,6 +1,6 @@
 import { readdirSync, statSync, existsSync, readFileSync } from 'fs'
 import { join, basename } from 'path'
-import { textMappings, baseDirs, headingBasedDirs } from '../config.ts'
+import { textMappings, baseDirs, headingBasedDirs } from '../config.mts'
 
 // Function to convert kebab-case to Title Case with custom mappings
 function toTitleCase(str: string): string {
