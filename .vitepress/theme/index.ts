@@ -11,11 +11,6 @@ import {
   NolebaseEnhancedReadabilitiesMenu,
   NolebaseEnhancedReadabilitiesScreenMenu,
 } from '@nolebase/vitepress-plugin-enhanced-readabilities/client'
-import {
-  LayoutSwitch,
-  ScreenLayoutSwitch,
-} from '@nolebase/vitepress-plugin-enhanced-readabilities/client'
-import '@nolebase/vitepress-plugin-enhanced-readabilities/client/style.css'
 
 import {
   NolebaseGitChangelogPlugin
@@ -50,6 +45,7 @@ import "./tailwind.css";
 import "primeicons/primeicons.css";
 import '@theojs/lumen/style'
 import './var.css'
+import '@nolebase/vitepress-plugin-enhanced-readabilities/client/style.css'
 
 export const Theme: ThemeConfig = {
   extends: DefaultTheme,
@@ -60,7 +56,6 @@ export const Theme: ThemeConfig = {
       ],
       'nav-screen-content-after': () => [
         h(NolebaseEnhancedReadabilitiesScreenMenu),
-        h(ScreenLayoutSwitch),
       ],
     })
   },
