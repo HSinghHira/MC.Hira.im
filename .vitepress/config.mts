@@ -43,6 +43,9 @@ export default defineConfig({
         sidebar: {
             '/en/': generateSidebar('./en'),
             '/pb/': generateSidebar('./pb')
+        },
+        editLink: {
+            pattern: 'https://github.com/HSinghHira/MC.Hira.im/edit/main/:path'
         }
     },
 })

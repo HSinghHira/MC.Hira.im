@@ -1,9 +1,21 @@
-# >> mc.hira.im <<
-# On: June 24, 2025
+# |>> mc.hira.im <<|
+# On: July 11th, 2025
 
 # Allow all user agents by default
 User-agent: *
 Disallow:
+
+# Sitemap location
+Sitemap: https://mc.hira.im/sitemap.xml
+
+# Disallow URLs
+Disallow: /pb/
+Disallow: /pb
+Disallow: /en/meteor/preview/
+Disallow: /en/download/
+
+# Allow everything else
+Allow: /
 
 # Allow important file types
 Allow: /*.css$
@@ -15,12 +27,6 @@ Allow: /*.gif$
 Allow: /*.svg$
 Allow: /*.webp$
 Allow: /*.ico$
-
-Allow: /data/
-Allow: /all/
-
-# Sitemap location
-Sitemap: https://mc.hira.im/sitemap.xml
 
 # Specific bot rules (Optional but tidy)
 User-agent: Bingbot
@@ -87,7 +93,6 @@ Disallow: /
 User-agent: curl
 Disallow: /
 
-# Social media preview bots - allowed
 User-agent: facebookexternalhit
 Allow: /
 
