@@ -43,8 +43,8 @@ export const locales: LocaleConfig = {
         },
       },
       footer: {
-        message: "Made with ❤️ in New Zealand",
-        copyright: "2025 © Harman Singh Hira",
+        message: "This website is not affiliated with, endorsed by, or officially connected to Mojang, the creators of Minecraft. All trademarks and registered trademarks are the property of their respective owners.",
+        copyright: "Made with ❤️ in New Zealand by Harman Singh Hira",
       },
     },
   }
