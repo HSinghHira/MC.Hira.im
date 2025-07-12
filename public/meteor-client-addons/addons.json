@@ -1,5 +1,13 @@
 [
   {
+    "title": "Numby Hack",
+    "link": "en/meteor/numby-hack",
+    "description": "Ultimate addon with various modules, HUD and commands designed specifically for Anarchy Servers.",
+    "icon": "/meteor-client-addons/icons/numby-hack.png",
+    "github_repo": "https://github.com/cqb13/Numby-hack",
+    "mc_version": ["1.21.7"]
+  },
+  {
     "title": "OneC",
     "link": "en/meteor/onec",
     "description": "OneC addon is a collection of custom modules designed to enhance the functionality of Meteor Client",

@@ -181,7 +181,7 @@ A curated collection of essential Minecraft websites, organized into intuitive c
   Huge selection of custom Minecraft player heads.
 
 - **[MCBuild](https://mcbuild.org/)**  
-  Free online service for installing Buildings & Schematics on your Minecraft map for Bedrock (PE) and Java Edition. Over 10K+ buildings, maps, mods and textures
+  Buildings & Schematics for Minecraft - Bedrock (PE) and Java Edition. Over 10K+ buildings, maps, mods and textures.
 
 ## Technical and Redstone Tools
 
