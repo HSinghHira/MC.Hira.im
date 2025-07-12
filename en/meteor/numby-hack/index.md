@@ -1,7 +1,7 @@
 ---
 layout: doc
 
-title: Numby Hack Addon Guide
+title: Numby Hack Addon for Meteor Client
 description: Comprehensive guide to the Numby Hack Meteor Client addon, covering its features, supported versions, and author credibility.
 
 head:
@@ -13,17 +13,17 @@ head:
       content: "Numby Hack, Meteor Client addon, Minecraft modules, Number81, Minecraft hack addon"
 ---
 
-# Asteroide Addon for Meteor Client
+# Numby Hack Addon for Meteor Client
 
 ::: warning
 I have taken this all infomation from developer's new & old Github commits and explored the modules manually. So if there is something that is not correct, please do let me know.
 :::
 
-# Introduction
+## Introduction
 
 Numby Hack is a **Meteor Client** addon that adds extra customization modules and commands to your Minecraft client. It was created “in honor of Number81” and aims to give players a variety of new tweaks and utilities. In short, it’s a collection of quality-of-life and fun modules (and a couple of chat commands) that plug into Meteor. The addon is verified for recent Minecraft/Meteor versions (see below), and it’s written by developer _cqb13_ (Maksim Straus) who actively maintains other Meteor projects.
 
-# Supported Minecraft Versions
+## Supported Minecraft Versions
 
 Numby Hack tracks Meteor Client updates, so it supports the latest Minecraft versions that Meteor does. In practice, that means it’s up-to-date through Minecraft **1.21.x** as of mid-2025. For example, the GitHub tags show builds like _1.21.7-build-44_ (released Jul 8, 2025) and _1.21.6-build-41_ (Jun 25, 2025), which correspond to Meteor Client 1.21.7 and 1.21.6 (Minecraft 1.21.7/1.21.6). The addon also has recent builds for **1.21.5** (June 2025) and **1.21.4** (Mar/Feb 2025) and so on.
 
@@ -41,11 +41,11 @@ In other words, Numby Hack keeps pace with Meteor’s updates. New Minecraft ver
 - 🗂️ [Download Other Versions](https://github.com/cqb13/Numby-hack/tags)
 - 💬 [Discord Server for Support](https://discord.gg/TtmQs7BzPJ)
 
-# Key Features and Modules
+## Key Features and Modules
 
 Numby Hack adds dozens of new modules to Meteor’s list, plus a few HUD elements and commands. Below is a rundown of **all** the included modules and what they do. (These come from the addon’s README.)
 
-## General Modules
+### General Modules
 
 - **Auto Log Plus:** Auto-disconnects you when a specified condition is met (e.g. low health or certain alerts). It helps you bail out of dangerous situations.
 - **Better Place:** Lets you place blocks in*weird* ways (ignoring normal placement rules), useful for quick building or scaffolding tricks.
@@ -74,7 +74,7 @@ Numby Hack adds dozens of new modules to Meteor’s list, plus a few HUD element
 
 Each of the above modules can be toggled on or off in the Meteor GUI. They are grouped under the “Numby Hack” category in your modules list. (The official README lists all of them similarly.)
 
-## HUD Modules
+### HUD Modules
 
 Numby Hack also adds several HUD (heads-up display) elements:
 
@@ -92,7 +92,7 @@ Numby Hack also adds several HUD (heads-up display) elements:
 
 Each HUD element can be enabled or disabled, and usually has its own settings (position, color, etc.) in the HUD modules menu.
 
-## Commands
+### Commands
 
 Numby Hack provides two chat commands:
 
@@ -101,11 +101,11 @@ Numby Hack provides two chat commands:
 
 (These match the commands listed in the addon README.)
 
-## Other Features
+### Other Features
 
 - **Player Particle (Feature):** This isn’t a module you toggle on/off like the rest. It’s a special feature that lets you render particles around specified players. You can configure it to, say, circle a team member or target with particles for fun visual effects.
 
-# Why the Author is Trustworthy
+## Why the Author is Trustworthy
 
 Numby Hack is written by **Maksim “cqb13” Straus** , an active Java developer in the Meteor Client community. A few reasons to trust his work:
 
