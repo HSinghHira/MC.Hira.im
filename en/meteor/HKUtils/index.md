@@ -37,7 +37,7 @@ For players using older Minecraft versions, the mod can be used with [ViaFabricP
 
 - 🔗 [Advanced Previewer](/en/meteor/preview/?H1ggsK/HKUtils/tree/main/src/main/java/com/h1ggsk/hkutils/modules) 🔗 [Simple Previewer](/en/meteor/preview/simple.html?H1ggsK/HKUtils/tree/main/src/main/java/com/h1ggsk/hkutils/modules)
 - 🔗 [Github Repository](https://github.com/H1ggsK/HKUtils/)
-- ⬇️ [Download Latest Version](/en/download/?H1ggsK/HKUtils/){target="\_blank"}
+- ⬇️ [Download Latest Version](/en/download/?H1ggsK/HKUtils/)
 - 🗂️ [Download Other Versions](https://github.com/H1ggsK/HKUtils/tags)
 - 💬 [Discord Server for Support](https://discord.com/invite/zcfMqDgFnF)
 

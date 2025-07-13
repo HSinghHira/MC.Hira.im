@@ -30,7 +30,7 @@ I have taken this all infomation from developer's new & old Github commits and e
 
 - [Advanced Demo/Preview](/en/meteor/preview/?Zgoly/Meteorist/tree/main/src/main/java/zgoly/meteorist/modules), [Simple Previewer](/en/meteor/preview/simple.html?Zgoly/Meteorist/tree/main/src/main/java/zgoly/meteorist/modules)
 - [Github Repository](https://github.com/Zgoly/Meteorist)
-- [Latest Download](/en/download/?Zgoly/Meteorist){target="\_blank"}
+- [Latest Download](/en/download/?Zgoly/Meteorist)
 - [All Versions](https://github.com/Zgoly/Meteorist/tags)
 
 ## Supported Minecraft Versions

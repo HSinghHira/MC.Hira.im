@@ -29,7 +29,7 @@ The addon is open source and actively maintained by etianl and team. It gets reg
 
 - [Demo/Preview](/en/meteor/preview/?etianl/Trouser-Streak/tree/main/src/main/java/pwn/noobs/trouserstreak/modules/)
 - [Github Repository](https://github.com/etianl/Trouser-Streak)
-- [Latest Download](/en/download/?etianl/Trouser-Streak){target="\_blank"}
+- [Latest Download](/en/download/?etianl/Trouser-Streak)
 - [Download Other Versions](https://github.com/etianl/Trouser-Streak/tags)
 - [Official Discord](https://discord.gg/3RUjaRzdKv)
 

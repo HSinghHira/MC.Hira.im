@@ -28,7 +28,7 @@ BlackOut is an open-source addon for Meteor Client, a widely used Minecraft util
 - [Advanced Previewer](/en/meteor/preview/?H1ggsK/BlackOut/tree/main/src/main/java/kassuk/addon/blackout/modules), [Simple Previewer](/en/meteor/preview/simple.html?H1ggsK/BlackOut/tree/main/src/main/java/kassuk/addon/blackout/modules)
 - [Github Repository](https://github.com/H1ggsK/BlackOut)
 - [Original Github Repository](https://github.com/KassuK1/BlackOut)
-- [Download Latest Version](/en/download/?H1ggsK/BlackOut){target="\_blank"}
+- [Download Latest Version](/en/download/?H1ggsK/BlackOut)
 - [All Other Versions](https://github.com/KassuK1/BlackOut/tags)
 
 ## Supported Minecraft Versions

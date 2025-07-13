@@ -26,7 +26,7 @@ Lucid is a lightweight addon for Meteor Client, a well-known Minecraft mod that 
 
 - [Advanced Previewer](/en/meteor/preview/?HUHNcode/Lucid-addon/tree/master/src/main/java/huhncode/lucid/lucidaddon/modules), [Simple Previewer](/en/meteor/preview/simple.html?HUHNcode/Lucid-addon/tree/master/src/main/java/huhncode/lucid/lucidaddon/modules)
 - [Github Repository](https://github.com/HUHNcode/Lucid-addon)
-- [Latest Download](/en/download/?HUHNcode/Lucid-addon){target="\_blank"}
+- [Latest Download](/en/download/?HUHNcode/Lucid-addon)
 - [All Other Versions](https://github.com/HUHNcode/Lucid-addon/tags)
 
 ## Supported Minecraft Versions

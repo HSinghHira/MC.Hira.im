@@ -28,7 +28,7 @@ In Minecraft, trading with villagers is a key mechanic for obtaining valuable it
 
 - [Advanced Demo/Preview](/en/meteor/preview/?maxsupermanhd/meteor-villager-roller/tree/main/src/main/java/maxsuperman/addons/roller/modules), [Simple Previewer](/en/meteor/preview/simple.html?maxsupermanhd/meteor-villager-roller/tree/main/src/main/java/maxsuperman/addons/roller/modules)
 - [Github Repository](https://github.com/maxsupermanhd/meteor-villager-roller)
-- [Download Latest Version](/en/download/?maxsupermanhd/meteor-villager-roller){target="\_blank"}
+- [Download Latest Version](/en/download/?maxsupermanhd/meteor-villager-roller)
 - [Check Older Versions](https://github.com/maxsupermanhd/meteor-villager-roller/tags)
 
 ## Supported Minecraft Versions

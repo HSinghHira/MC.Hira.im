@@ -30,7 +30,7 @@ Meteor Rejects is an addon designed to enhance the Meteor Client, a widely-used 
 
 - [Advanced Demo/Preview](/en/meteor/preview/?AntiCope/meteor-rejects/tree/master/src/main/java/anticope/rejects/modules), [Simple Previewer](/en/meteor/preview/simple.html?AntiCope/meteor-rejects/tree/master/src/main/java/anticope/rejects/modules)
 - [Github Repository](https://github.com/AntiCope/meteor-rejects)
-- [Latest Download](/en/download/?AntiCope/meteor-rejects){target="\_blank"}
+- [Latest Download](/en/download/?AntiCope/meteor-rejects)
 - [All Versions](https://github.com/AntiCope/meteor-rejects/tags)
 - [Discord](https://discord.gg/9mrRPGKYU3)
 

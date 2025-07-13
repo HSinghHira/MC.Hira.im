@@ -28,7 +28,7 @@ The Clarity addon enhances Meteor Client, a popular utility mod for Minecraft, b
 
 - 🔗 [Advanced Previewer](/en/meteor/preview/?ck-clarity/addon/tree/main/src/main/java/com/x310/clarity/modules) 🔗 [Simple Previewer](/en/meteor/preview/simple.html?ck-clarity/addon/tree/main/src/main/java/com/x310/clarity/modules)
 - 🔗 [Github Repository](https://github.com/ck-clarity/addon/)
-- ⬇️ [Download Latest Version](/en/download/?ck-clarity/addon/){target="\_blank"}
+- ⬇️ [Download Latest Version](/en/download/?ck-clarity/addon/)
 - 🗂️ [Download Other Versions](https://github.com/ck-clarity/addon//tags)
 - 🌐 [Author's Website](https://clarity.gay/)
 - 💬 [Discord Server for Support](https://discord.gg/JKDKbfc5mu)

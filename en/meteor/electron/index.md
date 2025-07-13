@@ -29,7 +29,7 @@ I have taken this all infomation from new & old Github commits and explored the 
 ## Useful Links
 
 - [Github Repository](https://github.com/RacoonDog/Electron)
-- [Latest Download](/en/download/?RacoonDog/Electron){target="\_blank"}
+- [Latest Download](/en/download/?RacoonDog/Electron)
 
 ## Supported Version(s)
 

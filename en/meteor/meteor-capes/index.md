@@ -25,7 +25,7 @@ Meteor Capes is a free, open-source addon for Meteor Client, a widely used utili
 ## Useful Links
 
 - 🔗 [Github Repository](https://github.com/Gllody/meteor-capes)
-- ⬇️ [Download Latest Version](/en/download/?Gllody/meteor-capes){target="\_blank"}
+- ⬇️ [Download Latest Version](/en/download/?Gllody/meteor-capes)
 - 🗂️ [Download Other Versions](https://github.com/Gllody/meteor-capes/tags)
 - 💬 [Discord Server for Support](https://discord.gg/XFaXTqfag5)
 
