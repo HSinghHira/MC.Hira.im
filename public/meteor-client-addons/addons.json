@@ -28,6 +28,7 @@
     "icon": "/meteor-client-addons/icons/numby-hack.png",
     "github_repo": "https://github.com/cqb13/Numby-hack",
     "mc_version": [
+      "1.21.8",
       "1.21.7",
       "1.21.6",
       "1.21.5",
@@ -129,6 +130,7 @@
     "icon": "/meteor-client-addons/icons/meteorist.png",
     "github_repo": "https://github.com/Zgoly/Meteorist",
     "mc_version": [
+      "1.21.8",
       "1.21.5",
       "1.21.4",
       "1.21",
@@ -148,6 +150,7 @@
     "icon": "/meteor-client-addons/icons/meteorplus.png",
     "github_repo": "https://github.com/MeteorClientPlus/MeteorPlus",
     "mc_version": [
+      "1.21.8",
       "1.21.6",
       "1.21.5",
       "1.21.4",
@@ -209,7 +212,7 @@
     "description": "Powerful addon for Meteor Client that enhances Minecraft PvP experience.",
     "icon": "/meteor-client-addons/icons/blackout.png",
     "github_repo": "https://github.com/H1ggsK/BlackOut",
-    "mc_version": ["1.21.4", "1.21.1"]
+    "mc_version": ["1.21.5", "1.21.4", "1.21.1"]
   },
   {
     "title": "Glazed",
