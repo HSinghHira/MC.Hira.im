@@ -437,5 +437,13 @@
       "https://mc.hira.im/meteor-archive/files/meteor-client-1.21.7-1.jar"
     ],
     "source_code": "https://github.com/MeteorDevelopment/meteor-client/releases/tag/v1.21.7"
+  },
+  {
+    "version": "1.21.8",
+    "minecraft_versions": ["1.21.8"],
+    "downloads": [
+      "https://mc.hira.im/meteor-archive/files/meteor-client-1.21.8-36.jar"
+    ],
+    "source_code": "https://github.com/MeteorDevelopment/meteor-client/releases/tag/v1.21.8"
   }
 ]
